@@ -8,7 +8,7 @@
       <link href="/post/ba01d453.html"/>
       <url>/post/ba01d453.html</url>
       
-        <content type="html"><![CDATA[<p><strong>就是网站标签栏上的那个小图标</strong></p><span id="more"></span><p>有时候我们想提取一个网站标签栏上的那个小图标（到底什么时候需要呢？）<br>一个简单的方法：<br>网址后端加：<br><code>/favicon.ico</code><br>eg:<br>  <a href="https://www.baidu.com/favicon.ico">https://www.baidu.com/favicon.ico</a><br>就可以了。</p>]]></content>
+        <content type="html"><![CDATA[<p><strong>浏览器访问网站，标签栏上的那个小图标的获取方法。</strong></p><span id="more"></span><h3 id="有时候我们想提取一个网站标签栏上的那个小图标（到底什么时候需要我也不知道）"><a href="#有时候我们想提取一个网站标签栏上的那个小图标（到底什么时候需要我也不知道）" class="headerlink" title="有时候我们想提取一个网站标签栏上的那个小图标（到底什么时候需要我也不知道）"></a>有时候我们想提取一个网站标签栏上的那个小图标（到底什么时候需要我也不知道）</h3><p>对于部署的传统服务器有一个简单的方法，直接访问静态资源。<br>网址后端加：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/favicon.ico</span><br></pre></td></tr></table></figure><p>eg:<br>  <a href="https://www.baidu.com/favicon.ico">https://www.baidu.com/favicon.ico</a><br>  <img src="https://www.baidu.com/favicon.ico"><br>就可以了。</p>]]></content>
       
       
       <categories>
