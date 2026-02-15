@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>提取网站标签栏图标的方法</title>
+      <link href="/post/ba01d453.html"/>
+      <url>/post/ba01d453.html</url>
+      
+        <content type="html"><![CDATA[<p><strong>就是网站标签栏上的那个小图标</strong></p><span id="more"></span><p>有时候我们想提取一个网站标签栏上的那个小图标（到底什么时候需要呢？）<br>一个简单的方法：<br>网址后端加：<br><code>/favicon.ico</code><br>eg:<br>  <a href="https://www.baidu.com/favicon.ico">https://www.baidu.com/favicon.ico</a><br>就可以了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 小技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
