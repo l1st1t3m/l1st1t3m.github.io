@@ -4,11 +4,40 @@
   
     
     <entry>
+      <title>AI效果图常用Prompt</title>
+      <link href="/post/9f7e849b.html"/>
+      <url>/post/9f7e849b.html</url>
+      
+        <content type="html"><![CDATA[<p><strong>AI生成效果图Prompt合集</strong></p><span id="more"></span><h1 id="图像渲染"><a href="#图像渲染" class="headerlink" title="图像渲染"></a>图像渲染</h1><h2 id="景观渲染"><a href="#景观渲染" class="headerlink" title="景观渲染"></a>景观渲染</h2><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260215215304079.jpg"><br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260215215056818.jpg"><br><strong>基础Prompt：</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将这张图片变成一个真实的照片，渲染可视化风格的图像。保留图像中的原有材质，植物种类，色彩和细节，拍摄视角不变。材质和植物真实反射，真实植物质感，明媚的光线。</span><br></pre></td></tr></table></figure><br><strong>图面:</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">图面要求：不要修改当前图面结构，增加一些增强氛围感的人物及其他合理细节元素，形体正确无畸变；草地细节纹理真实不杂乱，微地形柔和不锐利，体现到位，地形内无积水。</span><br></pre></td></tr></table></figure><br><strong>植物:</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">植物要求：项目地点为北京，按模型截图中树木的位置与形状，推测种植地理气候对应的大乔木。</span><br><span class="line">冠幅饱满，与模型中树冠一样大，树每一棵角度和形态都有微小差异，其中少量为花树。</span><br><span class="line">注意以图中的种植位置为主，仔细识别图中的树位置，不要少树和错位。</span><br><span class="line">草花、地被、灌木不要过多，疏密有致。</span><br></pre></td></tr></table></figure><br><strong>光照:</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">时间要求：要上午10:30的光照。</span><br><span class="line">季节为春夏季，植物不要出现秋季植物色。</span><br></pre></td></tr></table></figure><br><strong>材质:</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">硬化要求：桥梁道路等景观材质不要改变且不要出现脏污痕迹。</span><br></pre></td></tr></table></figure><br><strong>补充:</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">补充要求：首先注意区分草地和水面位置，不要错位。</span><br><span class="line">注意图中各元素的比例要合理，如人物、植物、构筑物等之间的相对比例正确。</span><br><span class="line">不要保留原有人物，重新生成符合场景功能的人物，增加的人物的比例要合理，营造极强的氛围感。</span><br><span class="line">图中若有文字部分，注意不要改动、变形文字。</span><br></pre></td></tr></table></figure><br><strong>示例:</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将这张图片变成一个真实的照片，渲染可视化风格的图像。保留图像中的原有材质，植物种类，色彩和细节，拍摄视角不变。材质和植物真实反射，真实植物质感，明媚的光线。植物要求：项目地点为北京，按模型截图中树木的位置与形状，推测种植地理气候对应的大乔木。冠幅饱满，与模型中树冠一样大，树每一棵角度和形态都有微小差异，其中少量为花树。注意以图中的种植位置为主，仔细识别图中的树位置，不要少树和错位。草花、地被、灌木不要过多，疏密有致。时间要求：要上午10:30的光照。季节为春夏季，植物不要出现秋季植物色。硬化要求：桥梁道路等景观材质不要改变且不要出现脏污痕迹。补充要求：首先注意区分草地和水面位置，不要错位。注意图中各元素的比例要合理，如人物、植物、构筑物等之间的相对比例正确。不要保留原有人物，重新生成符合场景功能的人物，增加的人物的比例要合理，营造极强的氛围感。图中若有文字部分，注意不要改动、变形文字。</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 景观设计 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计软件 </tag>
+            
+            <tag> AI </tag>
+            
+            <tag> 工作流 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>提取网站标签栏图标的方法</title>
       <link href="/post/ba01d453.html"/>
       <url>/post/ba01d453.html</url>
       
-        <content type="html"><![CDATA[<p><strong>浏览器访问网站，标签栏上的那个小图标的获取方法。</strong></p><span id="more"></span><h3 id="有时候我们想提取一个网站标签栏上的那个小图标（到底什么时候需要我也不知道）"><a href="#有时候我们想提取一个网站标签栏上的那个小图标（到底什么时候需要我也不知道）" class="headerlink" title="有时候我们想提取一个网站标签栏上的那个小图标（到底什么时候需要我也不知道）"></a>有时候我们想提取一个网站标签栏上的那个小图标（到底什么时候需要我也不知道）</h3><p>对于部署的传统服务器有一个简单的方法，直接访问静态资源。<br>网址后端加：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/favicon.ico</span><br></pre></td></tr></table></figure><p>eg:<br>  <a href="https://www.baidu.com/favicon.ico">https://www.baidu.com/favicon.ico</a><br>  <img src="https://www.baidu.com/favicon.ico"><br>就可以了。</p>]]></content>
+        <content type="html"><![CDATA[<p><strong>浏览器访问网站，标签栏上的那个小图标的获取方法。</strong></p><span id="more"></span><p><strong>有时候我们想提取一个网站标签栏上的那个小图标（到底什么时候需要我也不知道）</strong></p><p>  对于部署的传统服务器有一个简单的方法，直接访问静态资源。  </p><p>  网址后端加：  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/favicon.ico</span><br></pre></td></tr></table></figure><p>eg:<br>  <a href="https://www.baidu.com/favicon.ico">https://www.baidu.com/favicon.ico</a><br>  <img src="https://www.baidu.com/favicon.ico"><br>就可以了。</p>]]></content>
       
       
       <categories>

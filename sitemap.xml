@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://l1st1t3m.github.io/post/9f7e849b.html</loc>
+    
+    <lastmod>2026-02-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://l1st1t3m.github.io/post/ba01d453.html</loc>
     
     <lastmod>2026-02-15</lastmod>
@@ -69,10 +78,38 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://l1st1t3m.github.io/tags/%E8%AE%BE%E8%AE%A1%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1st1t3m.github.io/tags/AI/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1st1t3m.github.io/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
     <loc>https://l1st1t3m.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1st1t3m.github.io/categories/%E6%99%AF%E8%A7%82%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2026-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
