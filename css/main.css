@@ -1462,7 +1462,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ac75ff;
+    background: #5d335c;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3339,4 +3339,7 @@ body {
 }
 .post-body .highlight code {
   pointer-events: auto !important;
+}
+.copy-btn {
+  pointer-events: none !important;
 }
