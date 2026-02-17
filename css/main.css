@@ -1462,7 +1462,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #08d04f;
+    background: #ffffa7;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3280,4 +3280,54 @@ body {
   .post-body code:hover {
     background: rgba(255,255,255,0.2);
   }
+}
+/* =====================================
+   Inline Code 点击复制 + Tooltip
+   ===================================== */
+.post-body code {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+/* hover 高亮 */
+.post-body code:hover {
+  background: rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+/* 暗色 hover */
+@media (prefers-color-scheme: dark) {
+  .post-body code:hover {
+    background: rgba(255,255,255,0.2);
+  }
+}
+/* 复制成功 */
+.post-body code.copied {
+  background: #4ade80 !important;
+  color: #fff !important;
+}
+/* ===== Tooltip ===== */
+.post-body code::after {
+  content: "点击复制";
+  position: absolute;
+  top: -1.8em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.post-body code:hover::after {
+  opacity: 1;
+}
+/* 复制后提示 */
+.post-body code.copied::after {
+  content: "已复制 ✓";
+  opacity: 1;
+  background: #22c55e;
 }
