@@ -1462,7 +1462,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #dff0c8;
+    background: #ac75ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3330,4 +3330,13 @@ body {
   content: "已复制 ✓";
   opacity: 1;
   background: #22c55e;
+}
+.post-body .highlight {
+  pointer-events: auto !important;
+}
+.post-body .highlight pre {
+  pointer-events: auto !important;
+}
+.post-body .highlight code {
+  pointer-events: auto !important;
 }
