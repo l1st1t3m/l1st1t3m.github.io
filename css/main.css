@@ -1462,7 +1462,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ff05ff;
+    background: #77f72f;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3090,7 +3090,7 @@ header.header {
    基础环境：彻底清除默认白底
    ===================================== */
 body {
-  background: url("https://w.wallhaven.cc/full/j5/wallhaven-j59725.jpg") no-repeat center fixed;
+  background: url("https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260217203157093.jpeg") no-repeat center fixed;
   background-size: cover;
 }
 .header,
