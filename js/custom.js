@@ -18,18 +18,6 @@ document.addEventListener("click", function(e) {
       }, 1000);
     }
 
-    // 优先用 clipboard API
-    if (navigator.clipboard && window.isSecureContext) {
-
-      navigator.clipboard.writeText(text)
-        .then(showCopied)
-        .catch(fallbackCopy);
-
-    } else {
-      fallbackCopy();
-    }
-
-    // 兼容方案（Safari / 权限拒绝）
     function fallbackCopy() {
       const textarea = document.createElement("textarea");
       textarea.value = text;
@@ -38,6 +26,17 @@ document.addEventListener("click", function(e) {
       document.execCommand("copy");
       document.body.removeChild(textarea);
       showCopied();
+    }
+
+    // 关键：先尝试 clipboard API
+    if (navigator.clipboard && window.isSecureContext) {
+
+      navigator.clipboard.writeText(text)
+        .then(showCopied)
+        .catch(() => fallbackCopy());
+
+    } else {
+      fallbackCopy();
     }
 
   }
