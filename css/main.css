@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #75ff37;
+    background: #864eff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3400,4 +3400,39 @@ body {
 /* 让汉堡三条线本身也圆角一点（可选但更协调） */
 .toggle.sidebar-toggle .toggle-line {
   border-radius: 2px !important;
+}
+/* =====================================
+   Follow Me 透明圆角背景
+   ===================================== */
+.followme {
+  background: rgba(255,255,255,0.6) /* 半透明白底 */;
+  border-radius: 12px /* 圆角 */;
+  padding: 16px /* 内边距 */;
+  margin-bottom: 24px /* 与下方内容间距 */;
+/* 如果你想要玻璃质感可以启用 blur（可选） */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+/* 如果想再加一点阴影（可选） */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.followme .social-list {
+  display: flex;
+  gap: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.followme .social-item {
+  flex: 0 1 auto;
+}
+.followme .social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px /* 内部单个按钮也圆角 */;
+  transition: all 0.2s ease;
+}
+.followme .social-link:hover {
+  background: rgba(0,0,0,0.05);
 }
