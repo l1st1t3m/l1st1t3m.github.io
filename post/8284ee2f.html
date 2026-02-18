@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="CY2Nx7RmOneQXp5ubpaAyFRFL3q8ZD9sM6ANmWvgNzw">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"techbyliz.uk","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github-dark"},"prism":{"light":"coy","dark":"tomorrow"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":true,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="转载：字节全家桶 Seed 2.0 + TRAE 玩转 Skill原文作者：阮一峰原文链接：字节全家桶 Seed 2.0 + TRAE 玩转 Skill">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill">
+<meta property="og:url" content="https://techbyliz.uk/post/8284ee2f.html">
+<meta property="og:site_name" content="不群小筑">
+<meta property="og:description" content="转载：字节全家桶 Seed 2.0 + TRAE 玩转 Skill原文作者：阮一峰原文链接：字节全家桶 Seed 2.0 + TRAE 玩转 Skill">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021401.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021402.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021416.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021404.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021429.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021426.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021407.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021428.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021409.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021410.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021411.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021412.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021413.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021414.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021417.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021418.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021419.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021420.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021421.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021422.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021423.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021424.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021427.webp">
+<meta property="article:published_time" content="2026-02-18T12:11:29.256Z">
+<meta property="article:modified_time" content="2026-02-18T12:19:07.883Z">
+<meta property="article:author" content="李不群">
+<meta property="article:tag" content="转载">
+<meta property="article:tag" content="阮一峰">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021401.webp">
+
+
+<link rel="canonical" href="https://techbyliz.uk/post/8284ee2f.html">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://techbyliz.uk/post/8284ee2f.html","path":"post/8284ee2f.html","title":"【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill | 不群小筑</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="不群小筑" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">不群小筑</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay young, Stay simple.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索 | search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页 | home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我 | about me</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 | tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 | categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档 | archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索 | search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">一、引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Seed-2-0-%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">二、Seed 2.0 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81TRAE-%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">三、TRAE 的准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%BC%96%E7%A8%8B%E6%B5%8B%E8%AF%95"><span class="nav-number">4.</span> <span class="nav-text">四、编程测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E7%94%9F%E6%88%90%E7%BB%93%E6%9E%9C"><span class="nav-number">5.</span> <span class="nav-text">五、生成结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81Skill-%E7%AE%80%E4%BB%8B"><span class="nav-number">6.</span> <span class="nav-text">六、Skill 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E6%8A%80%E8%83%BD"><span class="nav-number">7.</span> <span class="nav-text">七、前端设计技能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81Vercel-deploy-%E6%8A%80%E8%83%BD"><span class="nav-number">8.</span> <span class="nav-text">八、Vercel deploy 技能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E6%80%BB%E7%BB%93"><span class="nav-number">9.</span> <span class="nav-text">九、总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="李不群"
+      src="https://avatars.githubusercontent.com/u/58502299">
+  <p class="site-author-name" itemprop="name">李不群</p>
+  <div class="site-description" itemprop="description">于浩歌狂热之际中寒</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/l1st1t3m" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;l1st1t3m" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lokilicho@gmail.com" title="Email → mailto:lokilicho@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.weibo.com/u/5761727412" title="Weibo → https:&#x2F;&#x2F;www.weibo.com&#x2F;u&#x2F;5761727412" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://x.com/II_F_s0cIeTy_ll" title="Twitter → https:&#x2F;&#x2F;x.com&#x2F;II_F_s0cIeTy_ll" rel="noopener me" target="_blank"><i class="fab fa-x-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/l1st1t3m/" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;l1st1t3m&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/384740116" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;384740116" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://music.163.com/#/user/home?id=99143704" title="网易云音乐 → https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;99143704" rel="noopener me" target="_blank"><i class="fa fa-music fa-fw"></i>网易云音乐</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/lokilicho" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;lokilicho" rel="noopener me" target="_blank"><i class="fa fa-book fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCv1Vlxe9qQJhTPc54mTh9wg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCv1Vlxe9qQJhTPc54mTh9wg" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/+fYQeoO16rNBmZjRl" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;+fYQeoO16rNBmZjRl" rel="noopener me" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://techbyliz.uk/post/8284ee2f.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/58502299">
+      <meta itemprop="name" content="李不群">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不群小筑">
+      <meta itemprop="description" content="于浩歌狂热之际中寒">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill | 不群小筑">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-02-18 20:11:29 / 修改时间：20:19:07" itemprop="dateCreated datePublished" datetime="2026-02-18T20:11:29+08:00">2026-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AC%E8%BD%BD/" itemprop="url" rel="index"><span itemprop="name">转载</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><div style="text-align: center;">
+
+<p><strong>转载：字节全家桶 Seed 2.0 + TRAE 玩转 Skill</strong><br>原文作者：阮一峰<br>原文链接：<a href="http://www.ruanyifeng.com/blog/2026/02/seed-2.0.html" target="_blank">字节全家桶 Seed 2.0 + TRAE 玩转 Skill</a></p>
+</div>
+
+<span id="more"></span>
+
+<blockquote>
+<p>本文由 <a target="_blank" rel="noopener" href="http://ksria.com/simpread/">简悦 SimpRead</a> 转码， 原文地址 <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2026/02/seed-2.0.html">www.ruanyifeng.com</a></p>
+</blockquote>
+<h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>国产大模型之中，字节是一个异类。</p>
+<p>不像其他大模型轰轰烈烈、争夺眼球，它更低调，不引人注目。</p>
+<p>但是，它做的事情反倒最多，大模型、Agent、开发工具、云服务都有独立品牌，遍地开花，一个都不缺，都在高速推进。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021401.webp"></p>
+<p>Seed 是字节的大模型团队，底下有好几条产品线，最近热得发烫的视频模型 Seedance 2.0 就是他们的产品。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021402.webp"></p>
+<p>今天，我就用字节的全家桶 —- 刚刚发布的 Seed 2.0 模型和开发工具 TRAE —- 写一篇 Skill 教程。</p>
+<p>大家会看到，<strong>它们组合起来既强大，又简单好用，（个人用户）还免费</strong>。这也是我想写的原因，让大家知道有这个方案。</p>
+<p>只要十分钟，读完这篇教程，你还会明白 Skill 是什么，怎么用，以及为什么一定要用它。</p>
+<h2 id="二、Seed-2-0-简介"><a href="#二、Seed-2-0-简介" class="headerlink" title="二、Seed 2.0 简介"></a>二、Seed 2.0 简介</h2><p>先介绍 Seed 2.0，它是 <strong>Seed 家族的基座模型</strong>。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021416.webp"></p>
+<p>所谓 “基座模型”（foundation model），就是一种通用大模型，<strong>可用来构建其他各种下游模型</strong>。最大的两个特征有两个：一个是规模大，另一个是泛化能力强，这样才方便构建别的模型。</p>
+<p>大家熟知的豆包，就是基于 Seed 模型，它也被称为 “豆包大模型”。这次 Seed 2.0 包含 Pro、Lite、Mini 三款通用模型，以及专为开发者定制的 Seed 2.0 Code 模型。</p>
+<p>由于各种用途都必须支持，<strong>Seed 2.0 的通用性特别突出</strong>，比以前版本都要强。</p>
+<blockquote>
+<p>1、支持多模态，各种类型的数据都能处理：文字、图表、视觉空间、运动、视频等等。</p>
+<p>2、具备各种 Agent 能力，方便跟企业工具对接：搜索、函数调用、工具调用、多轮指令、上下文管理等。</p>
+<p>3、有推理和代码能力。</p>
+</blockquote>
+<p>正因为最后一点，所以我们可以拿它来编程，尤其是生成前端代码。跟字节发布的 AI 编程工具 <a target="_blank" rel="noopener" href="https://www.trae.cn/">TRAE</a> 配合使用，效果很好，特别方便全栈开发，个人用户还免费。</p>
+<h2 id="三、TRAE-的准备工作"><a href="#三、TRAE-的准备工作" class="headerlink" title="三、TRAE 的准备工作"></a>三、TRAE 的准备工作</h2><p><a target="_blank" rel="noopener" href="https://www.trae.cn/ide/download">下载安装</a> TRAE 以后，它有两种模式，左上角可以切换：IDE 模型和 SOLO 模型。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021404.webp"></p>
+<p>选择 IDE 就可以了，SOLO 是 AI 任务的编排器，除非多个任务一起跑，否则用不到。</p>
+<p>然后，按下快捷键 Ctrl + U（或者 Command + U），唤出对话框，用来跟 AI 对话。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021429.webp"></p>
+<p>我们要构建 Web 应用，左上角就选 @Builder 开发模式。右下角的模型就选 Seed-2.0-Code。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021426.webp"></p>
+<p>可以看到，TRAE 自带的国产开源编程模型很全，都是免费使用。</p>
+<p>准备工作这样就差不多了。</p>
+<h2 id="四、编程测试"><a href="#四、编程测试" class="headerlink" title="四、编程测试"></a>四、编程测试</h2><p>我选了一个有点难度的任务，让 Seed 2.0 生成。</p>
+<p>ASCII 图形是使用字符画出来的图形，比如下图。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021407.webp"></p>
+<p>我打算生成一个 Web 应用，用户在网页上输入 ASCII 图形，自动转成 Excalidraw 风格的手绘图形。</p>
+<p>提示词如下：</p>
+<blockquote>
+<p>“生成一个 Web 应用，可以将 ASCII 图形转为 Excalidraw 风格的图片，并提供下载。”</p>
+</blockquote>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021428.webp"></p>
+<p>模型就开始思考，将这个任务分解为四步。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021409.webp"></p>
+<h2 id="五、生成结果"><a href="#五、生成结果" class="headerlink" title="五、生成结果"></a>五、生成结果</h2><p>等到 Seed 2.0 代码生成完毕，TRAE 就会起一个本地服务 localhost:8080，同时打开了预览窗口。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021410.webp"></p>
+<p>生成的结果还挺有意思，上部的 ASCII 输入框提供了四个示例：Box、Tree、Flowchart、Smiley。下面是 Tree 的样子。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021411.webp"></p>
+<p>然后是 Excalidraw 参数的控制面板：线宽、粗糙度、弯曲度、字体大小。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021412.webp"></p>
+<p>点击 Convert（转换）按钮，马上得到手绘风格的线条图。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021413.webp"></p>
+<p>整个页面就是下面的样子。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021414.webp"></p>
+<h2 id="六、Skill-简介"><a href="#六、Skill-简介" class="headerlink" title="六、Skill 简介"></a>六、Skill 简介</h2><p>这个页面的设计，感觉不是很美观，还可以改进。我打算为 Seed 2.0 加入专门的前端设计技能，使其能够做出更美观的页面。</p>
+<p><strong>所谓 Skill（技能），就是一段专门用途的提示词，用来注入上下文。</strong></p>
+<p>有时候，提示词很长，每次都输入，就很麻烦。我们可以把反复用到的部分提取出来，保存在一个文件里面，方便重复使用。这种提取出来的提示词，往往是关于如何完成一种任务的详细描述，所以就称为 “技能文件”。</p>
+<p>格式上，它就是一个 Markdown 文本文件，有一个 YAML 头，包含 name 字段和 description 字段。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021417.webp"></p>
+<p>name 字段是 Skill 的名称，可以通过这个名称调用该技能；description 字段则是技能的简要描述，模型通过这段描述判断何时自动调用该技能。</p>
+<p>有些技能比较复杂，除了描述文件以外，还有专门的脚本文件、资源文件、模板文件等等，相当于一个代码库。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021418.webp"></p>
+<p>这些文件里面，SKILL.md 是入口文件，模型根据它的描述，了解何时何处调用其他各个文件。</p>
+<p>这个库发到网上，就可以与其他人共享。如果你觉得 AI 模型处理任务时，需要用到某种技能，就可以寻找别人已经写好的 Skill 加载到模型。</p>
+<h2 id="七、前端设计技能"><a href="#七、前端设计技能" class="headerlink" title="七、前端设计技能"></a>七、前端设计技能</h2><p>下面，我使用 Anthropic 公司共享出来的<a target="_blank" rel="noopener" href="https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md">前端设计技能</a>，重构一下前面的页面。它只有单独一个 Markdown 文件，可以下载下来。</p>
+<p>打开 TRAE 的 “设置 &#x2F; 规则和技能” 页面。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021419.webp"></p>
+<p>点击技能部分的 “+ 创建” 按钮，打开创建技能的窗口。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021420.webp"></p>
+<p>你可以在这个窗口填写 SKill 内容，也可以上传现成的 Skill 文件。我选择上传，完成后，就可以看到列表里已经有 frontend-design 技能了。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021421.webp"></p>
+<p>然后，我就用下面的提示词，唤起这个技能来重构页面。</p>
+<blockquote>
+<p>“使用 frontend-design 技能，重构这个页面，让其变得更美观易用，更有专业感。”</p>
+</blockquote>
+<p>下面就是模型给出的文字描述和重构结果。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021422.webp"></p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021423.webp"></p>
+<p>页面确实感觉变得高大上了！</p>
+<h2 id="八、Vercel-deploy-技能"><a href="#八、Vercel-deploy-技能" class="headerlink" title="八、Vercel deploy 技能"></a>八、Vercel deploy 技能</h2><p>最后，再看一个技能的例子。</p>
+<p>代码生成以后，都是在本地机器上运行，能不能发布到网上，分享给更多的人呢？</p>
+<p>回答是只要使用 Vercel 公司的 deploy 技能，就能一个命令将生成结果发布到 Vercel 的机器上。</p>
+<p>在 Vercel 官方技能的 <a target="_blank" rel="noopener" href="https://github.com/vercel-labs/agent-skills/tree/main/skills/claude.ai">GitHub 仓库</a>里，下载 Vercel-deploy 技能的 zip 文件。</p>
+<p>然后，把这个 zip 文件拖到 TRAE 的技能窗口里面，就会自动加载了。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021424.webp"></p>
+<p>输入提示词：”将生成的网站发布到 Vercel”。</p>
+<p>模型就会执行 vercel-deploy 技能，将网站发布到 Vercel，最后给出两个链接，一个是预览链接，另一个是发布到你个人账户的链接。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021427.webp"></p>
+<p>大家现在可以访问<a target="_blank" rel="noopener" href="https://skill-deploy-wscj2pnyc7-agent-skill-vercel.vercel.app/">这个链接</a>，看看网站的实际效果了。</p>
+<h2 id="九、总结"><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h2><p>如果你读到这里，应该会同意我的观点，Seed 2.0 的编程能力相当不错，跟自家的编程工具 TRAE 搭配起来，好用又免费。</p>
+<p>Skill 则是强大的能力扩展机制，让模型变得无所不能，一定要学会使用。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>李不群
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://techbyliz.uk/post/8284ee2f.html" title="【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill">https://techbyliz.uk/post/8284ee2f.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其他平台</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://x.com/II_F_s0cIeTy_ll">
+            <span class="icon">
+              <i class="fab fa-x-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/+fYQeoO16rNBmZjRl">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag"># 转载</a>
+              <a href="/tags/%E9%98%AE%E4%B8%80%E5%B3%B0/" rel="tag"># 阮一峰</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/4b5b9a4f.html" rel="prev" title="Windows11延长更新时间100年">
+                  <i class="fa fa-angle-left"></i> Windows11延长更新时间100年
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-solid fa-eye"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">李不群</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/l1st1t3m" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"l1st1t3m/comment4myblog","issue_term":"pathname","theme":"preferred-color-scheme"}</script>
+<script src="/js/third-party/comments/utterances.js" defer></script>
+
+</body>
+</html>
