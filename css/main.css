@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #7a4f49;
+    background: #b171c7;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1903,7 +1903,7 @@ pre code {
   width: 100%;
 }
 .with-love {
-  color: #f00;
+  color: #fff;
   display: inline-block;
   margin: 0 5px;
 }
@@ -3134,7 +3134,8 @@ header.header {
    基础环境
    ===================================== */
 body {
-  background: url("https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1") no-repeat center fixed;
+  background-color: #0f1115;
+  background: url("https://bing.img.run/uhd.php") no-repeat center fixed;
   background-size: cover;
 }
 .header,
@@ -3320,4 +3321,16 @@ body {
     background: rgba(30,30,30,0.75) !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   }
+}
+/* =====================================
+   Footer 自动适应背景
+   ===================================== */
+.footer {
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.footer .copyright {
+  mix-blend-mode: difference;
 }
