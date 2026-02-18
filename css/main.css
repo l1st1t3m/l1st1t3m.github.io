@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #1b870e;
+    background: #538752;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3403,56 +3403,6 @@ body {
   content: "";
   display: block;
   height: 20px;
-}
-/* =====================================
-   Footer 自动适应背景
-   ===================================== */
-.footer {
-  position: relative;
-  z-index: 10;
-  color: #fff;
-  transition: color 0.3s ease;
-}
-.footer .copyright {
-  mix-blend-mode: difference;
-}
-/* =====================================
-   Round Corners Only
-   返回顶部 & 侧边栏按钮圆角
-   不修改尺寸、不变形
-   ===================================== */
-/* 只给返回顶部按钮加圆角 */
-.back-to-top {
-  border-radius: 10px !important;
-}
-/* 只给侧边栏切换按钮加圆角 */
-.toggle.sidebar-toggle {
-  border-radius: 8px !important;
-}
-/* 让汉堡三条线本身也圆角一点（可选但更协调） */
-.toggle.sidebar-toggle .toggle-line {
-  border-radius: 2px !important;
-}
-/* =====================================
-   FollowMe 区块：不透明背景 + 圆角 + 适配 Light / Dark 模式
-   ===================================== */
-/* 默认 Light 模式样式 */
-.followme {
-  background: #f9f9f9 /* 浅背景色 */;
-  border-radius: 12px /* 圆角 */;
-  padding: 14px 20px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  color: #222;
-}
-.followme .social-link {
-  border-radius: 8px /* 连按钮也更圆 */;
-  background: #fff;
-  padding: 8px 12px;
-  transition: background 0.2s;
-}
-.followme .social-link:hover {
-  background: #eee;
 }
 /* =====================================
    Tagcloud 深色模式字体明显
