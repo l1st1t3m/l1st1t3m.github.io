@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #01d4ff;
+    background: #ffff95;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3335,66 +3335,45 @@ body {
   mix-blend-mode: difference;
 }
 /* =====================================
-   全局按钮统一圆角矩形风格
+   Round Corners Only
+   返回顶部 & 侧边栏按钮圆角
+   不修改尺寸、不变形
    ===================================== */
 /* ------------------------------
-   返回顶部按钮：圆角矩形
+   返回顶部按钮 圆角
    ------------------------------ */
 .back-to-top {
-  padding: 0 14px;
-  height: 40px;
-  border-radius: 20px;
-  background: rgba(0,0,0,0.6) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+/* 可选背景增强对比 */
+  background: rgba(0,0,0,0.4) !important;
   color: #fff !important;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+/* 微调整体对比效果（可选） */
+  mix-blend-mode: difference;
 }
-.back-to-top:hover {
-  background: rgba(0,0,0,0.8) !important;
-  transform: translateY(-2px);
+/* 返回顶部图标和数字 */
+.back-to-top i,
+.back-to-top span {
+/* 保持原有布局，只圆角父容器 */
+  border-radius: inherit;
 }
 /* ------------------------------
-   侧边栏切换按钮（Hamburger）
-   圆角矩形背景 + 中间线条样式
+   侧边栏切换按钮（汉堡）圆角
    ------------------------------ */
 .toggle.sidebar-toggle {
-  width: 48px;
-  height: 40px;
-  border-radius: 12px;
-  background: rgba(0,0,0,0.6) !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 6px 0;
-  gap: 4px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  border-radius: 8px !important;
+  overflow: hidden;
+  background: rgba(0,0,0,0.3) !important;
+/* 增强按钮视觉对比（可选） */
+  mix-blend-mode: difference;
 }
-/* 菜单 汉堡线条 */
+/* 汉堡按钮三条线 圆角 */
 .toggle.sidebar-toggle .toggle-line {
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-  transition: all 0.2s ease;
+  border-radius: 2px !important;
+  background: #fff !important;
 }
-/* 悬停效果 */
+/* 悬停时略微加深背景（可选） */
+.back-to-top:hover,
 .toggle.sidebar-toggle:hover {
-  background: rgba(0,0,0,0.8) !important;
-  transform: translateY(-1px);
-}
-/* 当侧边栏打开时可以微调线条（可选） */
-.toggle.sidebar-toggle.sidebar-toggle-on .toggle-line:nth-child(1) {
-  transform: translateY(2px) rotate(45deg);
-}
-.toggle.sidebar-toggle.sidebar-toggle-on .toggle-line:nth-child(2) {
-  opacity: 0;
-}
-.toggle.sidebar-toggle.sidebar-toggle-on .toggle-line:nth-child(3) {
-  transform: translateY(-2px) rotate(-45deg);
+  background: rgba(0,0,0,0.6) !important;
 }
