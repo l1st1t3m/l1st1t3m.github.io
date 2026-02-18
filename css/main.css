@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #2d0d0e;
+    background: #7a4f49;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3131,10 +3131,10 @@ header.header {
    变量定义
    ===================================== */
 /* =====================================
-   基础环境：彻底清除默认白底
+   基础环境
    ===================================== */
 body {
-  background: url("https://bingw.jasonzeng.dev") no-repeat center fixed;
+  background: url("https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1") no-repeat center fixed;
   background-size: cover;
 }
 .header,
@@ -3148,7 +3148,7 @@ body {
   padding: 0 !important;
 }
 /* =====================================
-   左侧侧边栏：上下双圆角无缝拼接
+   左侧侧边栏
    ===================================== */
 .header-inner {
   margin-bottom: 20px !important;
@@ -3172,7 +3172,7 @@ body {
   padding: 20px !important;
 }
 /* =====================================
-   右侧文章区：间距同步
+   右侧文章区
    ===================================== */
 .content-wrap {
   margin-left: 20px !important;
@@ -3186,7 +3186,7 @@ body {
   backdrop-filter: blur(15px);
 }
 /* =====================================
-   Hover Reveal：精准触发修复
+   Hover Reveal
    ===================================== */
 .hover-reveal {
   opacity: 0;
@@ -3196,7 +3196,6 @@ body {
   padding: 15px;
   border-radius: 15px;
   margin-top: 15px;
-  border: none;
   cursor: help;
 }
 .hover-reveal:hover {
@@ -3204,61 +3203,35 @@ body {
   transform: translateY(0);
   background: rgba(255,255,255,0.7);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 /* =====================================
-   NexT Codeblock Layout Fix (Final)
-   自动换行 + 不吃字 + 行号稳定 + 左右对称
+   Codeblock Fix
    ===================================== */
-/* 让 table 正确分配宽度 */
 .highlight table {
   table-layout: fixed;
   width: 100%;
 }
-/* 行号列固定宽度 */
 .highlight .gutter {
   width: 3em;
   min-width: 3em;
 }
-/* 代码列占满剩余空间 */
 .highlight .code {
   width: 100%;
 }
-/* 代码允许换行 */
 .highlight .code pre {
   white-space: pre-wrap !important;
   word-break: break-word !important;
   overflow-wrap: anywhere !important;
   box-sizing: border-box;
   width: 100%;
-}
-/* 防止内部 span 阻止换行 */
-.highlight .code span {
-  white-space: inherit !important;
-}
-/* ===== 左右视觉对称留白 ===== */
-.highlight .code pre {
   padding-left: 0.8em !important;
   padding-right: 0.8em !important;
 }
-/* =====================================
-   🌙 深色模式适配
-   ===================================== */
-@media (prefers-color-scheme: dark) {
-  .site-nav,
-  .sidebar-inner,
-  .post-block {
-    background: rgba(30,30,30,0.75) !important;
-  }
-  .site-brand-container {
-    background: rgba(20,20,20,0.95) !important;
-  }
-  .hover-reveal:hover {
-    background: rgba(0,0,0,0.4);
-  }
+.highlight .code span {
+  white-space: inherit !important;
 }
 /* =====================================
-   社交链接样式
+   社交链接
    ===================================== */
 .social-links {
   display: flex;
@@ -3275,4 +3248,76 @@ body {
 .social-links a:hover {
   opacity: 1;
   transform: translateY(-2px);
+}
+/* =====================================
+   Utterances - 重构为双卡片结构
+   ===================================== */
+/* ===== ① 外层 = 和 post-block 完全一致 ===== */
+.comments {
+  margin-top: 20px !important;
+  padding: 32px !important;
+  border-radius: 24px !important;
+  background: rgba(255,255,255,0.82) !important;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: none !important;
+}
+.comments .utterances-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+/* ===== ② iframe 作为容器 ===== */
+.utterances {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.utterances-frame {
+  width: 100%;
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+/* ===== ③ iframe 内两个 GitHub block 变卡片 ===== */
+/* 评论展示区 */
+.utterances-frame iframe {
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+/* 让内部 spacing 呼吸感 */
+.utterances {
+  display: block;
+}
+/* ===== 间距制造（关键）===== */
+.utterances::before {
+  content: "";
+  display: block;
+  height: 20px;
+}
+.utterances::after {
+  content: "";
+  display: block;
+  height: 20px;
+}
+/* =====================================
+   深色模式
+   ===================================== */
+@media (prefers-color-scheme: dark) {
+  .site-nav,
+  .sidebar-inner,
+  .post-block {
+    background: rgba(30,30,30,0.75) !important;
+  }
+  .site-brand-container {
+    background: rgba(20,20,20,0.95) !important;
+  }
+  .hover-reveal:hover {
+    background: rgba(0,0,0,0.4);
+  }
+  .comments {
+    background: rgba(30,30,30,0.75) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
 }
