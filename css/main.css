@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #d0be16;
+    background: #9a9977;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3401,6 +3401,21 @@ body {
 }
 .followme .social-link:hover {
   background: #eee;
+}
+/* =====================================
+   Tagcloud 深色模式字体明显
+   ===================================== */
+/* 默认（浅色模式）保持原样 */
+.tag-cloud,
+.tag-cloud a {
+  color: inherit;
+}
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+  .tag-cloud,
+  .tag-cloud a {
+    color: #fff !important /* 强制白色，提升对比度 */;
+  }
 }
 /* =====================================
    深色模式
