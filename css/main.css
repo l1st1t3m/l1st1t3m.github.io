@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ffff95;
+    background: #c7c8d7;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3339,41 +3339,15 @@ body {
    返回顶部 & 侧边栏按钮圆角
    不修改尺寸、不变形
    ===================================== */
-/* ------------------------------
-   返回顶部按钮 圆角
-   ------------------------------ */
+/* 只给返回顶部按钮加圆角 */
 .back-to-top {
   border-radius: 10px !important;
-  overflow: hidden;
-/* 可选背景增强对比 */
-  background: rgba(0,0,0,0.4) !important;
-  color: #fff !important;
-/* 微调整体对比效果（可选） */
-  mix-blend-mode: difference;
 }
-/* 返回顶部图标和数字 */
-.back-to-top i,
-.back-to-top span {
-/* 保持原有布局，只圆角父容器 */
-  border-radius: inherit;
-}
-/* ------------------------------
-   侧边栏切换按钮（汉堡）圆角
-   ------------------------------ */
+/* 只给侧边栏切换按钮加圆角 */
 .toggle.sidebar-toggle {
   border-radius: 8px !important;
-  overflow: hidden;
-  background: rgba(0,0,0,0.3) !important;
-/* 增强按钮视觉对比（可选） */
-  mix-blend-mode: difference;
 }
-/* 汉堡按钮三条线 圆角 */
+/* 让汉堡三条线本身也圆角一点（可选但更协调） */
 .toggle.sidebar-toggle .toggle-line {
   border-radius: 2px !important;
-  background: #fff !important;
-}
-/* 悬停时略微加深背景（可选） */
-.back-to-top:hover,
-.toggle.sidebar-toggle:hover {
-  background: rgba(0,0,0,0.6) !important;
 }
