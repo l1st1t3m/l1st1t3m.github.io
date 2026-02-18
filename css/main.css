@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #b171c7;
+    background: #01d4ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3333,4 +3333,68 @@ body {
 }
 .footer .copyright {
   mix-blend-mode: difference;
+}
+/* =====================================
+   全局按钮统一圆角矩形风格
+   ===================================== */
+/* ------------------------------
+   返回顶部按钮：圆角矩形
+   ------------------------------ */
+.back-to-top {
+  padding: 0 14px;
+  height: 40px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.6) !important;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.back-to-top:hover {
+  background: rgba(0,0,0,0.8) !important;
+  transform: translateY(-2px);
+}
+/* ------------------------------
+   侧边栏切换按钮（Hamburger）
+   圆角矩形背景 + 中间线条样式
+   ------------------------------ */
+.toggle.sidebar-toggle {
+  width: 48px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.6) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 0;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+/* 菜单 汉堡线条 */
+.toggle.sidebar-toggle .toggle-line {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+/* 悬停效果 */
+.toggle.sidebar-toggle:hover {
+  background: rgba(0,0,0,0.8) !important;
+  transform: translateY(-1px);
+}
+/* 当侧边栏打开时可以微调线条（可选） */
+.toggle.sidebar-toggle.sidebar-toggle-on .toggle-line:nth-child(1) {
+  transform: translateY(2px) rotate(45deg);
+}
+.toggle.sidebar-toggle.sidebar-toggle-on .toggle-line:nth-child(2) {
+  opacity: 0;
+}
+.toggle.sidebar-toggle.sidebar-toggle-on .toggle-line:nth-child(3) {
+  transform: translateY(-2px) rotate(-45deg);
 }
