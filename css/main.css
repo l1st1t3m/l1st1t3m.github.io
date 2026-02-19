@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #8adaa6;
+    background: #6a4541;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3462,6 +3462,11 @@ body {
   font-weight: 600;
   font-size: 14px;
   margin-bottom: 4px;
+  text-align: center;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 .game-meta {
   opacity: 0.7;
