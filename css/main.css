@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #6a4541;
+    background: #cd38a4;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3434,9 +3434,11 @@ body {
   overflow: hidden;
   transition: all 0.35s ease;
   cursor: pointer;
+  width: 198px;
+  margin: 0 auto;
 }
 .game-card img {
-  width: 100%;
+  width: 198px;
   display: block;
   transition: transform 0.4s ease;
 }
@@ -3450,27 +3452,33 @@ body {
 .game-info {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 198px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 14px;
   background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
   color: #fff;
   font-size: 13px;
   backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 .game-title {
-  display: block;
+  width: 100%;
   font-weight: 600;
   font-size: 14px;
   margin-bottom: 4px;
-  text-align: center;
   word-break: break-word;
-  overflow: hidden;
-  text-overflow: ellipsis;
   white-space: normal;
+  text-align: center;
 }
 .game-meta {
-  opacity: 0.7;
+  width: 100%;
   font-size: 12px;
+  opacity: 0.7;
+  text-align: center;
 }
 /* =====================================
    深色模式
