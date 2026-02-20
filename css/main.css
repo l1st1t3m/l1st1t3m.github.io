@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #f5ff13;
+    background: #501441;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3479,6 +3479,14 @@ body {
   font-size: 12px;
   opacity: 0.7;
   text-align: center;
+}
+.trophy-info {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 2px;
+  font-size: 12px;
+  opacity: 0.85;
 }
 /* =====================================
    深色模式
