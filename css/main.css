@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ff2a88;
+    background: #ffff5b;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3603,7 +3603,7 @@ body {
   }
 }
 /* =====================================
-   气象站补丁：纯净交互版 (去图标)
+   气象站补丁：纯净交互进阶版 
    ===================================== */
 .site-subtitle {
   display: block !important;
@@ -3624,6 +3624,7 @@ body {
   padding: 18px 12px !important;
   cursor: pointer;
   user-select: none;
+/* 优化后的 12 宫格布局容器 */
 }
 #custom-weather-card #weather-info {
   color: #222 !important;
@@ -3636,6 +3637,29 @@ body {
   font-weight: 300;
   color: #000 !important;
 }
+#custom-weather-card .weather-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 8px /* 上下间距加大，左右稍微紧凑 */;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 14px;
+}
+#custom-weather-card .weather-detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#custom-weather-card .weather-detail-item .w-label {
+  font-size: 11px /* 稍微调大一点点，匹配两字平衡 */;
+  opacity: 0.5;
+  margin-bottom: 3px;
+  letter-spacing: 1px /* 两个字之间增加呼吸感 */;
+}
+#custom-weather-card .weather-detail-item .w-val {
+  font-size: 13px;
+  font-weight: 600;
+}
 #custom-weather-card:hover {
   transform: translateY(-6px) scale(1.01) !important;
   background: rgba(255,255,255,0.8) !important;
@@ -3644,20 +3668,7 @@ body {
 #custom-weather-card:hover #weather-city {
   color: #0078ff !important /* 悬停颜色反馈 */;
 }
-#custom-weather-card .weather-detail-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#custom-weather-card .weather-detail-item .w-label {
-  font-size: 10px;
-  opacity: 0.5;
-  margin-bottom: 2px;
-}
-#custom-weather-card .weather-detail-item .w-val {
-  font-size: 12px;
-  font-weight: 600;
-}
+/* --- 暗黑模式适配 --- */
 @media (prefers-color-scheme: dark) {
   #custom-weather-card {
     background: rgba(25,25,25,0.5) !important;
@@ -3672,8 +3683,8 @@ body {
   #custom-weather-card .w-label {
     color: rgba(255,255,255,0.5) !important;
   }
-  #custom-weather-card div[style*="border-top"] {
-    border-color: rgba(255,255,255,0.1) !important;
+  #custom-weather-card .weather-grid {
+    border-top-color: rgba(255,255,255,0.1) !important;
   }
   #custom-weather-card #weather-icon {
     filter: invert(1) brightness(1.8) contrast(1.2) !important;
