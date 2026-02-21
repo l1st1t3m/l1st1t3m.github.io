@@ -62,8 +62,8 @@
       <name>李不群</name>
     </author>
     <category term="操作系统" scheme="https://techbyliz.uk/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    <category term="小技巧" scheme="https://techbyliz.uk/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     <category term="Windows" scheme="https://techbyliz.uk/tags/Windows/"/>
+    <category term="小技巧" scheme="https://techbyliz.uk/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     <content>
       <![CDATA[<div style="text-align: center;"><p><strong>让硬件生命周期内的Windows 11系统永久停止更新</strong></p></div><span id="more"></span><div style="text-align: center;"><p>受够了<strong>傻逼Windows 11</strong>的更新吗？<br>受够了<strong>关键时刻卡在更新环节</strong>浪费时间吗？<br>受够了<strong>只能设定寥寥几日的延长更新</strong>提醒吗？<br>请看此篇教程吧！破除傻逼微软限制，让<strong>傻逼Windows 11</strong>的傻逼更新<strong>延长100年！</strong></p></div><ol><li>首先，Win+R输入<code>regedit</code>进入注册表<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218112220849.png"></li><li>然后找到路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</code>，并在右侧点击右键，新建DWORD(32位)值<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218112910257.png"></li><li>新建的文件命名为<code>FlightSettingsMaxPauseDays</code>，双击打开，进行如下设置：<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218113302319.png"><blockquote><p>修改选择<strong>十进制</strong>，数值为<strong>36500</strong>（延后的周期）</p></blockquote></li><li>最后，打开<strong>设置</strong>，选择<strong>Windows更新</strong>，点击<strong>暂停更新</strong>选项（注意会卡一下，因为修改了设置选项增加了上千条）。然后你会发现最高可选项高达<strong>5213周</strong>，约为<strong>100年</strong>。<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218113831893.png"></li></ol>]]>
     </content>
@@ -107,8 +107,8 @@
       <name>李不群</name>
     </author>
     <category term="前后端" scheme="https://techbyliz.uk/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/"/>
-    <category term="前端开发" scheme="https://techbyliz.uk/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     <category term="小技巧" scheme="https://techbyliz.uk/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <category term="前端开发" scheme="https://techbyliz.uk/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     <content>
       <![CDATA[<div style="text-align: center;"><p><strong>浏览器访问网站，标签栏小图标获取方法。</strong></p></div><span id="more"></span><p><strong>有时候我们想提取一个网站标签栏上的那个小图标<br>（到底什么时候需要我也不知道，反正这是第一篇博客文章测试用的。）</strong></p><p>  对于部署的传统服务器有一个简单的方法，直接访问静态资源。  </p><p>  在网址后端加：  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/favicon.ico</span><br></pre></td></tr></table></figure><p>eg:<br>  <a href="https://www.baidu.com/favicon.ico">https://www.baidu.com/favicon.ico</a><br>  <img src="https://www.baidu.com/favicon.ico"><br>就可以了。</p>]]>
     </content>
