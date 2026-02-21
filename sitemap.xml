@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://techbyliz.uk/post/2a1528de.html</loc>
+    
+    <lastmod>2026-02-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://techbyliz.uk/post/9f7e849b.html</loc>
     
     <lastmod>2026-02-21</lastmod>
@@ -152,13 +161,6 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://techbyliz.uk/tags/%E8%AE%BE%E8%AE%A1%E8%BD%AF%E4%BB%B6/</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -174,6 +176,27 @@
   
   <url>
     <loc>https://techbyliz.uk/tags/Workflow/</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://techbyliz.uk/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://techbyliz.uk/tags/%E5%9B%AD%E6%9E%97%E6%A4%8D%E7%89%A9/</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://techbyliz.uk/tags/%E7%9F%A5%E8%AF%86%E7%A7%91%E6%99%AE/</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -210,6 +233,13 @@
   </url>
   
   <url>
+    <loc>https://techbyliz.uk/categories/%E6%99%AF%E8%A7%82%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://techbyliz.uk/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -217,7 +247,7 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/categories/%E6%99%AF%E8%A7%82%E8%AE%BE%E8%AE%A1/</loc>
+    <loc>https://techbyliz.uk/categories/%E5%8D%9A%E7%89%A9%E5%AD%A6/</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
