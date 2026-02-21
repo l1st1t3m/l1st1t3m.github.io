@@ -122,7 +122,7 @@
       <p class="site-title">不群小筑</p>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">Stay young, Stay simple.</p>
+      <p class="site-subtitle" itemprop="description">loading...</p>
   </div>
 
   <div class="site-nav-right">
@@ -167,7 +167,16 @@
       </div>
     </div>
   </div>
+<script>
+document.addEventListener("DOMContentLoaded", async function () {
 
+  const el = document.querySelector('.site-subtitle');
+  if (!el) return;
+
+  el.innerHTML = "正在获取天气与诗词...";
+
+});
+</script>
 </header>
         
   
@@ -195,7 +204,7 @@
     <img class="site-author-image" itemprop="image" alt="李不群"
       src="https://avatars.githubusercontent.com/u/58502299">
   <p class="site-author-name" itemprop="name">李不群</p>
-  <div class="site-description" itemprop="description">于浩歌狂热之际中寒</div>
+  <div class="site-description" itemprop="description">Stay young, Stay simple.</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
@@ -280,7 +289,7 @@
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="不群小筑">
-      <meta itemprop="description" content="于浩歌狂热之际中寒">
+      <meta itemprop="description" content="Stay young, Stay simple.">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">

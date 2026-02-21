@@ -21,12 +21,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"techbyliz.uk","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github-dark"},"prism":{"light":"coy","dark":"tomorrow"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":true,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="于浩歌狂热之际中寒">
+    <meta name="description" content="Stay young, Stay simple.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="不群小筑">
 <meta property="og:url" content="https://techbyliz.uk/categories/%E8%BD%AC%E8%BD%BD/index.html">
 <meta property="og:site_name" content="不群小筑">
-<meta property="og:description" content="于浩歌狂热之际中寒">
+<meta property="og:description" content="Stay young, Stay simple.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="李不群">
 <meta property="article:tag" content="景观设计, AI设计, 数字建造, 技术思考, 个人博客, l1st1t3m, LZ, AI, Landscape, Design Thinking, Tech, Personal Notes">
@@ -95,7 +95,7 @@
       <p class="site-title">不群小筑</p>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">Stay young, Stay simple.</p>
+      <p class="site-subtitle" itemprop="description">loading...</p>
   </div>
 
   <div class="site-nav-right">
@@ -140,7 +140,16 @@
       </div>
     </div>
   </div>
+<script>
+document.addEventListener("DOMContentLoaded", async function () {
 
+  const el = document.querySelector('.site-subtitle');
+  if (!el) return;
+
+  el.innerHTML = "正在获取天气与诗词...";
+
+});
+</script>
 </header>
         
   
@@ -167,7 +176,7 @@
     <img class="site-author-image" itemprop="image" alt="李不群"
       src="https://avatars.githubusercontent.com/u/58502299">
   <p class="site-author-name" itemprop="name">李不群</p>
-  <div class="site-description" itemprop="description">于浩歌狂热之际中寒</div>
+  <div class="site-description" itemprop="description">Stay young, Stay simple.</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
