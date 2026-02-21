@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #4918e5;
+    background: #38d096;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3603,7 +3603,7 @@ body {
   }
 }
 /* =====================================
-   气象站补丁：纯净交互进阶版 
+   气象站补丁：纯净交互进阶版 (紧凑优化)
    ===================================== */
 .site-subtitle {
   display: block !important;
@@ -3621,10 +3621,11 @@ body {
   border: 1px solid rgba(255,255,255,0.4);
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
   margin-top: 20px !important;
-  padding: 18px 12px !important;
+  padding: 14px 10px !important /* 缩减了内边距，使外观更精致 */;
   cursor: pointer;
   user-select: none;
-/* 优化后的 12 宫格布局容器 */
+/* 图标动效：增加悬停时的反馈 */
+/* 12 宫格布局容器 */
 }
 #custom-weather-card #weather-info {
   color: #222 !important;
@@ -3637,11 +3638,17 @@ body {
   font-weight: 300;
   color: #000 !important;
 }
+#custom-weather-card #weather-icon {
+  transition: transform 0.3s ease;
+}
+#custom-weather-card #weather-icon:hover {
+  transform: scale(1.1);
+}
 #custom-weather-card .weather-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px 8px /* 上下间距加大，左右稍微紧凑 */;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  gap: 12px 6px /* 稍微收窄横向间距 */;
+  border-top: 1px solid rgba(0,0,0,0.06);
   padding-top: 14px;
 }
 #custom-weather-card .weather-detail-item {
@@ -3651,13 +3658,13 @@ body {
   justify-content: center;
 }
 #custom-weather-card .weather-detail-item .w-label {
-  font-size: 11px /* 稍微调大一点点，匹配两字平衡 */;
+  font-size: 10px /* 稍微缩小标签字号，增加空间感 */;
   opacity: 0.5;
-  margin-bottom: 3px;
-  letter-spacing: 1px /* 两个字之间增加呼吸感 */;
+  margin-bottom: 2px;
+  letter-spacing: 1px;
 }
 #custom-weather-card .weather-detail-item .w-val {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
 }
 #custom-weather-card:hover {
