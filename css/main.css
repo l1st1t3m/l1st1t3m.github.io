@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #5e93a1;
+    background: #9fff54;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3696,4 +3696,9 @@ body {
   #custom-weather-card:hover #weather-city {
     color: #31a2ff !important;
   }
+}
+/* --- 文本编辑 --- */
+.p {
+  text-indent: 2em;
+  line-height: 1.9;
 }
