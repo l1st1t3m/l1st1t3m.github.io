@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #cdffff;
+    background: #ffed83;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3698,7 +3698,8 @@ body {
   }
 }
 /* --- 文本编辑 --- */
-.p {
+.post-body p {
   text-indent: 2em;
   line-height: 1.9;
+  margin: 0 0 1em 0;
 }
