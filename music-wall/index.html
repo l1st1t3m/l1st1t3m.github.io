@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"techbyliz.uk","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github-dark"},"prism":{"light":"coy","dark":"tomorrow"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":true,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="🎵 海报墙加载中...    (function() {     &#x2F;&#x2F; 1. 定义注入函数     function injectMusicIframe() {         const container &#x3D; document.getElementById(&#39;music-container&#39;);         if (!container || document.getEleme">
+    <meta name="description" content="var iframe &#x3D; document.getElementById(&#39;music-iframe&#39;);   if(iframe) {       iframe.src &#x3D; iframe.src;   }">
 <meta property="og:type" content="website">
 <meta property="og:title" content="我喜欢的音乐">
 <meta property="og:url" content="https://techbyliz.uk/music-wall/index.html">
 <meta property="og:site_name" content="不群小筑">
-<meta property="og:description" content="🎵 海报墙加载中...    (function() {     &#x2F;&#x2F; 1. 定义注入函数     function injectMusicIframe() {         const container &#x3D; document.getElementById(&#39;music-container&#39;);         if (!container || document.getEleme">
+<meta property="og:description" content="var iframe &#x3D; document.getElementById(&#39;music-iframe&#39;);   if(iframe) {       iframe.src &#x3D; iframe.src;   }">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-02-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-02-24T16:23:48.222Z">
+<meta property="article:modified_time" content="2026-02-24T16:29:24.591Z">
 <meta property="article:author" content="李不群">
 <meta property="article:tag" content="景观设计, AI设计, 数字建造, 技术思考, 个人博客, l1st1t3m, LZ, AI, Landscape, Design Thinking, Tech, Personal Notes">
 <meta name="twitter:card" content="summary">
@@ -384,71 +384,24 @@
       
       
       <div class="post-body">
-          <div class="music-wall-wrapper" id="music-container">
-    <div id="music-loading">🎵 海报墙加载中...</div>
+          <div style="width:100%;height:800px">
+<iframe 
+    id="music-iframe"
+    src="https://l1st1t3m.github.io/l1st1t3music.github.io/"
+    width="100%" 
+    height="100%" 
+    frameborder="0"
+    referrerpolicy="no-referrer">
+</iframe>
 </div>
 
+<!-- 针对 Pjax 框架的强制重载脚本 -->
 <script>
-(function() {
-    // 1. 定义注入函数
-    function injectMusicIframe() {
-        const container = document.getElementById('music-container');
-        if (!container || document.getElementById('music-frame')) return;
-
-        // 创建新的 iframe
-        const iframe = document.createElement('iframe');
-        iframe.id = 'music-frame';
-        // 添加随机参数防止缓存，强制触发内部脚本完整运行
-        iframe.src = "https://l1st1t3m.github.io/l1st1t3music.github.io/?t=" + new Date().getTime();
-        iframe.frameBorder = "0";
-        
-        iframe.onload = function() {
-            document.getElementById('music-loading').style.display = 'none';
-            iframe.style.opacity = '1';
-            // 额外抖动一下高度，强行激活内部的懒加载监听
-            setTimeout(() => {
-                iframe.style.height = '100.1%';
-                setTimeout(() => iframe.style.height = '100%', 100);
-            }, 500);
-        };
-
-        container.appendChild(iframe);
-    }
-
-    // 2. 兼容各种博客主题的跳转（PJAX / Turbo / InstantClick）
-    injectMusicIframe(); // 首次进入
-    document.addEventListener('pjax:complete', injectMusicIframe);
-    document.addEventListener('pjax:end', injectMusicIframe);
-    document.addEventListener('turbo:load', injectMusicIframe);
-})();
+  var iframe = document.getElementById('music-iframe');
+  if(iframe) {
+      iframe.src = iframe.src;
+  }
 </script>
-
-<style>
-.music-wall-wrapper {
-    position: relative;
-    width: 100%;
-    height: 800px; /* 如果海报多，可以考虑设为 90vh */
-    background: #000;
-    overflow: hidden;
-}
-#music-frame {
-    width: 100%;
-    height: 100%;
-    border: none;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-}
-#music-loading {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #000;
-    color: #888;
-    z-index: 2;
-}
-</style>
       </div>
       
       
