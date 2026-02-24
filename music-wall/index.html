@@ -21,13 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"techbyliz.uk","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github-dark"},"prism":{"light":"coy","dark":"tomorrow"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":true,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta property="og:type" content="website">
+    <meta name="description" content="🎵 海报墙加载中...              .music-wall-wrapper {     position: relative;     width: 100%;     height: 800px;     background: #000;     border-radius: 8px; &#x2F;* 可选：加个圆角让嵌入区域更美观 *&#x2F;     overflow: hidde">
+<meta property="og:type" content="website">
 <meta property="og:title" content="我喜欢的音乐">
 <meta property="og:url" content="https://techbyliz.uk/music-wall/index.html">
 <meta property="og:site_name" content="不群小筑">
+<meta property="og:description" content="🎵 海报墙加载中...              .music-wall-wrapper {     position: relative;     width: 100%;     height: 800px;     background: #000;     border-radius: 8px; &#x2F;* 可选：加个圆角让嵌入区域更美观 *&#x2F;     overflow: hidde">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-02-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-02-24T16:11:44.162Z">
+<meta property="article:modified_time" content="2026-02-24T16:19:22.428Z">
 <meta property="article:author" content="李不群">
 <meta property="article:tag" content="景观设计, AI设计, 数字建造, 技术思考, 个人博客, l1st1t3m, LZ, AI, Landscape, Design Thinking, Tech, Personal Notes">
 <meta name="twitter:card" content="summary">
@@ -382,15 +384,53 @@
       
       
       <div class="post-body">
-          <div style="width:100%;height:800px">
-<iframe 
-    src="https://l1st1t3m.github.io/l1st1t3music.github.io/"
-    width="100%" 
-    height="100%" 
-    frameborder="0"
-    loading="lazy">
-</iframe>
+          <div class="music-wall-wrapper">
+    <div id="music-loading">🎵 海报墙加载中...</div>
+    <iframe 
+        id="music-frame"
+        src="https://l1st1t3m.github.io/l1st1t3music.github.io/"
+        frameborder="0"
+        loading="lazy"
+        onload="document.getElementById('music-loading').style.display='none'; this.style.opacity=1;">
+    </iframe>
 </div>
+
+<style>
+.music-wall-wrapper {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    background: #000;
+    border-radius: 8px; /* 可选：加个圆角让嵌入区域更美观 */
+    overflow: hidden;
+}
+
+/* iframe 初始隐藏 */
+#music-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* Loading 层 */
+#music-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: #aaa;
+    font-size: 16px;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+</style>
       </div>
       
       
