@@ -35,8 +35,8 @@
 <meta property="article:published_time" content="2026-02-18T03:50:54.410Z">
 <meta property="article:modified_time" content="2026-02-22T12:11:03.886Z">
 <meta property="article:author" content="李不群">
-<meta property="article:tag" content="Windows">
 <meta property="article:tag" content="小技巧">
+<meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218112220849.png">
 
@@ -334,9 +334,26 @@
           document.getElementById('w-uv').innerText = Math.round(uvData.value) || '0';
         }
 
+        // ======= 替换的新高级图标逻辑 =======
+        // 1. 将 OpenWeatherMap 原生代号映射到高级全彩图标代号
+        const iconMap = {
+          '01d': 'clear-day', '01n': 'clear-night', // 晴
+          '02d': 'partly-cloudy-day', '02n': 'partly-cloudy-night', // 多云
+          '03d': 'cloudy', '03n': 'cloudy', // 阴天
+          '04d': 'overcast', '04n': 'overcast', // 碎云/密云
+          '09d': 'rain', '09n': 'rain', // 阵雨/大雨
+          '10d': 'partly-cloudy-day-rain', '10n': 'partly-cloudy-night-rain', // 太阳/月亮雨
+          '11d': 'thunderstorms', '11n': 'thunderstorms', // 雷暴
+          '13d': 'snow', '13n': 'snow', // 雪
+          '50d': 'mist', '50n': 'mist' // 雾/霾
+        };
+        const premiumIcon = iconMap[data.weather[0].icon] || 'not-available';
+
         const iconImg = document.getElementById('weather-icon');
-        iconImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        // 2. 调用高颜值的 Meteocons 动态全彩 SVG 图标
+        iconImg.src = `https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/${premiumIcon}.svg`;
         iconImg.style.display = 'block';
+        // ===================================
 
       } catch (err) { console.error('Weather error:', err); }
     };
@@ -521,8 +538,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Windows/" rel="tag"># Windows</a>
               <a href="/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/" rel="tag"># 小技巧</a>
+              <a href="/tags/Windows/" rel="tag"># Windows</a>
           </div>
 
         

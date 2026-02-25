@@ -354,9 +354,26 @@
           document.getElementById('w-uv').innerText = Math.round(uvData.value) || '0';
         }
 
+        // ======= 替换的新高级图标逻辑 =======
+        // 1. 将 OpenWeatherMap 原生代号映射到高级全彩图标代号
+        const iconMap = {
+          '01d': 'clear-day', '01n': 'clear-night', // 晴
+          '02d': 'partly-cloudy-day', '02n': 'partly-cloudy-night', // 多云
+          '03d': 'cloudy', '03n': 'cloudy', // 阴天
+          '04d': 'overcast', '04n': 'overcast', // 碎云/密云
+          '09d': 'rain', '09n': 'rain', // 阵雨/大雨
+          '10d': 'partly-cloudy-day-rain', '10n': 'partly-cloudy-night-rain', // 太阳/月亮雨
+          '11d': 'thunderstorms', '11n': 'thunderstorms', // 雷暴
+          '13d': 'snow', '13n': 'snow', // 雪
+          '50d': 'mist', '50n': 'mist' // 雾/霾
+        };
+        const premiumIcon = iconMap[data.weather[0].icon] || 'not-available';
+
         const iconImg = document.getElementById('weather-icon');
-        iconImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        // 2. 调用高颜值的 Meteocons 动态全彩 SVG 图标
+        iconImg.src = `https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/${premiumIcon}.svg`;
         iconImg.style.display = 'block';
+        // ===================================
 
       } catch (err) { console.error('Weather error:', err); }
     };
