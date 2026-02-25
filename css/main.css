@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #85ffa6;
+    background: #015dbd;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3683,6 +3683,26 @@ body {
 #custom-weather-card:hover #weather-city {
   color: #0078ff !important;
 }
+/* 图标和温度稍微拉开一点即可，不用太宽 */
+#weather-info > div:nth-child(2) {
+  gap: 12px !important;
+  margin-bottom: 12px !important;
+}
+/* 高亮轮廓的清透玻璃底座 */
+#weather-icon {
+/* 底色提亮，使用偏向纯白的高光渐变 */
+  background: linear-gradient(135deg, #fff 20%, rgba(255,255,255,0.6) 100%) !important;
+  border-radius: 12px !important;
+  box-sizing: border-box !important;
+  padding: 4px !important;
+  width: 48px !important;
+  height: 48px !important;
+/* 【核心提升】1.5px 纯白实心边框，勾勒极其清晰的边缘 */
+  border: 1.5px solid #fff !important;
+/* 【核心提升】增加白色的外侧光晕，让轮廓彻底脱离背景亮起来；同时保留一丝极弱的黑阴影做空间感 */
+  box-shadow: 0 0 10px rgba(255,255,255,0.9), 0 4px 8px rgba(0,0,0,0.04) !important;
+  object-fit: contain !important;
+}
 /* --- 暗黑模式适配 --- */
 @media (prefers-color-scheme: dark) {
   #custom-weather-card {
@@ -3716,9 +3736,32 @@ body {
     color: #31a2ff !important;
   }
 }
+#weather-icon {
+/* 暗色模式改为极淡的白底框，彻底去掉内阴影的黑泥感 */
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  box-shadow: none !important /* 彻底干掉黑阴影 */;
+  filter: none !important;
+  opacity: 1 !important;
+}
 /* --- 文本编辑 --- */
 .post-body p {
   text-indent: 2em;
   line-height: 1.9;
   margin: 0 0 1em 0;
+}
+/* =====================================
+   极限压缩侧边栏社交链接 (links-of-author) 间距
+   ===================================== */
+.links-of-author {
+  margin-top: 10px !important /* 缩小与上方文章/分类数据的距离 (默认通常是20px) */;
+  margin-bottom: 5px !important /* 缩小与下方天气卡片的距离 */;
+}
+.links-of-author-item {
+  margin: 1px 0 !important /* 极限压缩社交按钮之间的上下间距 */;
+}
+.links-of-author-item a {
+  line-height: 1.6 !important /* 收紧行高 */;
+  font-size: 12.5px !important /* 稍微缩小一点字号，显得更精致 */;
+  padding: 0 4px !important /* 减少内部留白 */;
 }

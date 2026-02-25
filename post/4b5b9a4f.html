@@ -231,13 +231,18 @@
   </div>
 <div id="custom-weather-card" style="display: none;">
   <div id="weather-info">
-    <div id="custom-clock-header" style="text-align: center; margin-bottom: 6px;">
-      <div id="clock-time" style="font-size: 28px; font-weight: 300; letter-spacing: 2px; margin-bottom: 5px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">--:--:--</div>
-      <div id="clock-meta" style="font-size: 11px; opacity: 0.75; display: flex; justify-content: center; align-items: center; gap: 8px;">
-        <span id="clock-date">----年--月--日 周-</span>
-        <span style="opacity: 0.4;">|</span>
-        <span id="weather-city" style="font-weight: 600;">获取位置中...</span>
-      </div>
+    <!-- 全新三横排：日期 -> 时钟 -> 地理位置 -->
+    <div id="custom-clock-header" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 12px; gap: 3px;">
+      
+      <!-- 第一排：日期 (字号偏小，半透明，不抢眼) -->
+      <div id="clock-date" style="font-size: 11px; opacity: 0.65; letter-spacing: 1px;">获取日期中...</div>
+      
+      <!-- 第二排：时间 (去除了自带的上下行高留白，非常紧凑) -->
+      <div id="clock-time" style="font-size: 28px; font-weight: 300; letter-spacing: 2px; line-height: 1; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">--:--:--</div>
+      
+      <!-- 第三排：地理位置 (稍微加粗，增加字间距，更有质感) -->
+      <div id="weather-city" style="font-size: 12.5px; font-weight: 600; letter-spacing: 2px;">获取位置中...</div>
+      
     </div>
     
     <div style="display: flex; align-items: center; justify-content: center; gap: 5px; margin-bottom: 15px;">
