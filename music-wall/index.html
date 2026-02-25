@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"techbyliz.uk","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github-dark"},"prism":{"light":"coy","dark":"tomorrow"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":true,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="(function() {     &#x2F;&#x2F; 设置自动刷新的时间点（毫秒）     &#x2F;&#x2F; 第一次：1500ms（1.5秒后刷新，此时浏览器已经缓存了部分图片，强制重绘解决白屏）     &#x2F;&#x2F; 第二次：3500ms（3.5秒后兜底刷新，确保所有海报彻底加载并撑开排版）     var refreshDelays &#x3D; [1000];           refreshDelays">
+    <meta name="description" content=":root{    &#x2F;* 🎚 音乐墙整体高度      px &#x3D; 固定高度      vh &#x3D; 屏幕高度比例（推荐 80vh 更沉浸） *&#x2F;   --music-wall-height: 93vh;    &#x2F;* 🖥 PC端缩放比例      1 &#x3D; 原始尺寸      0.8 &#x3D; 推荐博客适配      0.7 &#x3D; 紧凑展示 *&#x2F;   --music-scale-desktop: 1;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="我喜欢的音乐">
 <meta property="og:url" content="https://techbyliz.uk/music-wall/index.html">
 <meta property="og:site_name" content="不群小筑">
-<meta property="og:description" content="(function() {     &#x2F;&#x2F; 设置自动刷新的时间点（毫秒）     &#x2F;&#x2F; 第一次：1500ms（1.5秒后刷新，此时浏览器已经缓存了部分图片，强制重绘解决白屏）     &#x2F;&#x2F; 第二次：3500ms（3.5秒后兜底刷新，确保所有海报彻底加载并撑开排版）     var refreshDelays &#x3D; [1000];           refreshDelays">
+<meta property="og:description" content=":root{    &#x2F;* 🎚 音乐墙整体高度      px &#x3D; 固定高度      vh &#x3D; 屏幕高度比例（推荐 80vh 更沉浸） *&#x2F;   --music-wall-height: 93vh;    &#x2F;* 🖥 PC端缩放比例      1 &#x3D; 原始尺寸      0.8 &#x3D; 推荐博客适配      0.7 &#x3D; 紧凑展示 *&#x2F;   --music-scale-desktop: 1;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-02-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-02-25T08:45:15.252Z">
+<meta property="article:modified_time" content="2026-02-25T09:03:04.803Z">
 <meta property="article:author" content="李不群">
 <meta property="article:tag" content="景观设计, AI设计, 数字建造, 技术思考, 个人博客, l1st1t3m, LZ, AI, Landscape, Design Thinking, Tech, Personal Notes">
 <meta name="twitter:card" content="summary">
@@ -434,35 +434,125 @@
       
       
       <div class="post-body">
-          <div style="width:100%;height:800px;border-radius:10px;overflow:hidden;">
-  <iframe 
-      id="music-poster-iframe"
-      src="https://l1st1t3m.github.io/CD-Wall-l1st1t3m/"
-      width="100%" 
-      height="100%" 
-      frameborder="0">
-  </iframe>
+          
+
+<!-- ================= 参数调节区（只改这里） ================= -->
+<style>
+:root{
+
+  /* 🎚 音乐墙整体高度
+     px = 固定高度
+     vh = 屏幕高度比例（推荐 80vh 更沉浸） */
+  --music-wall-height: 93vh;
+
+  /* 🖥 PC端缩放比例
+     1 = 原始尺寸
+     0.8 = 推荐博客适配
+     0.7 = 紧凑展示 */
+  --music-scale-desktop: 1;
+
+  /* 📱 手机端缩放比例 */
+  --music-scale-mobile: 0.65;
+
+  /* ↔️ 水平偏移（视觉居中用）
+     负数 = 左移
+     正数 = 右移 */
+  --music-offset-x: 0px;
+
+  /* ↕️ 垂直偏移
+     负数 = 上移
+     正数 = 下移 */
+  --music-offset-y: 0px;
+
+  /* 🔵 圆角 */
+  --music-radius: 20px;
+
+}
+</style>
+
+
+<!-- ================= 音乐墙容器 ================= -->
+<div class="music-wall-container">
+
+  <!-- 缩放控制层 -->
+  <div class="music-scale-wrapper">
+
+    <!-- 音乐海报墙 iframe -->
+    <iframe 
+        id="music-poster-iframe"
+        src="https://l1st1t3m.github.io/CD-Wall-l1st1t3m/"
+        class="music-iframe">
+    </iframe>
+
+  </div>
+
 </div>
 
-<!-- 自动多次刷新脚本（只修改 Markdown 就能生效） -->
+
+<!-- ================= 样式核心 ================= -->
+<style>
+
+/* 外层容器：控制显示区域 */
+.music-wall-container{
+  width:100%;
+  height:var(--music-wall-height);
+  border-radius:var(--music-radius);
+  overflow:hidden;
+}
+
+/* PC缩放逻辑 */
+.music-scale-wrapper{
+  width:100%;
+  height:100%;
+  transform:scale(var(--music-scale-desktop)) translate(var(--music-offset-x), var(--music-offset-y));
+  transform-origin:top left;
+}
+
+/* iframe补偿缩放（防止内容被裁切） */
+.music-iframe{
+  width:calc(100% / var(--music-scale-desktop));
+  height:calc(100% / var(--music-scale-desktop));
+  border:0;
+}
+
+/* 📱 手机端适配 */
+@media (max-width:768px){
+
+  .music-scale-wrapper{
+    transform:scale(var(--music-scale-mobile)) translate(var(--music-offset-x), var(--music-offset-y));
+  }
+
+  .music-iframe{
+    width:calc(100% / var(--music-scale-mobile));
+    height:calc(100% / var(--music-scale-mobile));
+  }
+
+}
+
+</style>
+
+
+<!-- ================= 自动刷新（防白屏） ================= -->
 <script>
-  (function() {
-    // 设置自动刷新的时间点（毫秒）
-    // 第一次：1500ms（1.5秒后刷新，此时浏览器已经缓存了部分图片，强制重绘解决白屏）
-    // 第二次：3500ms（3.5秒后兜底刷新，确保所有海报彻底加载并撑开排版）
-    var refreshDelays = [1000]; 
-    
-    refreshDelays.forEach(function(delay) {
-      setTimeout(function() {
-        var iframe = document.getElementById('music-poster-iframe');
-        if (iframe) {
-          // 通过重新赋予 src 来强制 iframe 重新加载
-          iframe.src = iframe.src;
-        }
-      }, delay);
-    });
-  })();
+(function() {
+
+  /* 刷新时间（毫秒）
+     可增加多个，如 [1000,3000] */
+  var refreshDelays = [1000];
+
+  refreshDelays.forEach(function(delay) {
+    setTimeout(function() {
+      var iframe = document.getElementById('music-poster-iframe');
+      if (iframe) {
+        iframe.src = iframe.src;
+      }
+    }, delay);
+  });
+
+})();
 </script>
+
+
       </div>
       
       
