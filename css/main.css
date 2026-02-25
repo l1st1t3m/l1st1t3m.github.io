@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #04ffba;
+    background: #85ffa6;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3603,7 +3603,7 @@ body {
   }
 }
 /* =====================================
-   气象站补丁：纯净交互进阶版 (极致紧凑)
+   气象站+时钟：纯净交互进阶版 (极致紧凑)
    ===================================== */
 .site-subtitle {
   display: block !important;
@@ -3623,21 +3623,25 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
   margin-top: 20px !important;
-/* 【压缩1】缩小卡片四周的留白 (原为18px -> 10px) */
   padding: 10px 10px !important;
   cursor: pointer;
   user-select: none;
-/* 【压缩3】强制缩短 温度/图标 区域 与 下方面板 的间距 (覆盖 HTML 中的 15px) */
-/* 优化后的 12 宫格布局容器 */
+/* 新增时钟头部的样式控制 */
+/* 12 宫格布局容器 */
 }
 #custom-weather-card #weather-info {
   color: #333 !important;
 }
+#custom-weather-card #custom-clock-header {
+  margin-bottom: 6px !important;
+}
+#custom-weather-card #clock-time {
+  color: #111 !important;
+}
 #custom-weather-card #weather-city {
   color: #111 !important;
   transition: color 0.3s ease;
-/* 【压缩2】覆盖 HTML 里写的 10px 间距，缩短顶部距离 */
-  margin-bottom: 4px !important;
+  margin-bottom: 0 !important /* 清除之前残留的间距 */;
 }
 #custom-weather-card #weather-info > div:nth-child(2) {
   margin-bottom: 8px !important;
@@ -3649,10 +3653,8 @@ body {
 #custom-weather-card .weather-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-/* 【压缩4】大幅缩小上下格子之间的间隙 (原为 12px -> 6px) */
   gap: 6px 4px;
   border-top: 1px solid rgba(0,0,0,0.06);
-/* 缩小横线与格子的距离 */
   padding-top: 8px;
 }
 #custom-weather-card .weather-detail-item {
@@ -3664,7 +3666,6 @@ body {
 #custom-weather-card .weather-detail-item .w-label {
   font-size: 11px;
   opacity: 0.55;
-/* 【压缩5】去掉文字和数值中间的间距，收紧行高 */
   margin-bottom: 0px;
   line-height: 1.2;
   letter-spacing: 1px;
@@ -3688,11 +3689,14 @@ body {
     background: rgba(30,30,32,0.65) !important;
     border: 1px solid rgba(255,255,255,0.08) !important;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+/* 让时钟、城市、温度等文字在暗黑模式自动变白 */
   }
   #custom-weather-card #weather-info,
   #custom-weather-card #weather-temp,
   #custom-weather-card #weather-city,
-  #custom-weather-card .w-val {
+  #custom-weather-card .w-val,
+  #custom-weather-card #clock-time,
+  #custom-weather-card #clock-meta {
     color: #fff !important;
   }
   #custom-weather-card .w-label {
