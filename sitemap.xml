@@ -158,6 +158,27 @@
   </url>
   
   <url>
+    <loc>https://techbyliz.uk/tags/Github%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://techbyliz.uk/tags/macOS/</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://techbyliz.uk/tags/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://techbyliz.uk/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -200,13 +221,6 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2026-02-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://techbyliz.uk/tags/%E5%9B%AD%E6%9E%97%E6%A4%8D%E7%89%A9/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -215,20 +229,6 @@
   
   <url>
     <loc>https://techbyliz.uk/tags/%E7%9F%A5%E8%AF%86%E7%A7%91%E6%99%AE/</loc>
-    <lastmod>2026-02-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://techbyliz.uk/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/</loc>
-    <lastmod>2026-02-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://techbyliz.uk/tags/%E7%94%B5%E5%AD%90%E8%89%BA%E6%9C%AF/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -249,21 +249,21 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/tags/Github%E9%A1%B9%E7%9B%AE/</loc>
+    <loc>https://techbyliz.uk/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/tags/macOS/</loc>
+    <loc>https://techbyliz.uk/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/tags/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/</loc>
+    <loc>https://techbyliz.uk/tags/%E7%94%B5%E5%AD%90%E8%89%BA%E6%9C%AF/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -286,6 +286,13 @@
   </url>
   
   <url>
+    <loc>https://techbyliz.uk/categories/%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://techbyliz.uk/categories/VPS%E7%B3%BB%E5%88%97/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -300,21 +307,7 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2026-02-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://techbyliz.uk/categories/NA-%E5%8D%9A%E7%89%A9%E5%AD%A6/</loc>
-    <lastmod>2026-02-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://techbyliz.uk/categories/%E6%88%91%E5%96%9C%E6%AC%A2%E7%9A%84%E5%8A%A8%E6%BC%AB/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -328,7 +321,14 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/categories/%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/</loc>
+    <loc>https://techbyliz.uk/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://techbyliz.uk/categories/%E6%88%91%E5%96%9C%E6%AC%A2%E7%9A%84%E5%8A%A8%E6%BC%AB/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
