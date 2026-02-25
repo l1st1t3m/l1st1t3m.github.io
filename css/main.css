@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #11ff1f;
+    background: #39a41b;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3603,7 +3603,7 @@ body {
   }
 }
 /* =====================================
-   气象站补丁：纯净交互进阶版 
+   气象站补丁：纯净交互进阶版 (极致紧凑)
    ===================================== */
 .site-subtitle {
   display: block !important;
@@ -3615,34 +3615,45 @@ body {
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 #custom-weather-card {
-  background: rgba(255,255,255,0.6) !important;
+  background: rgba(232,237,242,0.75) !important;
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 24px !important;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
   margin-top: 20px !important;
-  padding: 18px 12px !important;
+/* 【压缩1】缩小卡片四周的留白 (原为18px -> 10px) */
+  padding: 10px 10px !important;
   cursor: pointer;
   user-select: none;
+/* 【压缩3】强制缩短 温度/图标 区域 与 下方面板 的间距 (覆盖 HTML 中的 15px) */
 /* 优化后的 12 宫格布局容器 */
 }
 #custom-weather-card #weather-info {
-  color: #222 !important;
+  color: #333 !important;
 }
 #custom-weather-card #weather-city {
-  color: #000 !important;
+  color: #111 !important;
   transition: color 0.3s ease;
+/* 【压缩2】覆盖 HTML 里写的 10px 间距，缩短顶部距离 */
+  margin-bottom: 4px !important;
+}
+#custom-weather-card #weather-info > div:nth-child(2) {
+  margin-bottom: 8px !important;
 }
 #custom-weather-card #weather-temp {
   font-weight: 300;
-  color: #000 !important;
+  color: #111 !important;
 }
 #custom-weather-card .weather-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px 8px /* 上下间距加大，左右稍微紧凑 */;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  padding-top: 14px;
+/* 【压缩4】大幅缩小上下格子之间的间隙 (原为 12px -> 6px) */
+  gap: 6px 4px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+/* 缩小横线与格子的距离 */
+  padding-top: 8px;
 }
 #custom-weather-card .weather-detail-item {
   display: flex;
@@ -3651,28 +3662,32 @@ body {
   justify-content: center;
 }
 #custom-weather-card .weather-detail-item .w-label {
-  font-size: 11px /* 稍微调大一点点，匹配两字平衡 */;
-  opacity: 0.5;
-  margin-bottom: 3px;
-  letter-spacing: 1px /* 两个字之间增加呼吸感 */;
+  font-size: 11px;
+  opacity: 0.55;
+/* 【压缩5】去掉文字和数值中间的间距，收紧行高 */
+  margin-bottom: 0px;
+  line-height: 1.2;
+  letter-spacing: 1px;
 }
 #custom-weather-card .weather-detail-item .w-val {
   font-size: 13px;
   font-weight: 600;
+  line-height: 1.2;
 }
 #custom-weather-card:hover {
   transform: translateY(-6px) scale(1.01) !important;
-  background: rgba(255,255,255,0.8) !important;
+  background: rgba(220,226,233,0.9) !important;
   box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
 }
 #custom-weather-card:hover #weather-city {
-  color: #0078ff !important /* 悬停颜色反馈 */;
+  color: #0078ff !important;
 }
 /* --- 暗黑模式适配 --- */
 @media (prefers-color-scheme: dark) {
   #custom-weather-card {
-    background: rgba(25,25,25,0.5) !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
+    background: rgba(30,30,32,0.65) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
   #custom-weather-card #weather-info,
   #custom-weather-card #weather-temp,
@@ -3684,14 +3699,14 @@ body {
     color: rgba(255,255,255,0.5) !important;
   }
   #custom-weather-card .weather-grid {
-    border-top-color: rgba(255,255,255,0.1) !important;
+    border-top-color: rgba(255,255,255,0.08) !important;
   }
   #custom-weather-card #weather-icon {
-    filter: invert(1) brightness(1.8) contrast(1.2) !important;
-    opacity: 0.95;
+    filter: drop-shadow(0 2px 6px rgba(255,255,255,0.1)) !important;
+    opacity: 1;
   }
   #custom-weather-card:hover {
-    background: rgba(40,40,40,0.6) !important;
+    background: rgba(45,45,48,0.8) !important;
   }
   #custom-weather-card:hover #weather-city {
     color: #31a2ff !important;
