@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #1dcb1f;
+    background: #62d7fa;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3434,11 +3434,11 @@ body {
   overflow: hidden;
   transition: all 0.35s ease;
   cursor: pointer;
-  width: 198px;
+  width: 100%;
   margin: 0 auto;
 }
 .game-card img {
-  width: 198px;
+  width: 100%;
   display: block;
   transition: transform 0.4s ease;
 }
@@ -3455,11 +3455,11 @@ body {
 .game-info {
   position: absolute;
   bottom: 0;
-  width: 198px;
-  left: 50%;
-  transform: translateX(-50%);
+/* 修改：宽度设为 100%，去掉 left: 50% 和 transform */
+  width: 100%;
+  left: 0;
   padding: 14px;
-  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0));
   color: #fff;
   font-size: 13px;
   backdrop-filter: blur(2px);
@@ -3467,6 +3467,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+/* 新增：确保内容不会溢出卡片 */
+  box-sizing: border-box;
 }
 .game-title {
   width: 100%;
