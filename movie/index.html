@@ -21,16 +21,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"techbyliz.uk","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github-dark"},"prism":{"light":"coy","dark":"tomorrow"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":true,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content=".game-wall {     display: grid;     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));     gap: 20px;     padding: 20px 0;   }   .game-card {     background: var(--card-bg-color, #fff);">
+    <meta name="description" content="&#x2F;* 容器：响应式网格 *&#x2F;   .movie-wall {     display: grid;     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));     gap: 25px;     padding: 20px 0;   }    &#x2F;* 卡片主体：改用深色背景让白色文字更显眼 *&#x2F;   .movie-ca">
 <meta property="og:type" content="website">
 <meta property="og:title" content="我看过的影剧">
 <meta property="og:url" content="https://techbyliz.uk/movie/index.html">
 <meta property="og:site_name" content="不群小筑">
-<meta property="og:description" content=".game-wall {     display: grid;     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));     gap: 20px;     padding: 20px 0;   }   .game-card {     background: var(--card-bg-color, #fff);">
+<meta property="og:description" content="&#x2F;* 容器：响应式网格 *&#x2F;   .movie-wall {     display: grid;     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));     gap: 25px;     padding: 20px 0;   }    &#x2F;* 卡片主体：改用深色背景让白色文字更显眼 *&#x2F;   .movie-ca">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://image.tmdb.org/t/p/w500/aAdnwqwkKX5PPcr8EdtaiA8AZVl.jpg">
 <meta property="article:published_time" content="2026-02-26T10:09:54.000Z">
-<meta property="article:modified_time" content="2026-02-26T10:32:36.203Z">
+<meta property="article:modified_time" content="2026-02-26T10:35:32.519Z">
 <meta property="article:author" content="李不群">
 <meta property="article:tag" content="景观设计, AI设计, 数字建造, 技术思考, 个人博客, l1st1t3m, LZ, AI, Landscape, Design Thinking, Tech, Personal Notes">
 <meta name="twitter:card" content="summary">
@@ -447,71 +447,105 @@
       <div class="post-body">
           
 <style>
-  .game-wall {
+  /* 容器：响应式网格 */
+  .movie-wall {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 20px;
+    gap: 25px;
     padding: 20px 0;
   }
-  .game-card {
-    background: var(--card-bg-color, #fff);
-    border-radius: 10px;
+
+  /* 卡片主体：改用深色背景让白色文字更显眼 */
+  .movie-card {
+    background: #1a1a1a; 
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 1px solid #eee;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255,255,255,0.05);
   }
-  .game-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+
+  .movie-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    border-color: rgba(255,255,255,0.2);
   }
-  .game-card a {
-    text-decoration: none !important;
-    border-bottom: none !important;
-    color: inherit !important;
-    display: block;
+
+  /* 海报容器：固定 2:3 比例，确保海报显示完全 */
+  .poster-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
   }
-  .game-card img {
+
+  .movie-card img {
     width: 100% !important;
-    height: 230px !important;
+    height: 100% !important;
     object-fit: cover !important;
-    display: block;
     margin: 0 !important;
   }
-  .game-info {
-    padding: 12px 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+
+  /* 评分标签 */
+  .rating-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.7);
+    color: #ffca28;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    backdrop-filter: blur(4px);
+  }
+
+  /* 文字区域 */
+  .movie-info {
+    padding: 12px 10px;
     text-align: center;
   }
-  .game-title {
-    font-size: 15px;
+
+  .movie-title {
+    display: block;
+    font-size: 14px;
     font-weight: 600;
-    line-height: 1.2;
-    color: var(--text-color, #333);
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    color: #ffffff !important; /* 强制纯白 */
+    margin-bottom: 4px;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
   }
-  .game-meta {
+
+  .movie-meta {
+    display: block;
     font-size: 12px;
-    color: #888;
+    color: #999 !important; /* 浅灰色辅助信息 */
   }
+
+  .movie-card a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+
+  /* 移动端调整 */
   @media (max-width: 600px) {
-    .game-wall { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
-    .game-card img { height: 170px !important; }
+    .movie-wall {
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 15px;
+    }
   }
 </style>
 
-<div class="game-wall">
-  <div class="game-card">
+<div class="movie-wall">
+  <div class="movie-card">
     <a href="https://www.themoviedb.org/movie/278" target="_blank">
-      <img src="https://image.tmdb.org/t/p/w500/aAdnwqwkKX5PPcr8EdtaiA8AZVl.jpg" alt="肖申克的救赎" loading="lazy">
-      <div class="game-info">
-        <span class="game-title">肖申克的救赎</span>
-        <span class="game-meta">1994 · ⭐ 8.7</span>
+      <div class="poster-wrapper">
+        <img src="https://image.tmdb.org/t/p/w500/aAdnwqwkKX5PPcr8EdtaiA8AZVl.jpg" alt="肖申克的救赎" loading="lazy">
+        <div class="rating-badge">⭐ 8.7</div>
+      </div>
+      <div class="movie-info">
+        <span class="movie-title">肖申克的救赎</span>
+        <span class="movie-meta">1994</span>
       </div>
     </a>
   </div>
