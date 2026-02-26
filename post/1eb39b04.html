@@ -225,16 +225,12 @@
   </div>
 <div id="custom-weather-card" style="display: none;">
   <div id="weather-info">
-    <!-- 全新三横排：日期 -> 时钟 -> 地理位置 -->
     <div id="custom-clock-header" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 12px; gap: 3px;">
       
-      <!-- 第一排：日期 (字号偏小，半透明，不抢眼) -->
       <div id="clock-date" style="font-size: 11px; opacity: 0.65; letter-spacing: 1px;">获取日期中...</div>
       
-      <!-- 第二排：时间 (去除了自带的上下行高留白，非常紧凑) -->
       <div id="clock-time" style="font-size: 28px; font-weight: 300; letter-spacing: 2px; line-height: 1; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">--:--:--</div>
       
-      <!-- 第三排：地理位置 (稍微加粗，增加字间距，更有质感) -->
       <div id="weather-city" style="font-size: 12.5px; font-weight: 600; letter-spacing: 2px;">获取位置中...</div>
       
     </div>
@@ -270,7 +266,9 @@
 <script>
   (function() {
     const API_KEY = '8c6b74f5ed7f60c14f17f9eb06739a54';
+    const WAQI_TOKEN = '3a248985bbaea3cd420b2ab3800dbe622f098248';
     const cityMap = { 'Haidian': '北京市海淀区', 'Beijing': '北京市', 'Shanghai': '上海市', 'Chaoyang': '北京市朝阳区' };
+    
     // ======= 时钟逻辑补丁 =======
     const updateClock = () => {
       const now = new Date();
@@ -309,10 +307,10 @@
 
     const fetchWeather = async (lat, lon) => {
       try {
-        // 并行请求：天气基础数据、空气质量、紫外线
+        // 并行请求：天气基础数据、WAQI空气质量、紫外线
         const [weatherRes, aqiRes, uvRes] = await Promise.allSettled([
           fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=zh_cn`),
-          fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`),
+          fetch(`https://api.waqi.info/feed/geo:${lat};${lon}/?token=${WAQI_TOKEN}`),
           fetch(`https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${API_KEY}`) // 遗留免费紫外线接口
         ]);
 
@@ -344,15 +342,28 @@
         else if (data.snow && data.snow['1h']) precip = data.snow['1h'];
         document.getElementById('w-rain').innerText = precip > 0 ? precip.toFixed(1) + 'mm' : '0mm';
 
-        // 空气质量 (AQI) 处理
+        // ==========================================
+        // 空气质量 (AQI) 处理 - WAQI 接口
+        // ==========================================
         if (aqiRes.status === 'fulfilled' && aqiRes.value.ok) {
-          const aqiData = await aqiRes.value.json();
-          const aqiMapLabel = {1: '优', 2: '良', 3: '轻度', 4: '中度', 5: '重度'};
-          const aqiColor = {1: '#a3d765', 2: '#f0cc35', 3: '#f09c35', 4: '#e04f4f', 5: '#9c4fe0'};
-          const aqiVal = aqiData.list[0].main.aqi;
-          const aqiSpan = document.getElementById('w-aqi');
-          aqiSpan.innerText = aqiMapLabel[aqiVal] || '--';
-          aqiSpan.style.color = aqiColor[aqiVal] || 'inherit';
+          const aqiJson = await aqiRes.value.json();
+          if (aqiJson.status === 'ok') {
+            const aqiVal = aqiJson.data.aqi;
+            let aqiLabel = '--';
+            let aqiColor = 'inherit';
+
+            // 根据 WAQI 标准设置等级和颜色
+            if (aqiVal <= 50) { aqiLabel = '优'; aqiColor = '#a3d765'; }
+            else if (aqiVal <= 100) { aqiLabel = '良'; aqiColor = '#f0cc35'; }
+            else if (aqiVal <= 150) { aqiLabel = '轻度'; aqiColor = '#f09c35'; }
+            else if (aqiVal <= 200) { aqiLabel = '中度'; aqiColor = '#e04f4f'; }
+            else if (aqiVal <= 300) { aqiLabel = '重度'; aqiColor = '#9c4fe0'; }
+            else { aqiLabel = '严重'; aqiColor = '#7e0023'; } // 300以上严重污染
+
+            const aqiSpan = document.getElementById('w-aqi');
+            aqiSpan.innerText = `${aqiVal} ${aqiLabel}`; // 修改为数值+文字
+            aqiSpan.style.color = aqiColor;
+          }
         }
 
         // 紫外线处理
@@ -362,7 +373,6 @@
         }
 
         // ======= 替换的新高级图标逻辑 =======
-        // 1. 将 OpenWeatherMap 原生代号映射到高级全彩图标代号
         const iconMap = {
           '01d': 'clear-day', '01n': 'clear-night', // 晴
           '02d': 'partly-cloudy-day', '02n': 'partly-cloudy-night', // 多云
@@ -377,7 +387,6 @@
         const premiumIcon = iconMap[data.weather[0].icon] || 'not-available';
 
         const iconImg = document.getElementById('weather-icon');
-        // 2. 调用高颜值的 Meteocons 动态全彩 SVG 图标
         iconImg.src = `https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/${premiumIcon}.svg`;
         iconImg.style.display = 'block';
         // ===================================
