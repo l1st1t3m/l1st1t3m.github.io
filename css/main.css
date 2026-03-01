@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ffab21;
+    background: #1d2022;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3892,4 +3892,100 @@ body {
 /* 深色模式下，meta 信息整体变为柔和的白色 */
     color: rgba(255,255,255,0.8) !important;
   }
+}
+/* =====================================
+   翻页标签 - 真灵动岛胶囊版
+   ===================================== */
+/* 0️⃣ 外层胶囊（灵动岛底板） */
+.pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: fit-content !important;
+  margin: 20px auto !important;
+  padding: 10px 14px !important;
+/* 👇 关键：外层半透明磨砂 */
+  background: rgba(255,255,255,0.5) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: all 0.3s ease;
+}
+/* 防止主题套娃结构影响 */
+.pagination::before,
+.pagination::after {
+  display: none !important;
+}
+/* 1️⃣ 内部按钮 */
+.pagination .prev,
+.pagination .next,
+.pagination .page-number {
+  background: rgba(255,255,255,0.7) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px !important;
+  border: 1px solid rgba(255,255,255,0.5);
+  margin: 0 4px !important;
+  padding: 0 12px !important;
+  min-width: 36px;
+  height: 36px;
+  line-height: 36px;
+  color: #444 !important;
+  text-align: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+/* 2️⃣ 当前页 */
+.pagination .page-number.current {
+  background: rgba(15,17,21,0.85) !important;
+  color: #fff !important;
+  border: none;
+}
+/* 3️⃣ Hover */
+.pagination a.page-number:hover,
+.pagination .prev:hover,
+.pagination .next:hover {
+  background: rgba(255,255,255,0.95) !important;
+  transform: translateY(-2px);
+  color: #000 !important;
+}
+/* 4️⃣ 深色模式 */
+@media (prefers-color-scheme: dark) {
+  .pagination {
+    background: rgba(40,40,45,0.6) !important;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .pagination .prev,
+  .pagination .next,
+  .pagination .page-number {
+    background: rgba(60,60,65,0.7) !important;
+    color: rgba(255,255,255,0.85) !important;
+  }
+  .pagination .page-number.current {
+    background: rgba(255,255,255,0.25) !important;
+    color: #fff !important;
+  }
+  .pagination a.page-number:hover {
+    background: rgba(255,255,255,0.18) !important;
+  }
+}
+/* 🔧 去除 hover / focus 黑边 */
+.pagination a,
+.pagination .prev,
+.pagination .next,
+.pagination .page-number {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.pagination a:hover,
+.pagination a:focus,
+.pagination a:active,
+.pagination .prev:hover,
+.pagination .next:hover,
+.pagination .page-number:hover {
+  outline: none !important;
+  border: 1px solid rgba(255,255,255,0.5) !important;
+  box-shadow: none !important;
 }
