@@ -21,25 +21,39 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"techbyliz.uk","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github-dark"},"prism":{"light":"coy","dark":"tomorrow"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":true,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="Sometimes Naive.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="不群小筑">
-<meta property="og:url" content="https://techbyliz.uk/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A/index.html">
+    <meta name="description" content="通过亚马逊AWS的Lightsail服务搭建轻量服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VPS系列02：AWS轻量服务器推荐">
+<meta property="og:url" content="https://techbyliz.uk/post/72a57ff0.html">
 <meta property="og:site_name" content="不群小筑">
-<meta property="og:description" content="Sometimes Naive.">
+<meta property="og:description" content="通过亚马逊AWS的Lightsail服务搭建轻量服务器">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162318055.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260228172043572.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162726700.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162803673.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162820846.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162844180.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162951894.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301163020766.png">
+<meta property="article:published_time" content="2026-03-01T08:25:50.000Z">
+<meta property="article:modified_time" content="2026-03-01T08:30:34.556Z">
 <meta property="article:author" content="李不群">
-<meta property="article:tag" content="景观设计, AI设计, 数字建造, 技术思考, 个人博客, l1st1t3m, LZ, AI, Landscape, Design Thinking, Tech, Personal Notes">
+<meta property="article:tag" content="云服务">
+<meta property="article:tag" content="AWS">
+<meta property="article:tag" content="亚马逊">
+<meta property="article:tag" content="信用卡">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162318055.png">
 
 
-<link rel="canonical" href="https://techbyliz.uk/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A/">
+<link rel="canonical" href="https://techbyliz.uk/post/72a57ff0.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/亚马逊/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://techbyliz.uk/post/72a57ff0.html","path":"post/72a57ff0.html","title":"VPS系列02：AWS轻量服务器推荐"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: 亚马逊 | 不群小筑</title>
+<title>VPS系列02：AWS轻量服务器推荐 | 不群小筑</title>
   
 
 
@@ -147,7 +161,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -160,6 +174,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lightsail%E6%9C%8D%E5%8A%A1%E7%95%8C%E9%9D%A2%E4%B8%8E%E5%AE%9E%E4%BE%8B%E9%80%89%E6%8B%A9"><span class="nav-number">1.</span> <span class="nav-text">Lightsail服务界面与实例选择</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -421,71 +436,192 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">亚马逊
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://techbyliz.uk/post/72a57ff0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/58502299">
+      <meta itemprop="name" content="李不群">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不群小筑">
+      <meta itemprop="description" content="Sometimes Naive.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="VPS系列02：AWS轻量服务器推荐 | 不群小筑">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          VPS系列02：AWS轻量服务器推荐
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2026</span>
+
+      <time title="创建时间：2026-03-01 16:25:50 / 修改时间：16:30:34" itemprop="dateCreated datePublished" datetime="2026-03-01T16:25:50+08:00">2026-03-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/VPS%E7%B3%BB%E5%88%97/" itemprop="url" rel="index"><span itemprop="name">VPS系列</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><div style="text-align: center;">
+<strong>通过亚马逊AWS的Lightsail服务搭建轻量服务器
+</strong>
+</div>
+<span id="more"></span>
+
+<p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162318055.png"></p>
+<div style="text-align: center;">
+
+<p><strong><a target="_blank" rel="noopener" href="https://lightsail.aws.amazon.com/">Lightsail</a></strong></p>
+</div>
+
+<h2 id="Lightsail服务界面与实例选择"><a href="#Lightsail服务界面与实例选择" class="headerlink" title="Lightsail服务界面与实例选择"></a>Lightsail服务界面与实例选择</h2><p>登录AWS后，通过左上角的Services—All services—L检索到Lightsail服务，也可直接在左上角搜索栏输入Lightsail进行检索，找到后点击进入服务。</p>
+<p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260228172043572.png"></p>
+<p>Lightsail服务界面</p>
+<p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162726700.png"></p>
+<p>更改实例位置，发现可用的区域如下，此处可通过测速网站来检测AWS服务器连接到各地机房的速度，选择延迟最小的，可选择亚太地区的机房，因为地理位置较近，速度会快一些。（本教程使用伦敦服务器）</p>
+<p>测速网站CloudPing：<a target="_blank" rel="noopener" href="https://www.cloudping.info/">https://www.cloudping.info/</a></p>
+<p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162803673.png"></p>
+<p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162820846.png"></p>
+<p>选择平台：Linux&#x2F;Unix；操作系统：Debian10.8</p>
+<p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162844180.png"></p>
+<p>脚本默认为空，密钥也用默认就可以，不要开启快照，存储快照是额外收费的。选择实例计划个人选择第一个就够了。（新用户前三个月免费，如果想要无限白嫖可以三个月到了就重复[[VPS系列01：AWS账号的注册流程]]的操作换个账户，只要折腾得起）实例名字随便起，辨识用。</p>
+<p>设置完成点击创建实例。</p>
+<p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162951894.png"></p>
+<p>等上数十秒服务器开机，我们就有了一台自己的轻量云服务器。（若未显示开机可以刷新几次）</p>
+<p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301163020766.png"></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2026-03-01T16:25:50+08:00"
-              content="2026-03-01">
-          03-01
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/post/72a57ff0.html" itemprop="url">
-            <span itemprop="name">VPS系列02：AWS轻量服务器推荐</span>
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>李不群
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://techbyliz.uk/post/72a57ff0.html" title="VPS系列02：AWS轻量服务器推荐">https://techbyliz.uk/post/72a57ff0.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://x.com/II_F_s0cIeTy_ll">
+            <span class="icon">
+              <i class="fab fa-x-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
           </a>
       </div>
 
-      
-    </header>
-  </article>
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/l1st1t3m">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2026-02-18T22:10:07+08:00"
-              content="2026-02-18">
-          02-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/3624cd26.html" itemprop="url">
-            <span itemprop="name">VPS系列01：AWS账号的注册流程</span>
+            <span class="label">Telegram</span>
           </a>
       </div>
 
-      
-    </header>
-  </article>
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
 
-    </div>
+            <span class="label">RSS</span>
+          </a>
+      </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/" rel="tag"># 云服务</a>
+              <a href="/tags/AWS/" rel="tag"># AWS</a>
+              <a href="/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A/" rel="tag"># 亚马逊</a>
+              <a href="/tags/%E4%BF%A1%E7%94%A8%E5%8D%A1/" rel="tag"># 信用卡</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/9f7e849b.html" rel="prev" title="🔥AI效果图常用Prompt">
+                  <i class="fa fa-angle-left"></i> 🔥AI效果图常用Prompt
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
 </div>
   </main>
 
