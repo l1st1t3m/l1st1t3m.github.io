@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #b1ff86;
+    background: #44013d;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3871,4 +3871,25 @@ body {
 /* 去掉 NexT 默认的分隔竖线（如果存在） */
 .wordcount .post-meta-divider {
   display: none !important;
+}
+/* =====================================
+   文章页：阅读次数统计数值颜色修复
+   ===================================== */
+/* 强制让统计数字颜色跟随父级标签，确保左右一致 */
+.post-meta-item-container span[id*="busuanzi_value_page_pv"],
+#busuanzi_value_page_pv {
+  color: inherit !important;
+  opacity: 1 !important;
+  font-weight: inherit !important;
+}
+/* 确保深浅模式下都能正确显示 */
+.post-meta-item {
+/* 浅色模式下，meta 信息整体加深 */
+  color: #555 !important;
+}
+@media (prefers-color-scheme: dark) {
+  .post-meta-item {
+/* 深色模式下，meta 信息整体变为柔和的白色 */
+    color: rgba(255,255,255,0.8) !important;
+  }
 }
