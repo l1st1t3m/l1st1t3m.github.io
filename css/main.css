@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #292a7c;
+    background: #ffecff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4066,4 +4066,73 @@ a.btn:active {
   .popular-posts-link:hover {
     background: rgba(255,255,255,0.15);
   }
+}
+/* =====================================
+   文章图片 - 微悬浮交互版
+   ===================================== */
+/* 普通文章图片才有浮动效果 */
+.post-body img:not(.game-wall img) {
+  border-radius: 16px;
+  transition: all 0.28s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.post-body img:not(.game-wall img):hover {
+  border-radius: 0px;
+  transform: scale(1.005) translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.12);
+}
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .post-body img:not(.game-wall img):hover {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.35);
+  }
+}
+.game-card img {
+  position: relative;
+  z-index: 0;
+}
+.game-info {
+  position: absolute;
+  z-index: 2;
+}
+/* =====================================
+   返回顶部 → 贴文章右侧外边（750适配）
+   ===================================== */
+.back-to-top {
+  left: 50% !important;
+  right: auto !important;
+  bottom: 50px !important;
+/* 贴文章右侧 */
+  transform: translateX(750px);
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: all 0.25s ease;
+}
+/* Hover 浮起（注意同步750px） */
+.back-to-top:hover {
+  transform: translateX(750px) translateY(-6px) scale(1.06);
+  background: rgba(255,255,255,0.75);
+  box-shadow: 0 16px 45px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.7);
+}
+/* 图标 */
+.back-to-top i {
+  font-size: 22px !important;
+  margin-bottom: 2px;
+}
+/* 进度数字 */
+.back-to-top span {
+  font-size: 11px !important;
+  opacity: 0.7;
 }
