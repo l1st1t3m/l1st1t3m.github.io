@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #1d2022;
+    background: #f07085;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3988,4 +3988,48 @@ body {
   outline: none !important;
   border: 1px solid rgba(255,255,255,0.5) !important;
   box-shadow: none !important;
+}
+/* 阅读全文 按钮 - 灵动岛风 */
+.post-button .btn,
+a.btn {
+  display: inline-block;
+  padding: 6px 16px !important;
+  background: rgba(255,255,255,0.6) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,0.5) !important;
+  color: #444 !important;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  outline: none !important;
+}
+/* hover */
+.post-button .btn:hover,
+a.btn:hover {
+  background: rgba(255,255,255,0.95) !important;
+  color: #000 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+/* 点击黑边修复 */
+.post-button .btn:focus,
+a.btn:focus,
+.post-button .btn:active,
+a.btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+@media (prefers-color-scheme: dark) {
+  .post-button .btn,
+  a.btn {
+    background: rgba(60,60,65,0.6) !important;
+    color: rgba(255,255,255,0.85) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+  }
+  .post-button .btn:hover,
+  a.btn:hover {
+    background: rgba(255,255,255,0.15) !important;
+    color: #fff !important;
+  }
 }
