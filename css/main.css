@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #20a7bf;
+    background: #292a7c;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4031,5 +4031,39 @@ a.btn:active {
   a.btn:hover {
     background: rgba(255,255,255,0.15) !important;
     color: #fff !important;
+  }
+}
+/* 只美化相关文章链接本体 */
+.popular-posts-link {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.4);
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  font-weight: 600;
+}
+/* hover 不出现黑边 */
+.popular-posts-link:hover {
+  background: rgba(255,255,255,0.9);
+  transform: translateY(-1px);
+}
+/* 去除 focus 黑框 */
+.popular-posts-link:focus,
+.popular-posts-link:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* 暗色模式 */
+@media (prefers-color-scheme: dark) {
+  .popular-posts-link {
+    background: rgba(40,40,45,0.6);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .popular-posts-link:hover {
+    background: rgba(255,255,255,0.15);
   }
 }
