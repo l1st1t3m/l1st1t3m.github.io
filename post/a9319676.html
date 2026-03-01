@@ -327,7 +327,7 @@
         weatherCard.onclick = () => window.open(`https://www.windy.com/?${lat},${lon},10`, '_blank');
 
         // 基础与头部信息
-        document.getElementById('weather-city').innerText = cityMap[data.name] || (data.name + '市');
+        document.getElementById('weather-city').innerText = cityMap[data.name] || data.name;
         document.getElementById('weather-temp').innerText = Math.round(data.main.temp) + '°C';
         document.getElementById('weather-desc').innerText = data.weather[0].description;
         
