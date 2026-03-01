@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #5d41ff;
+    background: #b1ff86;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3815,4 +3815,60 @@ body {
     box-shadow: inset 0 2px 6px rgba(0,0,0,0.6), inset 0 -1px 3px rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.08);
   }
+}
+/* =====================================
+   页脚 - 灵动岛胶囊风格 (修正居中版)
+   ===================================== */
+.footer {
+  background: transparent !important;
+  padding: 20px 0 40px 0 !important;
+  border: none !important;
+/* 核心修正：利用 Flexbox 实现水平居中 */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+.footer-inner {
+/* 保持胶囊形态 */
+  display: flex !important; /* 内部也用 flex 让统计项横向排布 */
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* 各个统计项之间的间距 */
+  padding: 10px 28px !important;
+/* 磨砂玻璃质感 */
+  background: rgba(15,17,21,0.7) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+/* 极致圆角 */
+  border-radius: 50px !important;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+/* 布局修正 */
+  width: auto !important;
+  white-space: nowrap !important; /* 强制不换行，保持长条状 */
+}
+/* 文字与统计数据样式 */
+.footer-inner,
+.footer-inner a,
+.footer-inner span,
+#busuanzi_container_site_pv,
+#busuanzi_container_site_uv,
+#busuanzi_value_site_pv,
+#busuanzi_value_site_uv,
+#busuanzi_value_page_pv {
+  color: rgba(255,255,255,0.95) !important;
+  font-size: 13px !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+/* 交互效果 */
+.footer-inner:hover {
+  transform: translateY(-3px);
+  background: rgba(15,17,21,0.85) !important;
+  border-color: rgba(255,255,255,0.3);
+}
+/* 去掉 NexT 默认的分隔竖线（如果存在） */
+.wordcount .post-meta-divider {
+  display: none !important;
 }
