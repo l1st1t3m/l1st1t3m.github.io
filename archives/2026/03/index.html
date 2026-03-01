@@ -30,7 +30,7 @@
 <meta property="og:description" content="Sometimes Naive.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="李不群">
-<meta property="article:tag" content="景观设计, AI设计, 数字建造, 技术思考, 个人博客, l1st1t3m, LZ, AI, Landscape, Design Thinking, Tech, Personal Notes">
+<meta property="article:tag" content="景观设计, 建筑设计, 网络安全, 互联网, 计算机, AI设计, 数字建造, 技术思考, 个人博客, l1st1t3m, LZ, AI, Landscape, Design Thinking, Tech, Personal Notes">
 <meta name="twitter:card" content="summary">
 
 
@@ -114,7 +114,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-主页-|-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页 | home</a></li><li class="menu-item menu-item-关于-|-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于 | about</a></li><li class="menu-item menu-item-分类-|-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 | categories</a></li><li class="menu-item menu-item-标签-|-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 | tags</a></li><li class="menu-item menu-item-游戏-|-games"><a href="/games/" rel="section"><i class="fa-brands fa-playstation fa-fw"></i>游戏 | games</a></li><li class="menu-item menu-item-音乐-|-music"><a href="/music-wall/" rel="section"><i class="fa fa-music fa-fw"></i>音乐 | music</a></li><li class="menu-item menu-item-影剧-|-media"><a href="/movie/" rel="section"><i class="fa fa-film fa-fw"></i>影剧 | media</a></li><li class="menu-item menu-item-生活-|-diary"><a href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" rel="section"><i class="fa fa-book fa-fw"></i>生活 | diary</a></li><li class="menu-item menu-item-归档-|-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档 | archives</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页-|-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页 | home</a></li><li class="menu-item menu-item-关于-|-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于 | about</a></li><li class="menu-item menu-item-分类-|-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 | categories</a></li><li class="menu-item menu-item-标签-|-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 | tags</a></li><li class="menu-item menu-item-游戏-|-games"><a href="/games/" rel="section"><i class="fa-brands fa-playstation fa-fw"></i>游戏 | games</a></li><li class="menu-item menu-item-音乐-|-music"><a href="/music-wall/" rel="section"><i class="fa fa-music fa-fw"></i>音乐 | music</a></li><li class="menu-item menu-item-影剧-|-media"><a href="/movie/" rel="section"><i class="fa fa-film fa-fw"></i>影剧 | media</a></li><li class="menu-item menu-item-生活-|-diary"><a href="/categories/10-%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" rel="section"><i class="fa fa-book fa-fw"></i>生活 | diary</a></li><li class="menu-item menu-item-归档-|-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档 | archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -179,18 +179,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -399,6 +399,37 @@
     };
 
     const initWidgets = function() {
+      // ======= 1. 增强版：自动清理分类数字前缀 =======
+      const cleanNow = () => {
+        // 涵盖：列表链接、大标题、文章内元数据、面包屑等
+        const selectors = '.category-list-link, .collection-header, span[itemprop="name"], .post-category a, .breadcrumb';
+        document.querySelectorAll(selectors).forEach(el => {
+          const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+          let node;
+          while (node = walk.nextNode()) {
+            // 正则说明：匹配开头数字 + 可选空格 + 横杠 + 可选空格
+            const cleaned = node.nodeValue.replace(/^\d+\s*-\s*/, '');
+            if (node.nodeValue !== cleaned) {
+              node.nodeValue = cleaned;
+            }
+          }
+        });
+      };
+
+      // 立即执行一次
+      cleanNow();
+      
+      // 针对异步加载（如Pjax）增加一个延时执行，确保内容已填充
+      setTimeout(cleanNow, 100);
+      setTimeout(cleanNow, 500); 
+
+      // 使用 MutationObserver 监听动态变化（最保险的方法）
+      if (!window.catObserver) {
+        window.catObserver = new MutationObserver(cleanNow);
+        window.catObserver.observe(document.body, { childList: true, subtree: true });
+      }
+      // ==========================================
+
       const weatherCard = document.getElementById('custom-weather-card');
       const sidebar = document.querySelector('.sidebar-inner');
       if (weatherCard && sidebar) {
@@ -437,12 +468,12 @@
   <div class="post-block">
     <div class="post-content">
       <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 12 篇日志。 继续努力。</span>
+        <span class="collection-header">嗯..! 目前共计 13 篇日志。 继续努力。</span>
       </div>
 
       
     <div class="collection-year">
-      <span class="collection-header">2026<span class="collection-year-count">12</span></span>
+      <span class="collection-header">2026<span class="collection-year-count">13</span></span>
     </div>
 
   <article itemscope itemtype="http://schema.org/Article">
@@ -457,7 +488,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/post/731082ed.html" itemprop="url">
-            <span itemprop="name">VPS系列03：AWS轻量服务器推荐</span>
+            <span itemprop="name">AWS系列03：AWS轻量服务器推荐</span>
           </a>
       </div>
 
@@ -477,7 +508,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/post/72a57ff0.html" itemprop="url">
-            <span itemprop="name">VPS系列02：AWS轻量服务器推荐</span>
+            <span itemprop="name">AWS系列02：AWS轻量服务器推荐</span>
           </a>
       </div>
 

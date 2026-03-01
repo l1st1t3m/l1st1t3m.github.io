@@ -32,7 +32,7 @@
 <meta property="article:published_time" content="2026-02-14T14:05:29.000Z">
 <meta property="article:modified_time" content="2026-02-16T04:30:03.433Z">
 <meta property="article:author" content="李不群">
-<meta property="article:tag" content="景观设计, AI设计, 数字建造, 技术思考, 个人博客, l1st1t3m, LZ, AI, Landscape, Design Thinking, Tech, Personal Notes">
+<meta property="article:tag" content="景观设计, 建筑设计, 网络安全, 互联网, 计算机, AI设计, 数字建造, 技术思考, 个人博客, l1st1t3m, LZ, AI, Landscape, Design Thinking, Tech, Personal Notes">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,7 +117,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-主页-|-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页 | home</a></li><li class="menu-item menu-item-关于-|-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于 | about</a></li><li class="menu-item menu-item-分类-|-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 | categories</a></li><li class="menu-item menu-item-标签-|-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 | tags</a></li><li class="menu-item menu-item-游戏-|-games"><a href="/games/" rel="section"><i class="fa-brands fa-playstation fa-fw"></i>游戏 | games</a></li><li class="menu-item menu-item-音乐-|-music"><a href="/music-wall/" rel="section"><i class="fa fa-music fa-fw"></i>音乐 | music</a></li><li class="menu-item menu-item-影剧-|-media"><a href="/movie/" rel="section"><i class="fa fa-film fa-fw"></i>影剧 | media</a></li><li class="menu-item menu-item-生活-|-diary"><a href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" rel="section"><i class="fa fa-book fa-fw"></i>生活 | diary</a></li><li class="menu-item menu-item-归档-|-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档 | archives</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页-|-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页 | home</a></li><li class="menu-item menu-item-关于-|-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于 | about</a></li><li class="menu-item menu-item-分类-|-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 | categories</a></li><li class="menu-item menu-item-标签-|-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 | tags</a></li><li class="menu-item menu-item-游戏-|-games"><a href="/games/" rel="section"><i class="fa-brands fa-playstation fa-fw"></i>游戏 | games</a></li><li class="menu-item menu-item-音乐-|-music"><a href="/music-wall/" rel="section"><i class="fa fa-music fa-fw"></i>音乐 | music</a></li><li class="menu-item menu-item-影剧-|-media"><a href="/movie/" rel="section"><i class="fa fa-film fa-fw"></i>影剧 | media</a></li><li class="menu-item menu-item-生活-|-diary"><a href="/categories/10-%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" rel="section"><i class="fa fa-book fa-fw"></i>生活 | diary</a></li><li class="menu-item menu-item-归档-|-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档 | archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -182,18 +182,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -402,6 +402,37 @@
     };
 
     const initWidgets = function() {
+      // ======= 1. 增强版：自动清理分类数字前缀 =======
+      const cleanNow = () => {
+        // 涵盖：列表链接、大标题、文章内元数据、面包屑等
+        const selectors = '.category-list-link, .collection-header, span[itemprop="name"], .post-category a, .breadcrumb';
+        document.querySelectorAll(selectors).forEach(el => {
+          const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+          let node;
+          while (node = walk.nextNode()) {
+            // 正则说明：匹配开头数字 + 可选空格 + 横杠 + 可选空格
+            const cleaned = node.nodeValue.replace(/^\d+\s*-\s*/, '');
+            if (node.nodeValue !== cleaned) {
+              node.nodeValue = cleaned;
+            }
+          }
+        });
+      };
+
+      // 立即执行一次
+      cleanNow();
+      
+      // 针对异步加载（如Pjax）增加一个延时执行，确保内容已填充
+      setTimeout(cleanNow, 100);
+      setTimeout(cleanNow, 500); 
+
+      // 使用 MutationObserver 监听动态变化（最保险的方法）
+      if (!window.catObserver) {
+        window.catObserver = new MutationObserver(cleanNow);
+        window.catObserver.observe(document.body, { childList: true, subtree: true });
+      }
+      // ==========================================
+
       const weatherCard = document.getElementById('custom-weather-card');
       const sidebar = document.querySelector('.sidebar-inner');
       if (weatherCard && sidebar) {
@@ -452,10 +483,10 @@
       
       <div class="post-body"><div class="tag-cloud">
   <div class="tag-cloud-title">
-    目前共计 21 个标签
+    目前共计 28 个标签
   </div>
   <div class="tag-cloud-tags">
-    <a href="/tags/AI%E5%BA%94%E7%94%A8/" style="font-size: 12px;" class="tag-cloud-0">AI应用</a> <a href="/tags/AWS/" style="font-size: 30px;" class="tag-cloud-10">AWS</a> <a href="/tags/Github%E9%A1%B9%E7%9B%AE/" style="font-size: 12px;" class="tag-cloud-0">Github项目</a> <a href="/tags/PS5/" style="font-size: 12px;" class="tag-cloud-0">PS5</a> <a href="/tags/Windows/" style="font-size: 12px;" class="tag-cloud-0">Windows</a> <a href="/tags/Workflow/" style="font-size: 12px;" class="tag-cloud-0">Workflow</a> <a href="/tags/macOS/" style="font-size: 12px;" class="tag-cloud-0">macOS</a> <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/" style="font-size: 12px;" class="tag-cloud-0">二次元</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/" style="font-size: 30px;" class="tag-cloud-10">云服务</a> <a href="/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A/" style="font-size: 30px;" class="tag-cloud-10">亚马逊</a> <a href="/tags/%E4%BF%A1%E7%94%A8%E5%8D%A1/" style="font-size: 30px;" class="tag-cloud-10">信用卡</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 12px;" class="tag-cloud-0">前端开发</a> <a href="/tags/%E5%9B%AD%E6%9E%97%E6%A4%8D%E7%89%A9/" style="font-size: 12px;" class="tag-cloud-0">园林植物</a> <a href="/tags/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/" style="font-size: 12px;" class="tag-cloud-0">实用软件</a> <a href="/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/" style="font-size: 21px;" class="tag-cloud-5">小技巧</a> <a href="/tags/%E7%94%B5%E5%AD%90%E8%89%BA%E6%9C%AF/" style="font-size: 12px;" class="tag-cloud-0">电子艺术</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%A7%91%E6%99%AE/" style="font-size: 12px;" class="tag-cloud-0">知识科普</a> <a href="/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/" style="font-size: 12px;" class="tag-cloud-0">科幻小说</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E8%BD%AF%E4%BB%B6/" style="font-size: 12px;" class="tag-cloud-0">设计软件</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 12px;" class="tag-cloud-0">转载</a> <a href="/tags/%E9%98%AE%E4%B8%80%E5%B3%B0/" style="font-size: 12px;" class="tag-cloud-0">阮一峰</a>
+    <a href="/tags/AI%E5%BA%94%E7%94%A8/" style="font-size: 12px;" class="tag-cloud-0">AI应用</a> <a href="/tags/AWS/" style="font-size: 30px;" class="tag-cloud-10">AWS</a> <a href="/tags/Github%E9%A1%B9%E7%9B%AE/" style="font-size: 12px;" class="tag-cloud-0">Github项目</a> <a href="/tags/PS5/" style="font-size: 12px;" class="tag-cloud-0">PS5</a> <a href="/tags/Windows/" style="font-size: 12px;" class="tag-cloud-0">Windows</a> <a href="/tags/Workflow/" style="font-size: 12px;" class="tag-cloud-0">Workflow</a> <a href="/tags/macOS/" style="font-size: 12px;" class="tag-cloud-0">macOS</a> <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/" style="font-size: 12px;" class="tag-cloud-0">二次元</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/" style="font-size: 30px;" class="tag-cloud-10">云服务</a> <a href="/tags/%E4%BA%9A%E9%A9%AC%E9%80%8A/" style="font-size: 30px;" class="tag-cloud-10">亚马逊</a> <a href="/tags/%E4%BF%A1%E7%94%A8%E5%8D%A1/" style="font-size: 30px;" class="tag-cloud-10">信用卡</a> <a href="/tags/%E5%81%A5%E8%BA%AB%E8%AE%B0%E5%BD%95/" style="font-size: 12px;" class="tag-cloud-0">健身记录</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 12px;" class="tag-cloud-0">前端开发</a> <a href="/tags/%E5%9B%AD%E6%9E%97%E6%A4%8D%E7%89%A9/" style="font-size: 12px;" class="tag-cloud-0">园林植物</a> <a href="/tags/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/" style="font-size: 12px;" class="tag-cloud-0">实用软件</a> <a href="/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/" style="font-size: 21px;" class="tag-cloud-5">小技巧</a> <a href="/tags/%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95/" style="font-size: 12px;" class="tag-cloud-0">旅行记录</a> <a href="/tags/%E6%99%AF%E8%A7%82%E8%AE%BE%E8%AE%A1/" style="font-size: 12px;" class="tag-cloud-0">景观设计</a> <a href="/tags/%E6%9D%82%E8%B0%88%E9%9B%86/" style="font-size: 12px;" class="tag-cloud-0">杂谈集</a> <a href="/tags/%E7%82%92%E8%82%A1%E7%AC%94%E8%AE%B0/" style="font-size: 12px;" class="tag-cloud-0">炒股笔记</a> <a href="/tags/%E7%94%B5%E5%AD%90%E8%89%BA%E6%9C%AF/" style="font-size: 12px;" class="tag-cloud-0">电子艺术</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%A7%91%E6%99%AE/" style="font-size: 12px;" class="tag-cloud-0">知识科普</a> <a href="/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/" style="font-size: 12px;" class="tag-cloud-0">科幻小说</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%96%87%E7%AB%A0/" style="font-size: 12px;" class="tag-cloud-0">行业文章</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E8%BD%AF%E4%BB%B6/" style="font-size: 12px;" class="tag-cloud-0">设计软件</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 12px;" class="tag-cloud-0">转载</a> <a href="/tags/%E9%98%AE%E4%B8%80%E5%B3%B0/" style="font-size: 12px;" class="tag-cloud-0">阮一峰</a> <a href="/tags/%E9%A5%AE%E9%A3%9F%E8%AE%B0%E5%BD%95/" style="font-size: 12px;" class="tag-cloud-0">饮食记录</a>
   </div>
 </div>
 
