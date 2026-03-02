@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ff2525;
+    background: #21ccf0;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4096,4 +4096,26 @@ a.btn:active {
 .game-info {
   position: absolute;
   z-index: 2;
+}
+/* =====================================
+   GitHub Corner 毛玻璃效果适配
+   ===================================== */
+.github-corner svg {
+/* 1. 将原本的黑色填充改为半透明深色 */
+  fill: rgba(34,34,34,0.4) !important;
+/* 2. 核心毛玻璃滤镜 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+/* 3. 可选：给边缘加一点点亮边，增加高级感 */
+  border-bottom-left-radius: 0;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+}
+/* 鼠标悬停时的效果 */
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+/* 确保内部的猫咪（白色部分）依然清晰 */
+.github-corner .octo-body,
+.github-corner .octo-arm {
+  fill: #fff !important;
 }
