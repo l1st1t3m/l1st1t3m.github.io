@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #478503;
+    background: #fff4ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3755,12 +3755,11 @@ body {
   filter: none !important;
   opacity: 1 !important;
 }
-/* --- 文本编辑 --- */
-.post-body p {
-  text-indent: 2em;
-  line-height: 1.9;
-  margin: 0 0 1em 0;
-}
+/* --- 文本编辑 --- 
+.post-body p
+  text-indent 2em
+  line-height 1.9
+  margin 0 0 1em 0*/
 /* =====================================
    极限压缩侧边栏社交链接 (links-of-author) 间距
    ===================================== */
