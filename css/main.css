@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #491aff;
+    background: #c146ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4117,7 +4117,4 @@ a.btn:active {
 .github-corner .octo-body,
 .github-corner .octo-arm {
   fill: #fff !important;
-}
-.weight-data {
-  display: none;
 }
