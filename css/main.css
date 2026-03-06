@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #d7b1ba;
+    background: #fe6eb3;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4105,4 +4105,88 @@ a.btn:active {
   text-decoration: none !important;
   background: transparent !important;
   outline: none !important;
+}
+/* =====================================
+   照片墙 - 完美居中（真实比例、绝不裁切版）
+   ===================================== */
+.photo-wall {
+  margin: 20px 0 !important;
+  width: 100%;
+/* 彻底抹杀排版杀手：<br> 换行符 */
+/* 让包裹图片的 <a> 标签变成不强行拉伸的盒子 */
+/* 真正控制图片的尺寸 */
+/* 相册交互：当前悬浮微微放大变亮，其他变暗 */
+/* 兜底：处理没有 a 标签的纯网图 */
+/* 📱 手机端优化 (缩减高度装下更多内容) */
+}
+.photo-wall p {
+  display: flex !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: center !important /* ★ 核心：绝对居中排布 */;
+  align-items: center !important;
+  gap: 8px !important /* 照片之间的间距，可调 */;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  text-indent: 0 !important /* 干掉首行缩进 */;
+}
+.photo-wall br {
+  display: none !important;
+}
+.photo-wall a.fancybox,
+.photo-wall a:has(img) {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 auto !important /* ★ 核心：绝不强行拉伸宽度，保持自然比例 */;
+  height: 260px !important /* ★ 统一基准高度（觉得大可以改成 220px） */;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+}
+.photo-wall img {
+  display: block !important;
+  width: auto !important /* ★ 宽度自适应，根据高度自动算出真实比例 */;
+  height: 260px !important /* 跟随 a 标签的高度 */;
+  max-width: 100% !important;
+  object-fit: cover !important;
+  margin: 0 !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08) /* 加一点微弱的高级感阴影 */;
+}
+.photo-wall img:hover {
+  filter: brightness(1.05);
+  transform: scale(1.01) !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.photo-wall p:hover a:not(:hover) img {
+  filter: brightness(0.65);
+  opacity: 0.9;
+}
+.photo-wall > img,
+.photo-wall p > img:not(a img) {
+  flex: 0 1 auto !important;
+  height: 260px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: cover !important;
+  border-radius: 6px !important;
+}
+@media (max-width: 768px) {
+  .photo-wall p {
+    gap: 4px !important;
+  }
+  .photo-wall a.fancybox,
+  .photo-wall a:has(img),
+  .photo-wall > img,
+  .photo-wall p > img:not(a img),
+  .photo-wall img {
+    height: 150px !important /* 手机上高度变小，防止一张图占满整屏 */;
+  }
 }
