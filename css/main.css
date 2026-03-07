@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ff0af0;
+    background: #7f9;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3858,24 +3858,27 @@ body {
   }
 }
 /* =====================================
-   页脚 - 灵动岛胶囊风格 (修正居中版)
+   页脚 - 灵动岛胶囊风格 (真实文章栏居中版)
    ===================================== */
 .footer {
   background: transparent !important;
-  padding: 20px 0 40px 0 !important;
   border: none !important;
-/* 核心修正：利用 Flexbox 实现水平居中 */
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
+/* ★ 修复1：绝不能用简写覆盖左右 padding！只修改上下间距。
+     这样就能完美保留主题自带的“侧边栏避让空间” */
+  padding-top: 20px !important;
+  padding-bottom: 40px !important;
+/* ★ 删掉 width: 100% 和 Flex，恢复默认的区块形态 */
+  display: block !important;
 }
 .footer-inner {
-/* 保持胶囊形态 */
-  display: flex !important; /* 内部也用 flex 让统计项横向排布 */
+/* ★ 修复2：核心居中魔法。让它自己收缩为刚好包住文字的宽度，并利用 margin 完美居中 */
+  margin: 0 auto !important;
+  width: fit-content !important;
+/* 内部依然保持横向弹性排布 */
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  gap: 15px; /* 各个统计项之间的间距 */
+  gap: 15px;
   padding: 10px 28px !important;
 /* 磨砂玻璃质感 */
   background: rgba(15,17,21,0.7) !important;
@@ -3885,11 +3888,11 @@ body {
   border-radius: 50px !important;
   border: 1px solid rgba(255,255,255,0.15);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-/* 布局修正 */
-  width: auto !important;
-  white-space: nowrap !important; /* 强制不换行，保持长条状 */
+  white-space: nowrap !important;
 }
-/* 文字与统计数据样式 */
+/* =====================================
+   以下部分保持你的原样不变
+   ===================================== */
 .footer-inner,
 .footer-inner a,
 .footer-inner span,
@@ -3903,13 +3906,11 @@ body {
   border-bottom: none !important;
   text-decoration: none !important;
 }
-/* 交互效果 */
 .footer-inner:hover {
   transform: translateY(-3px);
   background: rgba(15,17,21,0.85) !important;
   border-color: rgba(255,255,255,0.3);
 }
-/* 去掉 NexT 默认的分隔竖线（如果存在） */
 .wordcount .post-meta-divider {
   display: none !important;
 }
