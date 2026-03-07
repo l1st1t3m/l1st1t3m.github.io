@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #fe6eb3;
+    background: #678fd7;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3580,6 +3580,48 @@ body {
 }
 .trophy-summary .bronze {
   color: #cd7f32;
+}
+/* =====================================
+   Game Wall - 手机端专属优化 (不影响电脑端)
+===================================== */
+@media (max-width: 768px) {
+  .game-wall {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+  }
+  .trophy-summary {
+    font-size: 13px;
+    padding: 10px 8px;
+    margin-bottom: 15px;
+  }
+  .trophy-summary span {
+    min-width: auto;
+    flex: 1;
+  }
+  .game-info {
+    padding: 10px 4px;
+  }
+  .game-title {
+    font-size: 12px;
+    margin-bottom: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .game-meta {
+    font-size: 11px;
+  }
+  .trophy-info {
+    gap: 3px;
+    margin-top: 2px;
+  }
+  .trophy-info span {
+    padding: 1px 3px;
+    font-size: 10px;
+  }
 }
 /* =====================================
    深色模式
