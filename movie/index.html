@@ -29,13 +29,11 @@
 <meta property="og:site_name" content="不群小筑">
 <meta property="og:description" content="日期 (新→旧)           日期 (旧→新)           评分 (高→低)           评分 (低→高)                                               全部         电影         剧集">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://techbyliz.uk/movie/$%7Bm.poster%20?%20IMG_BASE%20+%20m.poster%20:">
 <meta property="article:published_time" content="2026-02-27T02:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-07T04:05:29.957Z">
+<meta property="article:modified_time" content="2026-03-07T04:09:06.719Z">
 <meta property="article:author" content="李不群">
 <meta property="article:tag" content="景观设计, 建筑设计, 网络安全, 互联网, 计算机, AI设计, 数字建造, 技术思考, 个人博客, l1st1t3m, LZ, AI, Landscape, Design Thinking, Tech, Personal Notes">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://techbyliz.uk/movie/$%7Bm.poster%20?%20IMG_BASE%20+%20m.poster%20:">
 
 
 <link rel="canonical" href="https://techbyliz.uk/movie/">
@@ -538,37 +536,36 @@
   .tags .tag.active { background: var(--highlight); color: var(--highlight-text); font-weight: 600; }
   .movie-wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
   
-  /* ======== 修改点 1：修复 Safari 浏览器下图片撑破圆角的外壳问题 ======== */
   .movie-card { 
-    background: transparent; 
-    border-radius: 12px; 
-    overflow: hidden; 
-    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-    border: 1px solid transparent; 
+    background: transparent; border-radius: 12px; overflow: hidden; 
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid transparent; 
     text-decoration: none !important; 
-    -webkit-mask-image: -webkit-radial-gradient(white, black); /* 强行裁切内部 */
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-backface-visibility: hidden; transform: translateZ(0);
   }
-  /* ==================================================================== */
 
   .movie-card:hover { transform: translateY(-8px); background: var(--glass-bg); border-color: var(--glass-border); box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
   .poster-wrapper { position: relative; aspect-ratio: 2/3; width: 100%; overflow: hidden; background: #1a1a1a; }
-  .poster-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+  
+  /* 💡 优化 3：高级渐显动画（结合JS） */
+  .poster-wrapper img { 
+    width: 100%; height: 100%; object-fit: cover; 
+    opacity: 0; /* 初始隐藏 */
+    transition: opacity 0.6s ease, transform 0.5s ease; /* 增加透明度渐变 */
+  }
+  .poster-wrapper img.loaded { 
+    opacity: 1; /* 加载完毕后平滑浮现 */
+  }
 
-  /* ======== 修改点 2：高优先级免疫防御，禁止原有 styl 篡改海报圆角 ======== */
+  /* 免疫博客主题原有冲突 */
   .post-body #movie-app img {
-      border-radius: 0 !important;
-      position: static !important;
-      z-index: auto !important;
-      box-shadow: none !important;
+      border-radius: 0 !important; position: static !important;
+      z-index: auto !important; box-shadow: none !important;
       transform: none !important;
   }
-  .post-body #movie-app .movie-card:hover img {
-      transform: scale(1.05) !important;
-      border-radius: 0 !important;
+  .post-body #movie-app .movie-card:hover img.loaded {
+      transform: scale(1.05) !important; border-radius: 0 !important;
   }
-  /* ==================================================================== */
 
   .rating-badge { position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.7); color: var(--text-primary); padding: 3px 7px; border-radius: 6px; font-size: 11px; font-weight: bold; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.1); }
   .movie-info { padding: 12px 10px; text-align: center; }
@@ -579,7 +576,7 @@
 
 <script data-pjax>
 window.allMovies = [{"id":83533,"title":"阿凡达：火与烬","date":"2025-12-17","rating":7.274,"poster":"/bY9hEk4od0ywjCErkwYWkwXuLE0.jpg","type":"movie","genres":["科幻","冒险","奇幻"]},{"id":980477,"title":"哪吒之魔童闹海","date":"2025-01-29","rating":8.115,"poster":"/bTMf8M7rZ21fChGdtsZtJj4Dfqh.jpg","type":"movie","genres":["动画","奇幻","冒险","动作"]},{"id":209867,"title":"葬送的芙莉莲","date":"2023-09-29","rating":8.774,"poster":"/1TtrtRIwXz5BB0gXEl8zgBypl9c.jpg","type":"tv","genres":["动画","剧情"]},{"id":842675,"title":"流浪地球2","date":"2023-01-22","rating":7.286,"poster":"/cAS2e9hUwu6Ydsx7byXj16H00Ai.jpg","type":"movie","genres":["科幻","动作","冒险"]},{"id":76600,"title":"阿凡达：水之道","date":"2022-12-14","rating":7.598,"poster":"/zdXdYiIgDbhP5oNYLh0VI6qbgpj.jpg","type":"movie","genres":["动作","冒险","科幻"]},{"id":751741,"title":"博物馆奇妙夜：法老归来","date":"2022-12-08","rating":6.352,"poster":"/oxhc1s3U0J7076IKfwmgGI4jkV7.jpg","type":"movie","genres":["动画","喜剧","家庭","奇幻","冒险"]},{"id":283566,"title":"福音战士新剧场版：终","date":"2021-03-08","rating":8.197,"poster":"/dhvOX84DwAp1LSe2r1jCbjBGBtB.jpg","type":"movie","genres":["动画","动作","科幻","剧情"]},{"id":307525,"title":"刘老根3","date":"2020-02-10","rating":0,"poster":"/eiR8UYnaPYxEc0LqQiuR5KoEroN.jpg","type":"tv","genres":[]},{"id":331482,"title":"小妇人","date":"2019-12-25","rating":7.856,"poster":"/dgAhOHteskhnMPyceRRspcVUMiJ.jpg","type":"movie","genres":["剧情","爱情","历史"]},{"id":615453,"title":"哪吒之魔童降世","date":"2019-07-26","rating":7.887,"poster":"/zb8xejiaNR0snSJgDepwFQUIi2e.jpg","type":"movie","genres":["动画","奇幻","冒险"]},{"id":535167,"title":"流浪地球","date":"2019-02-05","rating":6.645,"poster":"/tXuQCgx69DxVgeTsU0TkruR3i9O.jpg","type":"movie","genres":["科幻","动作","剧情"]},{"id":532753,"title":"我不是药神","date":"2018-07-06","rating":8.179,"poster":"/qrhEWQjR3AyMbyy5l3vFuwA576W.jpg","type":"movie","genres":["剧情","喜剧"]},{"id":333339,"title":"头号玩家","date":"2018-03-28","rating":7.584,"poster":"/546MvE18yfLXEBwWWsxE0f4xuMy.jpg","type":"movie","genres":["冒险","动作","科幻"]},{"id":354912,"title":"寻梦环游记","date":"2017-10-27","rating":8.199,"poster":"/zrhUypo2z3aRX9htuzGpoVWE4jo.jpg","type":"movie","genres":["家庭","动画","音乐","冒险"]},{"id":460790,"title":"星河战队：火星叛国者","date":"2017-08-21","rating":5.9,"poster":"/liGD5tywMAHXr6T30apv2rGiF2Z.jpg","type":"movie","genres":["动画","动作","科幻"]},{"id":360814,"title":"摔跤吧！爸爸","date":"2016-12-21","rating":7.895,"poster":"/j5M6e55pAhzPWUTP5k0Qyg6o876.jpg","type":"movie","genres":["剧情","家庭","喜剧"]},{"id":269149,"title":"疯狂动物城","date":"2016-02-11","rating":7.8,"poster":"/6L0nYQqqEYPaSMjmsWH8dr8I4Sk.jpg","type":"movie","genres":["动画","冒险","家庭","喜剧"]},{"id":60059,"title":"风骚律师","date":"2015-02-08","rating":8.703,"poster":"/pQApBo9VfXQzABmZQ3TQqSzsCCL.jpg","type":"tv","genres":["犯罪","剧情"]},{"id":181533,"title":"博物馆奇妙夜3：墓葬秘密","date":"2014-12-17","rating":6.221,"poster":"/z9jMkX76HdPGjr8sMrnLpYg2Sr3.jpg","type":"movie","genres":["冒险","喜剧","奇幻","家庭"]},{"id":157336,"title":"星际穿越","date":"2014-11-05","rating":8.468,"poster":"/c35Vwd9rmMQfaEJuUrJRF3LZWJX.jpg","type":"movie","genres":["冒险","剧情","科幻"]},{"id":262543,"title":"机器纪元","date":"2014-10-09","rating":5.9,"poster":"/fQE5mjOUOZZmMjSbRydjYInekaz.jpg","type":"movie","genres":["惊悚","科幻"]},{"id":284427,"title":"我是谁：没有绝对安全的系统","date":"2014-09-25","rating":7.571,"poster":"/2wmCBQQsKWIu0fH9eZ6kUaKq37r.jpg","type":"movie","genres":["惊悚"]},{"id":98566,"title":"忍者神龟：变种时代","date":"2014-08-07","rating":5.925,"poster":"/ss21uIgZueWDDUgCGmVHqtCAn4y.jpg","type":"movie","genres":["科幻","动作","冒险","喜剧"]},{"id":264397,"title":"意外空间","date":"2014-05-17","rating":6.9,"poster":"/gcBwrjRwqsQwK2xeeGaqA0p3mvy.jpg","type":"movie","genres":["惊悚","科幻"]},{"id":157353,"title":"超验骇客","date":"2014-04-16","rating":6.065,"poster":"/hZY0kqShLLcEMMezzobvKgvD400.jpg","type":"movie","genres":["惊悚","科幻","剧情","悬疑"]},{"id":117251,"title":"惊天危机","date":"2013-06-27","rating":6.465,"poster":"/sqy1qjF9mr9TYI0f0kZFHxV6vaL.jpg","type":"movie","genres":["动作","剧情","惊悚"]},{"id":49521,"title":"超人：钢铁之躯","date":"2013-06-12","rating":6.64,"poster":"/xXCWxNeSrdsv6DJwWblzEeAXuh7.jpg","type":"movie","genres":["动作","冒险","科幻"]},{"id":207273,"title":"恐惧幻影","date":"2013-05-15","rating":4.8,"poster":"/uxRtcHQWmd2Wv1BLxcI2DerncdI.jpg","type":"movie","genres":["恐怖"]},{"id":670458,"title":"杨光的快乐生活","date":"2013-03-03","rating":0,"poster":"/4t7aADfjbZOyD99uHmuCK39muGK.jpg","type":"movie","genres":["喜剧"]},{"id":76640,"title":"背水一战","date":"2013-01-12","rating":6.073,"poster":"/l9JJAeDxKEfoCUJU18wSAa45g9m.jpg","type":"movie","genres":["动作","犯罪","惊悚"]},{"id":87827,"title":"少年派的奇幻漂流","date":"2012-11-20","rating":7.407,"poster":"/eDUzhpGbIjIcdzsstlbEksn1n7A.jpg","type":"movie","genres":["冒险","剧情"]},{"id":75629,"title":"福音战士新剧场版：Q","date":"2012-11-17","rating":7.195,"poster":"/zLX11AWDNPW88f6zAqlDhNYbWyg.jpg","type":"movie","genres":["动画","科幻","动作","剧情"]},{"id":114478,"title":"星河战队：入侵","date":"2012-08-28","rating":5.86,"poster":"/uhRgQCmwAkhfRDfV7uUSRvWTtDJ.jpg","type":"movie","genres":["动画","动作","科幻"]},{"id":71469,"title":"至暗之时","date":"2011-12-22","rating":5.307,"poster":"/8MmdJd3qBrVpPLUIsUFH7a0LtpJ.jpg","type":"movie","genres":["恐怖","动作","惊悚","科幻"]},{"id":59965,"title":"在劫难逃","date":"2011-09-22","rating":5.842,"poster":"/zWZnWpZrNHZNCkfdZjMs02kD2in.jpg","type":"movie","genres":["惊悚","动作","悬疑"]},{"id":12445,"title":"哈利·波特与死亡圣器（下）","date":"2011-07-12","rating":8.081,"poster":"/8o2IcBnrwLS4XM0TxxnYwRxEVTX.jpg","type":"movie","genres":["冒险","奇幻"]},{"id":51533,"title":"让子弹飞","date":"2010-12-20","rating":7.8,"poster":"/vUvrjRRmC1BeI8QyMaRBdtIqHHn.jpg","type":"movie","genres":["动作","喜剧"]},{"id":12444,"title":"哈利·波特与死亡圣器（上）","date":"2010-11-17","rating":7.735,"poster":"/AuUYSqCVdGNezYU1dcl1dNpod0k.jpg","type":"movie","genres":["冒险","奇幻"]},{"id":27205,"title":"盗梦空间","date":"2010-07-15","rating":8.371,"poster":"/89W962aAnPS3N3BdKgy2BvUhnCh.jpg","type":"movie","genres":["动作","科幻","冒险"]},{"id":20453,"title":"三傻大闹宝莱坞","date":"2009-12-23","rating":7.998,"poster":"/3Kdkci7FE36fWcsuoeGFYApBBE1.jpg","type":"movie","genres":["剧情","喜剧"]},{"id":19995,"title":"阿凡达","date":"2009-12-16","rating":7.6,"poster":"/bwKhj6tHlm8hiw9QjhpooJjQWgG.jpg","type":"movie","genres":["动作","冒险","科幻"]},{"id":14161,"title":"2012","date":"2009-10-10","rating":5.868,"poster":"/sjMAP8jIJfuqrVPIFx1wlObamxg.jpg","type":"movie","genres":["动作","冒险","科幻"]},{"id":767,"title":"哈利·波特与混血王子","date":"2009-07-15","rating":7.681,"poster":"/aNDhtiAudIoEnTAI7z5igghhW5u.jpg","type":"movie","genres":["冒险","奇幻"]},{"id":22843,"title":"福音战士新剧场版：破","date":"2009-06-26","rating":7.797,"poster":"/i0Nu8GF1XTwkbTI3g2k5ZBgsPiO.jpg","type":"movie","genres":["动画","科幻","动作","剧情"]},{"id":28178,"title":"忠犬八公的故事","date":"2009-06-08","rating":8.008,"poster":"/mElBV2f9cpgVeuQLDFH3HS5u1gY.jpg","type":"movie","genres":["剧情","家庭"]},{"id":18360,"title":"博物馆奇妙夜2：史密森尼之战","date":"2009-05-20","rating":6.151,"poster":"/niGFi5KOY430h5FId6ymL4WMy7N.jpg","type":"movie","genres":["冒险","奇幻","动作","喜剧","家庭"]},{"id":156210,"title":"我的丑娘","date":"2008-09-22","rating":7,"poster":"/A5t5DD5cXOGlaYeujtWIYP5cJ3q.jpg","type":"tv","genres":["剧情","家庭"]},{"id":11127,"title":"星河战队3：掠夺者","date":"2008-07-19","rating":4.846,"poster":"/aCLOGQg9DcGKemx2WTQ0LxtzO4Y.jpg","type":"movie","genres":["冒险","科幻","动作"]},{"id":10681,"title":"机器人总动员","date":"2008-06-22","rating":8.108,"poster":"/hg2Z4rD1CkplEZENYEMDBsMWcxK.jpg","type":"movie","genres":["动画","家庭","科幻"]},{"id":1396,"title":"绝命毒师","date":"2008-01-20","rating":8.9,"poster":"/rqliuvX7NdknSHu5qaSDfESplQi.jpg","type":"tv","genres":["剧情","犯罪"]},{"id":54318,"title":"尼斯湖怪：深水传说","date":"2007-12-25","rating":6.541,"poster":"/g6RrD10rMr4GU8Jo6RO0oJ5ZbB4.jpg","type":"movie","genres":["家庭","冒险","奇幻"]},{"id":15137,"title":"福音战士新剧场版：序","date":"2007-09-01","rating":7.593,"poster":"/hEu9QLy1a7ieHydN1LNvAEkYAgS.jpg","type":"movie","genres":["动画","科幻","动作","剧情"]},{"id":675,"title":"哈利·波特与凤凰社","date":"2007-07-08","rating":7.672,"poster":"/vTRfNdAzQet1kRpEYRfEqSixklh.jpg","type":"movie","genres":["冒险","奇幻"]},{"id":1593,"title":"博物馆奇妙夜","date":"2006-12-20","rating":6.596,"poster":"/fqY7JmrLQtR4DWMqRGSy7Dxai2x.jpg","type":"movie","genres":["奇幻","家庭","喜剧"]},{"id":1402,"title":"当幸福来敲门","date":"2006-12-14","rating":7.886,"poster":"/vxj2k0168d7K3pih7Aw6kqvvLcN.jpg","type":"movie","genres":["剧情"]},{"id":8997,"title":"透明人2","date":"2006-05-23","rating":4.904,"poster":"/c6Ga1AUGPe3GwlpX3qDYrD9y3EZ.jpg","type":"movie","genres":["恐怖","惊悚","科幻"]},{"id":674,"title":"哈利·波特与火焰杯","date":"2005-11-16","rating":7.801,"poster":"/wFWTByIUYjtB113HTriXJXTN13S.jpg","type":"movie","genres":["冒险","奇幻"]},{"id":1656,"title":"佐罗传奇","date":"2005-10-24","rating":6.12,"poster":"/oulvMkerckhqFbH13RHsvkgkPzX.jpg","type":"movie","genres":["动作","冒险","西部"]},{"id":4442,"title":"格林兄弟","date":"2005-08-26","rating":5.8,"poster":"/j0I5SfUGF6JYVXnhWjRLiUj19JE.jpg","type":"movie","genres":["冒险","奇幻","动作","喜剧","惊悚"]},{"id":10214,"title":"变相怪杰2：面具之子","date":"2005-02-11","rating":4.2,"poster":"/wuSGQIlRJM1S72chLt6GqNGTVGI.jpg","type":"movie","genres":["奇幻","喜剧","家庭","冒险"]},{"id":673,"title":"哈利·波特与阿兹卡班的囚徒","date":"2004-05-31","rating":8.009,"poster":"/iCwifbvs8pZNPo8o485143y3FdC.jpg","type":"movie","genres":["冒险","奇幻"]},{"id":10304,"title":"星河战队2：联邦英雄","date":"2004-05-19","rating":4.45,"poster":"/tSNJtM2ez5YRmRPjuiQpMMgdO6q.jpg","type":"movie","genres":["冒险","恐怖","动作","科幻"]},{"id":111697,"title":"马大帅","date":"2004-01-24","rating":8.8,"poster":"/lFVFD3ZaOkNWR3ZjHooSyEtp1Ec.jpg","type":"tv","genres":["喜剧"]},{"id":45484,"title":"玉观音","date":"2003-01-01","rating":6.8,"poster":"/3rnhrJ0k3RhIuha0kYndJCVbzz6.jpg","type":"movie","genres":["动作","剧情","爱情"]},{"id":672,"title":"哈利·波特与密室","date":"2002-11-13","rating":7.705,"poster":"/p6e7HSfWcrPCerEF23lin8bKuQ0.jpg","type":"movie","genres":["冒险","奇幻"]},{"id":99730,"title":"刘老根","date":"2002-03-01","rating":0,"poster":"/ya8gM1yXI8d8FkgcFl2dvi88vR6.jpg","type":"tv","genres":["剧情","喜剧"]},{"id":671,"title":"哈利·波特与魔法石","date":"2001-11-16","rating":7.899,"poster":"/4oglmTTSAZb9FSO3IFuMK8F7qQ3.jpg","type":"movie","genres":["冒险","奇幻"]},{"id":129,"title":"千与千寻","date":"2001-07-20","rating":8.534,"poster":"/9oZmkkNlI4Ktx6NTkdpeU525qSc.jpg","type":"movie","genres":["动画","家庭","奇幻"]},{"id":4308,"title":"情深深雨濛濛","date":"2001-04-03","rating":7.55,"poster":"/vM52TSVNV3GV7Z6iKp8j97ILuPA.jpg","type":"tv","genres":["剧情"]},{"id":9383,"title":"透明人","date":"2000-08-04","rating":5.956,"poster":"/tayTpxo7hTNyQSJPfnorhiVys2m.jpg","type":"movie","genres":["动作","科幻","惊悚"]},{"id":107438,"title":"贫嘴张大民的幸福生活","date":"2000-02-15","rating":8.5,"poster":"/iiPUhD2jd40tLGmh2dnUTDlOgQP.jpg","type":"tv","genres":["剧情","喜剧","家庭"]},{"id":10376,"title":"海上钢琴师","date":"1998-10-28","rating":8.2,"poster":"/le7jQ6Sc3xEUvosHXJojDMR6EnE.jpg","type":"movie","genres":["剧情","音乐"]},{"id":37165,"title":"楚门的世界","date":"1998-06-04","rating":8.151,"poster":"/nAnzFcqORitpwvRQPceIt4mcm8G.jpg","type":"movie","genres":["喜剧","剧情"]},{"id":4285,"title":"还珠格格","date":"1998-04-28","rating":7.7,"poster":"/4c8BanaITeHM6Eu2UykW4xrZovx.jpg","type":"tv","genres":["剧情","喜剧"]},{"id":857862,"title":"新世纪福音战士剧场版：复兴_DEATH(TRUE)²","date":"1998-03-07","rating":6.7,"poster":"/m9kucLjJLzcdCCiIFnkaqK0DpGj.jpg","type":"movie","genres":["动画","科幻","动作","剧情"]},{"id":54270,"title":"新世纪福音战士剧场版：复兴","date":"1998-03-07","rating":7.7,"poster":"/txy0VEW52tb5TJYz6UsZvOWfTXX.jpg","type":"movie","genres":["动作","动画","剧情","科幻"]},{"id":78132,"title":"水浒传","date":"1998-01-08","rating":9.1,"poster":"/8E8qTBaSDTQKvy3BLG6nZGYRQfK.jpg","type":"tv","genres":["剧情"]},{"id":597,"title":"泰坦尼克号","date":"1997-12-18","rating":7.903,"poster":"/lFYUkUPcFXDzZzSfkiCDsvHIJxj.jpg","type":"movie","genres":["剧情","爱情"]},{"id":18491,"title":"新世纪福音战士剧场版：Air / 真心为你","date":"1997-07-19","rating":8.261,"poster":"/yBanOpNIccxjZlH4QH7ag4ojWOI.jpg","type":"movie","genres":["动画","科幻","剧情","奇幻"]},{"id":21832,"title":"新世纪福音战士剧场版：死与新生","date":"1997-03-15","rating":7.4,"poster":"/rMGVm0q3iJZ1Rpe0ZLBwO3TEhQ8.jpg","type":"movie","genres":["动画","剧情","科幻"]},{"id":75,"title":"火星人玩转地球","date":"1996-12-13","rating":6.414,"poster":"/fWpo6O0QcVlUVsxbBzYGVL6zWC7.jpg","type":"movie","genres":["喜剧","奇幻","科幻"]},{"id":76083,"title":"宰相刘罗锅","date":"1996-12-12","rating":7.6,"poster":"/mRu8T6mYXOcAeXVNMfyqRReBjcq.jpg","type":"tv","genres":["剧情","喜剧"]},{"id":262764,"title":"新世纪福音战士 2003 重制版","date":"1995-10-04","rating":7,"poster":"/nL5zW2LKqe1nplQGOszubgrVYjE.jpg","type":"tv","genres":["动画","剧情"]},{"id":890,"title":"新世纪福音战士","date":"1995-10-04","rating":8.6,"poster":"/cDxbgU4k5e9Pup9y5ydfTjQmv8y.jpg","type":"tv","genres":["动画","剧情"]},{"id":31955,"title":"神雕侠侣","date":"1995-07-31","rating":7.4,"poster":"/pkUGghGufdG17N601kD4m04LDNw.jpg","type":"tv","genres":["剧情"]},{"id":278,"title":"肖申克的救赎","date":"1994-09-23","rating":8.7,"poster":"/aAdnwqwkKX5PPcr8EdtaiA8AZVl.jpg","type":"movie","genres":["剧情","犯罪"]},{"id":101,"title":"这个杀手不太冷","date":"1994-09-14","rating":8.295,"poster":"/wT9bYGpoFnJGiRaRF9DErVjZ7qo.jpg","type":"movie","genres":["犯罪","剧情","动作"]},{"id":854,"title":"变相怪杰","date":"1994-07-29","rating":6.977,"poster":"/m3zVqD2RCTPJyl1VEJ0f4MA85Fh.jpg","type":"movie","genres":["爱情","喜剧","犯罪","奇幻"]},{"id":13,"title":"阿甘正传","date":"1994-06-23","rating":8.462,"poster":"/yiWWUa1mB55dfd0QpGHsFsge67I.jpg","type":"movie","genres":["喜剧","剧情","爱情"]},{"id":72645,"title":"三国演义","date":"1994-02-10","rating":9.1,"poster":"/eBAPRgRDPYAqQJt7N2aQPW8ZIAn.jpg","type":"tv","genres":["剧情"]},{"id":75999,"title":"北京人在纽约","date":"1993-09-26","rating":7,"poster":"/zeDxvebVS08CQs9WsQVMnCFsNaj.jpg","type":"tv","genres":["剧情"]},{"id":10997,"title":"霸王别姬","date":"1993-01-01","rating":7.91,"poster":"/vOEkLofQ8N1OdbGs5L87m7Plpw2.jpg","type":"movie","genres":["剧情"]},{"id":19612,"title":"魔神英雄传","date":"1988-04-16","rating":7,"poster":"/x3kF6Jsn6FJGmkAZ5AVdvoDkcSP.jpg","type":"tv","genres":["动画"]},{"id":160,"title":"忍者神龟","date":"1987-12-14","rating":7.8,"poster":"/AaihPizftZo5YCqzEgHMwkceaEo.jpg","type":"tv","genres":["动画","喜剧"]},{"id":13923,"title":"西游记","date":"1986-02-09","rating":8.4,"poster":"/bAl4rX85qVbGeVslvQqFRDHsQ6X.jpg","type":"tv","genres":["剧情"]},{"id":11645,"title":"乱","date":"1985-06-01","rating":8.039,"poster":"/uBq0cdKXfIByYCx0JaZhK1eW1h2.jpg","type":"movie","genres":["动作","剧情","历史"]},{"id":91068,"title":"黑猫警长","date":"1984-01-01","rating":8.4,"poster":"/vfQuIn6IwAznQDnqnTXs4NRhTyd.jpg","type":"tv","genres":["动画","悬疑"]},{"id":11953,"title":"影武者","date":"1980-04-26","rating":7.833,"poster":"/chG4HgGxHBmhPvPFyblgeI9tWpi.jpg","type":"movie","genres":["动作","剧情","历史","战争"]},{"id":7842,"title":"猫和老鼠","date":"1975-09-06","rating":7.692,"poster":"/gxuenxLwJgRPZjQiBeUmbS3DeKt.jpg","type":"tv","genres":["动画","家庭","喜剧"]},{"id":12493,"title":"天国与地狱","date":"1963-03-01","rating":8.3,"poster":"/w5KQL2NHKULOz6YuouXDRavtIko.jpg","type":"movie","genres":["剧情","犯罪"]},{"id":11712,"title":"椿三十郎","date":"1962-01-01","rating":7.958,"poster":"/64R32Kpd1BAjF0AE8YzboEoKeY.jpg","type":"movie","genres":["剧情","动作","喜剧"]},{"id":11878,"title":"用心棒","date":"1961-04-25","rating":8.1,"poster":"/lIbwlZe5KHKfrFykpOTWHzPdqbO.jpg","type":"movie","genres":["剧情","惊悚"]},{"id":44256,"title":"鼹鼠的故事","date":"1957-09-13","rating":8,"poster":"/6hkmH6pDvrWoUBC4engxUTpiRSl.jpg","type":"tv","genres":["动画"]},{"id":3777,"title":"蜘蛛巢城","date":"1957-01-15","rating":7.918,"poster":"/6ReixPFNYsPDFJmovfMF5DvrP59.jpg","type":"movie","genres":["剧情","历史"]},{"id":346,"title":"七武士","date":"1954-04-26","rating":8.45,"poster":"/trW7LvPSPzLzXjmuc05KNWYw0yf.jpg","type":"movie","genres":["动作","剧情"]},{"id":3782,"title":"生之欲","date":"1952-10-09","rating":8.308,"poster":"/cM1OfsXbVCtXynoELuHxixTmaMd.jpg","type":"movie","genres":["剧情"]},{"id":286117,"title":"刘老根2","date":"0000-00-00","rating":0,"poster":"/mILbPM2yCK8puzjtKvBzLoGXvy1.jpg","type":"tv","genres":["喜剧"]},{"id":286680,"title":"马大帅3 马大帅III (2006)","date":"0000-00-00","rating":0,"poster":"/bZdwklJcZtdgfeuD1fOX8TP0Daj.jpg","type":"tv","genres":[]},{"id":286679,"title":"马大帅 II","date":"0000-00-00","rating":0,"poster":"/knCzniskvyK0fwGlaa99DVGuMVt.jpg","type":"tv","genres":["剧情"]},{"id":8392,"title":"大力水手","date":"1960-06-10","rating":7.1,"poster":"/tQPDl1S1pRg2jzCQWtVUuauZSqa.jpg","type":"tv","genres":["动画"]},{"id":548,"title":"罗生门","date":"1950-08-26","rating":8.041,"poster":"/7S5ut0iDmuevbGc0hDBxFJLthEd.jpg","type":"movie","genres":["犯罪","剧情","悬疑"]},{"id":282524,"title":"还珠格格第二部","date":"0000-00-00","rating":6.222,"poster":"/n5NZYGfI2JX5Heebs1YHplPwyAi.jpg","type":"tv","genres":["剧情","喜剧"]}];
-const IMG_BASE = "https://image.tmdb.org/t/p/w500";
+const IMG_BASE = "https://image.tmdb.org/t/p/w342";
 
 function renderMovies() {
   const searchInput = document.getElementById('movie-search');
@@ -610,12 +607,13 @@ function renderMovies() {
     return; 
   }
   
+  // 💡 优化 2：不再直接写 src，而是用 data-src 存放链接，配合 JS 按需请求
   container.innerHTML = filtered.map(m => `
     <a href="https://www.themoviedb.org/${m.type}/${m.id}" target="_blank" class="movie-card">
       <div class="poster-wrapper">
-        <!-- ======== 修改点 3：删掉了 loading="lazy"，彻底解决黑屏必须刷新才显示的问题 ======== -->
-        <img src="${m.poster ? IMG_BASE + m.poster : ''}" decoding="async" referrerpolicy="no-referrer" alt="${m.title}">
-        <!-- ================================================================================== -->
+        <img data-src="${m.poster ? IMG_BASE + m.poster : ''}" 
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+             class="lazy-poster" alt="${m.title}">
         <div class="rating-badge">⭐ ${m.rating.toFixed(1)}</div>
       </div>
       <div class="movie-info">
@@ -624,6 +622,24 @@ function renderMovies() {
       </div>
     </a>
   `).join('');
+
+  // 💡 核心机制：PJAX 专属监听器。当图片靠近屏幕(300px)时才开始下载，打破并发限制！
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.onload = () => img.classList.add('loaded'); // 下载完淡入显示
+        } else {
+          img.classList.add('loaded'); 
+        }
+        obs.unobserve(img);
+      }
+    });
+  }, { rootMargin: '300px' }); // 提前 300px 预加载，保证滚到的时候刚好加载完
+
+  container.querySelectorAll('.lazy-poster').forEach(img => observer.observe(img));
 }
 
 // 绑定事件
