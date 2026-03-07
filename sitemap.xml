@@ -249,6 +249,13 @@
   </url>
   
   <url>
+    <loc>https://techbyliz.uk/tags/PS5/</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://techbyliz.uk/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -257,20 +264,6 @@
   
   <url>
     <loc>https://techbyliz.uk/tags/%E7%94%B5%E5%AD%90%E8%89%BA%E6%9C%AF/</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://techbyliz.uk/tags/PS5/</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://techbyliz.uk/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -319,6 +312,13 @@
   </url>
   
   <url>
+    <loc>https://techbyliz.uk/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://techbyliz.uk/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -347,7 +347,7 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/tags/Windows/</loc>
+    <loc>https://techbyliz.uk/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -355,13 +355,6 @@
   
   <url>
     <loc>https://techbyliz.uk/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://techbyliz.uk/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -376,6 +369,13 @@
   
   <url>
     <loc>https://techbyliz.uk/tags/%E7%9F%A5%E8%AF%86%E7%A7%91%E6%99%AE/</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://techbyliz.uk/tags/Windows/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -433,13 +433,6 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/categories/08-%E5%8A%A8%E6%BC%AB%E7%9B%B8%E5%85%B3/</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://techbyliz.uk/categories/09-%E6%B8%B8%E6%88%8F%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -447,7 +440,7 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/categories/05-%E8%AF%BB%E4%B9%A6%E6%91%98%E5%BD%95/</loc>
+    <loc>https://techbyliz.uk/categories/08-%E5%8A%A8%E6%BC%AB%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -462,6 +455,13 @@
   
   <url>
     <loc>https://techbyliz.uk/categories/02-%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://techbyliz.uk/categories/05-%E8%AF%BB%E4%B9%A6%E6%91%98%E5%BD%95/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
