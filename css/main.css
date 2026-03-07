@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #7f9;
+    background: #ffff45;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3858,23 +3858,20 @@ body {
   }
 }
 /* =====================================
-   页脚 - 灵动岛胶囊风格 (真实文章栏居中版)
+   页脚 - 灵动岛胶囊风格 (右侧文章栏精准对齐版)
    ===================================== */
 .footer {
   background: transparent !important;
+  padding: 20px 0 40px 0 !important;
   border: none !important;
-/* ★ 修复1：绝不能用简写覆盖左右 padding！只修改上下间距。
-     这样就能完美保留主题自带的“侧边栏避让空间” */
-  padding-top: 20px !important;
-  padding-bottom: 40px !important;
-/* ★ 删掉 width: 100% 和 Flex，恢复默认的区块形态 */
+/* 放弃强行 flex，以免破坏全局宽度 */
   display: block !important;
 }
 .footer-inner {
-/* ★ 修复2：核心居中魔法。让它自己收缩为刚好包住文字的宽度，并利用 margin 完美居中 */
+/* 先让它在全屏居中 */
   margin: 0 auto !important;
   width: fit-content !important;
-/* 内部依然保持横向弹性排布 */
+/* 保持胶囊形态 */
   display: flex !important;
   justify-content: center;
   align-items: center;
@@ -3889,9 +3886,35 @@ body {
   border: 1px solid rgba(255,255,255,0.15);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   white-space: nowrap !important;
+  transition: all 0.3s ease;
+}
+/* ★★★ 核心魔法：向右精准偏移，对齐文章区 ★★★ */
+/* 原理：NexT 默认侧边栏宽 240px，你设置的间距是 20px。
+   要对齐文章中心，只需向右偏移 (240 + 20) / 2 = 130px */
+@media (min-width: 992px) {
+  .footer-inner {
+    transform: translateX(125px);
+  }
+  .footer-inner:hover {
+/* hover时保留X轴偏移，并向上浮动 */
+    transform: translateX(125px) translateY(-3px);
+    background: rgba(15,17,21,0.85) !important;
+    border-color: rgba(255,255,255,0.3);
+  }
+}
+/* 📱 手机或窄屏下，左侧边栏消失，恢复真正的全屏居中 */
+@media (max-width: 991px) {
+  .footer-inner {
+    transform: translateX(0);
+  }
+  .footer-inner:hover {
+    transform: translateY(-3px);
+    background: rgba(15,17,21,0.85) !important;
+    border-color: rgba(255,255,255,0.3);
+  }
 }
 /* =====================================
-   以下部分保持你的原样不变
+   文字与统计数据样式 (保持不变)
    ===================================== */
 .footer-inner,
 .footer-inner a,
@@ -3906,11 +3929,7 @@ body {
   border-bottom: none !important;
   text-decoration: none !important;
 }
-.footer-inner:hover {
-  transform: translateY(-3px);
-  background: rgba(15,17,21,0.85) !important;
-  border-color: rgba(255,255,255,0.3);
-}
+/* 去掉 NexT 默认的分隔竖线 */
 .wordcount .post-meta-divider {
   display: none !important;
 }
