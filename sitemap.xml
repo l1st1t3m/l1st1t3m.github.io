@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://techbyliz.uk/movie/index.html</loc>
+    
+    <lastmod>2026-03-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://techbyliz.uk/post/f64927f0.html</loc>
     
     <lastmod>2026-03-06</lastmod>
@@ -146,15 +155,6 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/movie/index.html</loc>
-    
-    <lastmod>2026-02-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://techbyliz.uk/music-wall/index.html</loc>
     
     <lastmod>2026-02-25</lastmod>
@@ -200,14 +200,14 @@
 
   
   <url>
-    <loc>https://techbyliz.uk/tags/%E9%A5%AE%E9%A3%9F%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://techbyliz.uk/tags/%E5%81%A5%E8%BA%AB%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/tags/%E5%81%A5%E8%BA%AB%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://techbyliz.uk/tags/%E9%A5%AE%E9%A3%9F%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -270,6 +270,13 @@
   </url>
   
   <url>
+    <loc>https://techbyliz.uk/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://techbyliz.uk/tags/%E8%AE%BE%E8%AE%A1%E8%BD%AF%E4%BB%B6/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -285,13 +292,6 @@
   
   <url>
     <loc>https://techbyliz.uk/tags/Workflow/</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://techbyliz.uk/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -447,14 +447,14 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/categories/01-%E6%99%AF%E8%A7%82%E8%AE%BE%E8%AE%A1/</loc>
+    <loc>https://techbyliz.uk/categories/05-%E8%AF%BB%E4%B9%A6%E6%91%98%E5%BD%95/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/categories/05-%E8%AF%BB%E4%B9%A6%E6%91%98%E5%BD%95/</loc>
+    <loc>https://techbyliz.uk/categories/01-%E6%99%AF%E8%A7%82%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
