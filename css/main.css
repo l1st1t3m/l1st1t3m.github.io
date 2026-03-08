@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ffa4ff;
+    background: #0e9ae5;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4257,6 +4257,7 @@ a.btn:active {
    ===================================== */
 .bento-video {
   width: 100% !important;
+  aspect-ratio: 16/9 !important;
   border-radius: 16px !important;
   overflow: hidden !important;
   background: #1a1a1a !important;
@@ -4265,6 +4266,8 @@ a.btn:active {
   padding: 0 !important;
   height: auto !important;
   display: flex !important;
+  text-decoration: none !important /* 因为改成了 a 标签，干掉下划线 */;
+  border-bottom: none !important;
   transition: all 0.3s ease !important;
   -webkit-mask-image: -webkit-radial-gradient(#fff, #000);
   -webkit-backface-visibility: hidden;
@@ -4274,21 +4277,20 @@ a.btn:active {
   box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
   transform: translateY(-4px);
 }
-/* ★ 核心 1：彻底封杀博客主题自带的 .video-container 干扰 */
+/* 彻底封杀博客主题自带的 .video-container 干扰 */
 .bento-video .video-container {
   position: static !important;
   padding: 0 !important;
   margin: 0 !important;
-  height: auto !important;
+  height: 100% !important;
   width: 100% !important;
 }
-/* ★ 核心 2：让 iframe 直接接管 16:9 的物理尺寸，拒绝绝对定位 (position: absolute) */
+/* iframe 样式 */
 .bento-video iframe {
   position: static !important;
   display: block !important;
   width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 16/9 !important;
+  height: 100% !important;
   border: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -4300,4 +4302,54 @@ a.btn:active {
   .bento-video:hover {
     box-shadow: 0 15px 40px rgba(0,0,0,0.6) !important;
   }
+}
+/* =====================================
+   YouTube 伪装封面播放按钮 (隐身免流版)
+   ===================================== */
+.yt-facade {
+  cursor: pointer;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+/* 绝对隐身的背景图容器：Fancybox 彻底变成瞎子！ */
+.yt-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+.yt-facade:hover .yt-cover {
+  transform: scale(1.03);
+}
+/* 居中的红色播放按钮 */
+.yt-play-btn {
+  position: absolute;
+  width: 68px;
+  height: 48px;
+  background-color: rgba(33,33,33,0.8);
+  border-radius: 12px;
+  z-index: 1;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 播放按钮内部的白色三角 */
+.yt-play-btn::before {
+  content: "";
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 4px;
+}
+.yt-facade:hover .yt-play-btn {
+  background-color: #f00;
+  transform: scale(1.05);
 }
