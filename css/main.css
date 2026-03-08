@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #637a18;
+    background: #ff1d0b;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4258,20 +4258,17 @@ a.btn:active {
 .bento-video {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25% /* ★ 核心：强制 16:9 黄金比例 */;
-  height: 0;
+  aspect-ratio: 16/9 /* ★ 升级：用原生 16:9 属性，杜绝高度计算错误 */;
   margin: 20px 0;
   border-radius: 16px;
   overflow: hidden;
-  background: #1a1a1a /* 加载前的暗色骨架屏 */;
+  background: #1a1a1a;
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
-/* 修复 Safari / iOS 下 iframe 强行撑破圆角的顽疾 */
   -webkit-mask-image: -webkit-radial-gradient(#fff, #000);
   -webkit-backface-visibility: hidden;
   transform: translateZ(0);
 }
-/* 视频悬浮交互效果 */
 .bento-video:hover {
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
   transform: translateY(-4px);
@@ -4284,7 +4281,6 @@ a.btn:active {
   height: 100%;
   border: none;
 }
-/* 深色模式适配 */
 @media (prefers-color-scheme: dark) {
   .bento-video {
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
