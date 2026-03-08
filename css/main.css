@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ff7d67;
+    background: #ffadbd;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4250,5 +4250,46 @@ a.btn:active {
   .photo-wall p > img:not(a img),
   .photo-wall img {
     height: 150px !important /* 手机上高度变小，防止一张图占满整屏 */;
+  }
+}
+/* =====================================
+   优雅的响应式视频容器 (YouTube / Bilibili)
+   ===================================== */
+.bento-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25% /* ★ 核心：强制 16:9 黄金比例 */;
+  height: 0;
+  margin: 20px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #1a1a1a /* 加载前的暗色骨架屏 */;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+/* 修复 Safari / iOS 下 iframe 强行撑破圆角的顽疾 */
+  -webkit-mask-image: -webkit-radial-gradient(#fff, #000);
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+/* 视频悬浮交互效果 */
+.bento-video:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+}
+.bento-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .bento-video {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  }
+  .bento-video:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
   }
 }
