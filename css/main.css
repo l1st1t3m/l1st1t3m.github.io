@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #0e9ae5;
+    background: #9ed04f;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4352,4 +4352,10 @@ a.btn:active {
 .yt-facade:hover .yt-play-btn {
   background-color: #f00;
   transform: scale(1.05);
+}
+/* =====================================
+   头像不透明及样式增强
+   ===================================== */
+.site-author-image {
+  opacity: 1 !important /* 强制不透明 */;
 }
