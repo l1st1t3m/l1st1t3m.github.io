@@ -237,20 +237,6 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/tags/%E8%A1%8C%E4%B8%9A%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://techbyliz.uk/tags/%E6%99%AF%E8%A7%82%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://techbyliz.uk/tags/%E6%9D%82%E8%B0%88%E9%9B%86/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -266,6 +252,20 @@
   
   <url>
     <loc>https://techbyliz.uk/tags/%E7%94%B5%E5%AD%90%E8%89%BA%E6%9C%AF/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://techbyliz.uk/tags/%E8%A1%8C%E4%B8%9A%E6%96%87%E7%AB%A0/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://techbyliz.uk/tags/%E6%99%AF%E8%A7%82%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -435,13 +435,6 @@
   </url>
   
   <url>
-    <loc>https://techbyliz.uk/categories/07-%E6%96%87%E7%AB%A0%E7%82%B9%E8%AF%84/</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://techbyliz.uk/categories/11-%E4%B8%8D%E7%BE%A4%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -450,6 +443,13 @@
   
   <url>
     <loc>https://techbyliz.uk/categories/08-%E5%8A%A8%E6%BC%AB%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://techbyliz.uk/categories/07-%E6%96%87%E7%AB%A0%E7%82%B9%E8%AF%84/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
