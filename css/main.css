@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #8f6e16;
+    background: #ff2f17;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4253,39 +4253,51 @@ a.btn:active {
   }
 }
 /* =====================================
-   优雅的响应式视频容器 (YouTube / Bilibili)
+   终极响应式视频容器 (专治折叠错位与主题冲突)
    ===================================== */
 .bento-video {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16/9 /* ★ 升级：用原生 16:9 属性，杜绝高度计算错误 */;
-  margin: 20px 0;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #1a1a1a;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  width: 100% !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background: #1a1a1a !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+  margin: 20px 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  display: flex !important;
+  transition: all 0.3s ease !important;
   -webkit-mask-image: -webkit-radial-gradient(#fff, #000);
   -webkit-backface-visibility: hidden;
   transform: translateZ(0);
 }
 .bento-video:hover {
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
   transform: translateY(-4px);
 }
+/* ★ 核心 1：彻底封杀博客主题自带的 .video-container 干扰 */
+.bento-video .video-container {
+  position: static !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: auto !important;
+  width: 100% !important;
+}
+/* ★ 核心 2：让 iframe 直接接管 16:9 的物理尺寸，拒绝绝对定位 (position: absolute) */
 .bento-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+  position: static !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16/9 !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 @media (prefers-color-scheme: dark) {
   .bento-video {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
   }
   .bento-video:hover {
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6) !important;
   }
 }
