@@ -1,4 +1,6 @@
 User-agent: *
-Allow: /
+Disallow: /categories/
+Disallow: /tags/
+Disallow: /archives/
 
-Sitemap: https://l1st1t3m.github.io/sitemap.xml
+Sitemap: https://techbyliz.uk/sitemap.xml
