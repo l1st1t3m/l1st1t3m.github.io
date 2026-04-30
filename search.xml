@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> 小技巧 </tag>
-            
             <tag> GitHub 项目 </tag>
+            
+            <tag> 小技巧 </tag>
             
         </tags>
       
@@ -259,6 +259,33 @@
     
     
     <entry>
+      <title>Homebrew常用命令</title>
+      <link href="/post/d71c9458.html"/>
+      <url>/post/d71c9458.html</url>
+      
+        <content type="html"><![CDATA[<div style="text-align: center;"><strong>macOS上的Homebrew安装及更新软件等常用命令</strong></div><span id="more"></span><h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a><strong>项目介绍</strong></h2><p>Homebrew 的设计宗旨可以用一句话概括：用一行命令完成软件安装与管理，让 macOS 彻底告别手动装软件的时代。</p><p>它是一款 macOS &#x2F; Linux 平台下的包管理工具，类似 Linux 的 apt &#x2F; yum，专门解决软件安装、依赖管理与版本控制问题。 </p><p>Homebrew 主要功能包括：<br>通过一条命令安装软件，无需手动下载或拖拽安装。<br>自动处理依赖关系，避免版本冲突与缺失依赖问题。<br>支持软件的安装、卸载、更新、查询等完整生命周期管理。<br>支持命令行工具与 GUI 应用（通过 Cask）。<br>支持服务管理（如 nginx、redis 等后台服务）。<br>支持扩展仓库（Tap），获取官方之外的软件资源。<br>支持预编译二进制（Bottle），提升安装速度。</p><p>Homebrew 的核心组成包括：</p><ul><li>brew：核心命令行工具</li><li>Formula：软件安装脚本（配方）</li><li>Bottle：预编译二进制包</li><li>Cask：GUI 应用管理</li><li>Tap：扩展仓库机制</li></ul><p>👉 本质上：<br>Homebrew &#x3D; 软件包管理 + 依赖管理 + 自动化环境搭建工具</p><hr><h2 id="安装、更新、卸载"><a href="#安装、更新、卸载" class="headerlink" title="安装、更新、卸载"></a><strong>安装、更新、卸载</strong></h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a><strong>安装</strong></h3><p>打开终端（Terminal），粘贴以下命令安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span><br></pre></td></tr></table></figure><h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a><strong>更新</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure><h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a><strong>卸载</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)&quot;</span><br></pre></td></tr></table></figure><hr><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a><strong>常用命令</strong></h2><h3 id="1-安装软件包"><a href="#1-安装软件包" class="headerlink" title="1.安装软件包"></a>1.安装软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><blockquote><p>例如，安装wget：<br>brew install wget</p></blockquote><h3 id="2-卸载软件包"><a href="#2-卸载软件包" class="headerlink" title="2.卸载软件包"></a>2.卸载软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew uninstall &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><h3 id="3-更新软件"><a href="#3-更新软件" class="headerlink" title="3.更新软件"></a>3.更新软件</h3><p>更新Homebrew本身</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure><p>更新所有已安装的软件包</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade</span><br></pre></td></tr></table></figure><p>更新指定的软件包</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><h3 id="4-查看已安装的软件包"><a href="#4-查看已安装的软件包" class="headerlink" title="4.查看已安装的软件包"></a>4.查看已安装的软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list</span><br></pre></td></tr></table></figure><h3 id="5-搜索软件包"><a href="#5-搜索软件包" class="headerlink" title="5.搜索软件包"></a>5.搜索软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew search &lt;关键词&gt;</span><br></pre></td></tr></table></figure><h3 id="6-查看软件包信息"><a href="#6-查看软件包信息" class="headerlink" title="6.查看软件包信息"></a>6.查看软件包信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew info &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><h3 id="7-清理不再需要的文件"><a href="#7-清理不再需要的文件" class="headerlink" title="7.清理不再需要的文件"></a>7.清理不再需要的文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cleanup</span><br></pre></td></tr></table></figure><blockquote><p>会自动删除无用文件，释放空间</p></blockquote><h3 id="8-显示-Homebrew-的系统诊断信息"><a href="#8-显示-Homebrew-的系统诊断信息" class="headerlink" title="8.显示 Homebrew 的系统诊断信息"></a>8.显示 Homebrew 的系统诊断信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew doctor</span><br></pre></td></tr></table></figure><h3 id="9-列出过时的软件包"><a href="#9-列出过时的软件包" class="headerlink" title="9.列出过时的软件包"></a>9.列出过时的软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew outdated</span><br></pre></td></tr></table></figure><h3 id="10-导出和导入已安装的软件包列表"><a href="#10-导出和导入已安装的软件包列表" class="headerlink" title="10.导出和导入已安装的软件包列表"></a>10.导出和导入已安装的软件包列表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list --formula &gt; Brewfile</span><br></pre></td></tr></table></figure><blockquote><p>导出已安装的软件包列表</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install $(cat Brewfile)</span><br></pre></td></tr></table></figure><blockquote><p>使用Brewfile安装已导出的软件包：</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 02-工具文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> macOS </tag>
+            
+            <tag> 实用软件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>北京植物的花期</title>
       <link href="/post/2a1528de.html"/>
       <url>/post/2a1528de.html</url>
@@ -360,9 +387,9 @@
       
         <tags>
             
-            <tag> Windows </tag>
-            
             <tag> 小技巧 </tag>
+            
+            <tag> Windows </tag>
             
         </tags>
       
