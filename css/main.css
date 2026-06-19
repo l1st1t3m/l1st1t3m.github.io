@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ffe559;
+    background: #0503d5;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3743,18 +3743,43 @@ body {
 }
 /* 高亮轮廓的清透玻璃底座 */
 #weather-icon {
-/* 底色提亮，使用偏向纯白的高光渐变 */
-  background: linear-gradient(135deg, #fff 20%, rgba(255,255,255,0.6) 100%) !important;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.72) !important;
   border-radius: 12px !important;
   box-sizing: border-box !important;
   padding: 4px !important;
   width: 48px !important;
   height: 48px !important;
-/* 【核心提升】1.5px 纯白实心边框，勾勒极其清晰的边缘 */
-  border: 1.5px solid #fff !important;
-/* 【核心提升】增加白色的外侧光晕，让轮廓彻底脱离背景亮起来；同时保留一丝极弱的黑阴影做空间感 */
-  box-shadow: 0 0 10px rgba(255,255,255,0.9), 0 4px 8px rgba(0,0,0,0.04) !important;
-  object-fit: contain !important;
+  border: 1px solid rgba(255,255,255,0.9) !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06) !important;
+  font-size: 29px;
+  line-height: 1;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+.weather-icon-sun {
+  color: #e6a52d;
+}
+.weather-icon-night {
+  color: #6f7fa3;
+}
+.weather-icon-cloud {
+  color: #78909c;
+}
+.weather-icon-overcast {
+  color: #60717d;
+}
+.weather-icon-rain {
+  color: #4388b9;
+}
+.weather-icon-storm {
+  color: #7160a8;
+}
+.weather-icon-snow {
+  color: #62a9c7;
+}
+.weather-icon-mist {
+  color: #84939a;
 }
 /* --- 暗黑模式适配 --- */
 @media (prefers-color-scheme: dark) {
@@ -3779,7 +3804,10 @@ body {
     border-top-color: rgba(255,255,255,0.08) !important;
   }
   #custom-weather-card #weather-icon {
-    filter: drop-shadow(0 2px 6px rgba(255,255,255,0.1)) !important;
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.12) !important;
+    box-shadow: none !important;
+    filter: none !important;
     opacity: 1;
   }
   #custom-weather-card:hover {
@@ -3788,14 +3816,6 @@ body {
   #custom-weather-card:hover #weather-city {
     color: #31a2ff !important;
   }
-}
-#weather-icon {
-/* 暗色模式改为极淡的白底框，彻底去掉内阴影的黑泥感 */
-  background: rgba(255,255,255,0.05) !important;
-  border: 1px solid rgba(255,255,255,0.1) !important;
-  box-shadow: none !important /* 彻底干掉黑阴影 */;
-  filter: none !important;
-  opacity: 1 !important;
 }
 /* --- 文本编辑 --- 
 .post-body p
