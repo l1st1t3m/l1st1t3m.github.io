@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218225305538.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218225109650.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218225216750.png">
+  <link rel="mask-icon" href="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218225334858.svg" color="#222">
+  <meta name="google-site-verification" content="CY2Nx7RmOneQXp5ubpaAyFRFL3q8ZD9sM6ANmWvgNzw">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"l1st1t3m.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github-dark"},"prism":{"light":"coy","dark":"tomorrow"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":true,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="转载：字节全家桶 Seed 2.0 + TRAE 玩转 Skill 原文作者：阮一峰 原文链接： 字节全家桶 Seed 2.0 + TRAE 玩转 Skill">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill">
+<meta property="og:url" content="https://l1st1t3m.github.io/post/8284ee2f.html">
+<meta property="og:site_name" content="不群小筑">
+<meta property="og:description" content="转载：字节全家桶 Seed 2.0 + TRAE 玩转 Skill 原文作者：阮一峰 原文链接： 字节全家桶 Seed 2.0 + TRAE 玩转 Skill">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021401.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021402.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021416.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021404.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021429.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021426.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021407.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021428.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021409.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021410.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021411.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021412.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021413.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021414.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021417.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021418.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021419.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021420.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021421.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021422.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021423.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021424.webp">
+<meta property="og:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021427.webp">
+<meta property="article:published_time" content="2026-07-04T09:05:09.873Z">
+<meta property="article:modified_time" content="2026-03-01T14:05:46.000Z">
+<meta property="article:author" content="李不群">
+<meta property="article:tag" content="转载">
+<meta property="article:tag" content="阮一峰">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.beekka.com/blogimg/asset/202602/bg2026021401.webp">
+
+
+<link rel="canonical" href="https://l1st1t3m.github.io/post/8284ee2f.html">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://l1st1t3m.github.io/post/8284ee2f.html","path":"post/8284ee2f.html","title":"【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill | 不群小筑</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="不群小筑" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">不群小筑</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay young, Stay simple.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页-|-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页 | home</a></li><li class="menu-item menu-item-关于-|-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于 | about</a></li><li class="menu-item menu-item-分类-|-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 | categories</a></li><li class="menu-item menu-item-标签-|-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 | tags</a></li><li class="menu-item menu-item-游戏-|-games"><a href="/games/" rel="section"><i class="fa-brands fa-playstation fa-fw"></i>游戏 | games</a></li><li class="menu-item menu-item-音乐-|-music"><a href="https://l1st1t3m.github.io/CD-Wall-l1st1t3m/" rel="section"><i class="fa fa-music fa-fw"></i>音乐 | music</a></li><li class="menu-item menu-item-影剧-|-media"><a href="/movie/" rel="section"><i class="fa fa-film fa-fw"></i>影剧 | media</a></li><li class="menu-item menu-item-生活-|-diary"><a href="/categories/10-%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" rel="section"><i class="fa fa-book fa-fw"></i>生活 | diary</a></li><li class="menu-item menu-item-归档-|-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档 | archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">一、引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Seed-2-0-%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">二、Seed 2.0 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81TRAE-%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">三、TRAE 的准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%BC%96%E7%A8%8B%E6%B5%8B%E8%AF%95"><span class="nav-number">4.</span> <span class="nav-text">四、编程测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E7%94%9F%E6%88%90%E7%BB%93%E6%9E%9C"><span class="nav-number">5.</span> <span class="nav-text">五、生成结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81Skill-%E7%AE%80%E4%BB%8B"><span class="nav-number">6.</span> <span class="nav-text">六、Skill 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E6%8A%80%E8%83%BD"><span class="nav-number">7.</span> <span class="nav-text">七、前端设计技能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81Vercel-deploy-%E6%8A%80%E8%83%BD"><span class="nav-number">8.</span> <span class="nav-text">八、Vercel deploy 技能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E6%80%BB%E7%BB%93"><span class="nav-number">9.</span> <span class="nav-text">九、总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="李不群"
+      src="https://avatars.githubusercontent.com/u/58502299">
+  <p class="site-author-name" itemprop="name">李不群</p>
+  <div class="site-description" itemprop="description">Sometimes Naive.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/l1st1t3m" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;l1st1t3m" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lokilicho@gmail.com" title="Email → mailto:lokilicho@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://x.com/II_F_s0cIeTy_ll" title="Twitter → https:&#x2F;&#x2F;x.com&#x2F;II_F_s0cIeTy_ll" rel="noopener me" target="_blank"><i class="fab fa-x-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/l1st1t3m/" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;l1st1t3m&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCv1Vlxe9qQJhTPc54mTh9wg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCv1Vlxe9qQJhTPc54mTh9wg" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/l1st1t3m" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;l1st1t3m" rel="noopener me" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+<div id="custom-weather-card" style="display: none;">
+  <div id="weather-info">
+    <div id="custom-clock-header" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 12px; gap: 3px;">
+      
+      <div id="clock-date" style="font-size: 11px; opacity: 0.65; letter-spacing: 1px;">获取日期中...</div>
+      
+      <div id="clock-time" style="font-size: 28px; font-weight: 300; letter-spacing: 2px; line-height: 1; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">--:--:--</div>
+      
+      <div id="weather-city" style="font-size: 12.5px; font-weight: 600; letter-spacing: 2px;">获取位置中...</div>
+      
+    </div>
+    
+    <div style="display: flex; align-items: center; justify-content: center; gap: 5px; margin-bottom: 15px;">
+      <i id="weather-icon" class="fa-solid fa-cloud" aria-hidden="true" style="display: none;"></i>
+      <div>
+        <div id="weather-temp" style="font-size: 28px; font-weight: 300; line-height: 1;">--°C</div>
+        <div id="weather-desc" style="font-size: 12px; opacity: 0.8; margin-top: 5px;">--</div>
+      </div>
+    </div>
+
+    <div class="weather-grid">
+      <div class="weather-detail-item"><span class="w-label">体感</span><span id="w-feels" class="w-val">--°</span></div>
+      <div class="weather-detail-item"><span class="w-label">空气</span><span id="w-aqi" class="w-val">--</span></div>
+      <div class="weather-detail-item"><span class="w-label">降水</span><span id="w-rain" class="w-val">--mm</span></div>
+      
+      <div class="weather-detail-item"><span class="w-label">风速</span><span id="w-wind" class="w-val">--m/s</span></div>
+      <div class="weather-detail-item"><span class="w-label">风向</span><span id="w-winddir" class="w-val">--</span></div>
+      <div class="weather-detail-item"><span class="w-label">湿度</span><span id="w-humidity" class="w-val">--%</span></div>
+      
+      <div class="weather-detail-item"><span class="w-label">云量</span><span id="w-clouds" class="w-val">--%</span></div>
+      <div class="weather-detail-item"><span class="w-label">紫外</span><span id="w-uv" class="w-val">--</span></div>
+      <div class="weather-detail-item"><span class="w-label">能见</span><span id="w-vis" class="w-val">--km</span></div>
+      
+      <div class="weather-detail-item"><span class="w-label">气压</span><span id="w-press" class="w-val">--hPa</span></div>
+      <div class="weather-detail-item"><span class="w-label">日出</span><span id="w-sunrise" class="w-val">--:--</span></div>
+      <div class="weather-detail-item"><span class="w-label">日落</span><span id="w-sunset" class="w-val">--:--</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const API_KEY = '8c6b74f5ed7f60c14f17f9eb06739a54';
+    const WAQI_TOKEN = '3a248985bbaea3cd420b2ab3800dbe622f098248';
+    const cityMap = { 'Haidian': '北京市海淀区', 'Beijing': '北京市', 'Shanghai': '上海市', 'Chaoyang': '北京市朝阳区' };
+    
+    // ======= 时钟逻辑补丁 =======
+    const updateClock = () => {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      
+      const year = now.getFullYear();
+      const month = now.getMonth() + 1;
+      const date = now.getDate();
+      const days = ['日', '一', '二', '三', '四', '五', '六'];
+      const day = days[now.getDay()];
+      
+      const timeEl = document.getElementById('clock-time');
+      const dateEl = document.getElementById('clock-date');
+      if(timeEl) timeEl.innerText = `${h}:${m}:${s}`;
+      if(dateEl) dateEl.innerText = `${year}年${month}月${date}日 周${day}`;
+    };
+    setInterval(updateClock, 1000);
+    updateClock();
+    // ==========================
+
+    // 风向转换函数
+    const getWindDir = (deg) => {
+      if(deg === undefined) return '--';
+      const dirs = ['北', '东北', '东', '东南', '南', '西南', '西', '西北'];
+      return dirs[Math.round(deg / 45) % 8] + '风';
+    };
+
+    // 时间转换函数
+    const formatTime = (unixTs) => {
+      if(!unixTs) return '--:--';
+      const d = new Date(unixTs * 1000);
+      return d.getHours().toString().padStart(2, '0') + ':' + d.getMinutes().toString().padStart(2, '0');
+    };
+
+    const fetchWeather = async (lat, lon) => {
+      try {
+        // 并行请求：天气基础数据、WAQI空气质量、紫外线
+        const [weatherRes, aqiRes, uvRes] = await Promise.allSettled([
+          fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=zh_cn`),
+          fetch(`https://api.waqi.info/feed/geo:${lat};${lon}/?token=${WAQI_TOKEN}`),
+          fetch(`https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${API_KEY}`) // 遗留免费紫外线接口
+        ]);
+
+        if (weatherRes.status !== 'fulfilled') throw new Error('Weather fetch failed');
+        const data = await weatherRes.value.json();
+        
+        const weatherCard = document.getElementById('custom-weather-card');
+        weatherCard.onclick = () => window.open(`https://www.windy.com/?${lat},${lon},10`, '_blank');
+
+        // 基础与头部信息
+        document.getElementById('weather-city').innerText = cityMap[data.name] || data.name;
+        document.getElementById('weather-temp').innerText = Math.round(data.main.temp) + '°C';
+        document.getElementById('weather-desc').innerText = data.weather[0].description;
+        
+        // 12宫格数据填充
+        document.getElementById('w-feels').innerText = Math.round(data.main.feels_like) + '°';
+        document.getElementById('w-wind').innerText = Math.round(data.wind.speed) + 'm/s';
+        document.getElementById('w-winddir').innerText = getWindDir(data.wind.deg);
+        document.getElementById('w-humidity').innerText = data.main.humidity + '%';
+        document.getElementById('w-clouds').innerText = data.clouds.all + '%';
+        document.getElementById('w-vis').innerText = (data.visibility / 1000).toFixed(1) + 'km';
+        document.getElementById('w-press').innerText = data.main.pressure;
+        document.getElementById('w-sunrise').innerText = formatTime(data.sys.sunrise);
+        document.getElementById('w-sunset').innerText = formatTime(data.sys.sunset);
+
+        // 降水计算 (优先雨，其次雪，都没有则为 0)
+        let precip = 0;
+        if (data.rain && data.rain['1h']) precip = data.rain['1h'];
+        else if (data.snow && data.snow['1h']) precip = data.snow['1h'];
+        document.getElementById('w-rain').innerText = precip > 0 ? precip.toFixed(1) + 'mm' : '0mm';
+
+        // ==========================================
+        // 空气质量 (AQI) 处理 - WAQI 接口
+        // ==========================================
+        if (aqiRes.status === 'fulfilled' && aqiRes.value.ok) {
+          const aqiJson = await aqiRes.value.json();
+          if (aqiJson.status === 'ok') {
+            const aqiVal = aqiJson.data.aqi;
+            let aqiLabel = '--';
+            let aqiColor = 'inherit';
+
+            // 根据 WAQI 标准设置等级和颜色
+            if (aqiVal <= 50) { aqiLabel = '优'; aqiColor = '#a3d765'; }
+            else if (aqiVal <= 100) { aqiLabel = '良'; aqiColor = '#f0cc35'; }
+            else if (aqiVal <= 150) { aqiLabel = '轻度'; aqiColor = '#f09c35'; }
+            else if (aqiVal <= 200) { aqiLabel = '中度'; aqiColor = '#e04f4f'; }
+            else if (aqiVal <= 300) { aqiLabel = '重度'; aqiColor = '#9c4fe0'; }
+            else { aqiLabel = '严重'; aqiColor = '#7e0023'; } // 300以上严重污染
+
+            const aqiSpan = document.getElementById('w-aqi');
+            aqiSpan.innerText = `${aqiVal} ${aqiLabel}`; // 修改为数值+文字
+            aqiSpan.style.color = aqiColor;
+          }
+        }
+
+        // 紫外线处理
+        if (uvRes.status === 'fulfilled' && uvRes.value.ok) {
+          const uvData = await uvRes.value.json();
+          document.getElementById('w-uv').innerText = Math.round(uvData.value) || '0';
+        }
+
+        // 使用站点已加载的 Font Awesome，避免依赖不稳定的外部天气图标地址
+        const iconMap = {
+          '01d': ['fa-sun', 'weather-icon-sun'],
+          '01n': ['fa-moon', 'weather-icon-night'],
+          '02d': ['fa-cloud-sun', 'weather-icon-cloud'],
+          '02n': ['fa-cloud-moon', 'weather-icon-night'],
+          '03d': ['fa-cloud', 'weather-icon-cloud'],
+          '03n': ['fa-cloud', 'weather-icon-cloud'],
+          '04d': ['fa-cloud', 'weather-icon-overcast'],
+          '04n': ['fa-cloud', 'weather-icon-overcast'],
+          '09d': ['fa-cloud-showers-heavy', 'weather-icon-rain'],
+          '09n': ['fa-cloud-showers-heavy', 'weather-icon-rain'],
+          '10d': ['fa-cloud-rain', 'weather-icon-rain'],
+          '10n': ['fa-cloud-rain', 'weather-icon-rain'],
+          '11d': ['fa-cloud-bolt', 'weather-icon-storm'],
+          '11n': ['fa-cloud-bolt', 'weather-icon-storm'],
+          '13d': ['fa-snowflake', 'weather-icon-snow'],
+          '13n': ['fa-snowflake', 'weather-icon-snow'],
+          '50d': ['fa-smog', 'weather-icon-mist'],
+          '50n': ['fa-smog', 'weather-icon-mist']
+        };
+        const [iconClass, toneClass] = iconMap[data.weather[0].icon] || ['fa-cloud', 'weather-icon-cloud'];
+        const iconEl = document.getElementById('weather-icon');
+        iconEl.className = `fa-solid ${iconClass} ${toneClass}`;
+        iconEl.title = data.weather[0].description;
+        iconEl.style.display = 'flex';
+
+      } catch (err) { console.error('Weather error:', err); }
+    };
+
+    const initWidgets = function() {
+      // ======= 1. 增强版：自动清理分类数字前缀 =======
+      const cleanNow = () => {
+        // 涵盖：列表链接、大标题、文章内元数据、面包屑等
+        const selectors = '.category-list-link, .collection-header, span[itemprop="name"], .post-category a, .breadcrumb';
+        document.querySelectorAll(selectors).forEach(el => {
+          const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+          let node;
+          while (node = walk.nextNode()) {
+            // 正则说明：匹配开头数字 + 可选空格 + 横杠 + 可选空格
+            const cleaned = node.nodeValue.replace(/^\d+\s*-\s*/, '');
+            if (node.nodeValue !== cleaned) {
+              node.nodeValue = cleaned;
+            }
+          }
+        });
+      };
+
+      // 立即执行一次
+      cleanNow();
+      
+      // 针对异步加载（如Pjax）增加一个延时执行，确保内容已填充
+      setTimeout(cleanNow, 100);
+      setTimeout(cleanNow, 500); 
+
+      // 使用 MutationObserver 监听动态变化（最保险的方法）
+      if (!window.catObserver) {
+        window.catObserver = new MutationObserver(cleanNow);
+        window.catObserver.observe(document.body, { childList: true, subtree: true });
+      }
+      // ==========================================
+
+      const weatherCard = document.getElementById('custom-weather-card');
+      const sidebar = document.querySelector('.sidebar-inner');
+      if (weatherCard && sidebar) {
+        if (!sidebar.querySelector('#custom-weather-card')) sidebar.appendChild(weatherCard);
+        weatherCard.style.display = 'block';
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (pos) => fetchWeather(pos.coords.latitude, pos.coords.longitude), 
+            () => fetchWeather(39.9, 116.4)
+          );
+        } else { fetchWeather(39.9, 116.4); }
+      }
+    };
+    initWidgets();
+    document.addEventListener('pjax:success', initWidgets);
+  })();
+</script>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://l1st1t3m.github.io/post/8284ee2f.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/58502299">
+      <meta itemprop="name" content="李不群">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不群小筑">
+      <meta itemprop="description" content="Sometimes Naive.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill | 不群小筑">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-07-04 17:05:09" itemprop="dateCreated datePublished" datetime="2026-07-04T17:05:09+08:00">2026-07-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-03-01 22:05:46" itemprop="dateModified" datetime="2026-03-01T22:05:46+08:00">2026-03-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/12-%E8%BD%AC%E8%BD%BD/" itemprop="url" rel="index"><span itemprop="name">12-转载</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p style="text-align:center;">
+<strong>
+转载：字节全家桶 Seed 2.0 + TRAE 玩转 Skill</br>
+原文作者：阮一峰</br>
+原文链接：<a href="http://www.ruanyifeng.com/blog/2026/02/seed-2.0.html" target="_blank"></br>
+字节全家桶 Seed 2.0 + TRAE 玩转 Skill</a>
+</strong>
+</p>
+<span id="more"></span>
+
+<blockquote>
+<p>本文由 <a target="_blank" rel="noopener" href="http://ksria.com/simpread/">简悦 SimpRead</a> 转码， 原文地址 <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2026/02/seed-2.0.html">www.ruanyifeng.com</a></p>
+</blockquote>
+<h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>国产大模型之中，字节是一个异类。</p>
+<p>不像其他大模型轰轰烈烈、争夺眼球，它更低调，不引人注目。</p>
+<p>但是，它做的事情反倒最多，大模型、Agent、开发工具、云服务都有独立品牌，遍地开花，一个都不缺，都在高速推进。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021401.webp"></p>
+<p>Seed 是字节的大模型团队，底下有好几条产品线，最近热得发烫的视频模型 Seedance 2.0 就是他们的产品。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021402.webp"></p>
+<p>今天，我就用字节的全家桶 —- 刚刚发布的 Seed 2.0 模型和开发工具 TRAE —- 写一篇 Skill 教程。</p>
+<p>大家会看到，<strong>它们组合起来既强大，又简单好用，（个人用户）还免费</strong>。这也是我想写的原因，让大家知道有这个方案。</p>
+<p>只要十分钟，读完这篇教程，你还会明白 Skill 是什么，怎么用，以及为什么一定要用它。</p>
+<h2 id="二、Seed-2-0-简介"><a href="#二、Seed-2-0-简介" class="headerlink" title="二、Seed 2.0 简介"></a>二、Seed 2.0 简介</h2><p>先介绍 Seed 2.0，它是 <strong>Seed 家族的基座模型</strong>。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021416.webp"></p>
+<p>所谓 “基座模型”（foundation model），就是一种通用大模型，<strong>可用来构建其他各种下游模型</strong>。最大的两个特征有两个：一个是规模大，另一个是泛化能力强，这样才方便构建别的模型。</p>
+<p>大家熟知的豆包，就是基于 Seed 模型，它也被称为 “豆包大模型”。这次 Seed 2.0 包含 Pro、Lite、Mini 三款通用模型，以及专为开发者定制的 Seed 2.0 Code 模型。</p>
+<p>由于各种用途都必须支持，<strong>Seed 2.0 的通用性特别突出</strong>，比以前版本都要强。</p>
+<blockquote>
+<p>1、支持多模态，各种类型的数据都能处理：文字、图表、视觉空间、运动、视频等等。</p>
+<p>2、具备各种 Agent 能力，方便跟企业工具对接：搜索、函数调用、工具调用、多轮指令、上下文管理等。</p>
+<p>3、有推理和代码能力。</p>
+</blockquote>
+<p>正因为最后一点，所以我们可以拿它来编程，尤其是生成前端代码。跟字节发布的 AI 编程工具 <a target="_blank" rel="noopener" href="https://www.trae.cn/">TRAE</a> 配合使用，效果很好，特别方便全栈开发，个人用户还免费。</p>
+<h2 id="三、TRAE-的准备工作"><a href="#三、TRAE-的准备工作" class="headerlink" title="三、TRAE 的准备工作"></a>三、TRAE 的准备工作</h2><p><a target="_blank" rel="noopener" href="https://www.trae.cn/ide/download">下载安装</a> TRAE 以后，它有两种模式，左上角可以切换：IDE 模型和 SOLO 模型。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021404.webp"></p>
+<p>选择 IDE 就可以了，SOLO 是 AI 任务的编排器，除非多个任务一起跑，否则用不到。</p>
+<p>然后，按下快捷键 Ctrl + U（或者 Command + U），唤出对话框，用来跟 AI 对话。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021429.webp"></p>
+<p>我们要构建 Web 应用，左上角就选 @Builder 开发模式。右下角的模型就选 Seed-2.0-Code。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021426.webp"></p>
+<p>可以看到，TRAE 自带的国产开源编程模型很全，都是免费使用。</p>
+<p>准备工作这样就差不多了。</p>
+<h2 id="四、编程测试"><a href="#四、编程测试" class="headerlink" title="四、编程测试"></a>四、编程测试</h2><p>我选了一个有点难度的任务，让 Seed 2.0 生成。</p>
+<p>ASCII 图形是使用字符画出来的图形，比如下图。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021407.webp"></p>
+<p>我打算生成一个 Web 应用，用户在网页上输入 ASCII 图形，自动转成 Excalidraw 风格的手绘图形。</p>
+<p>提示词如下：</p>
+<blockquote>
+<p>“生成一个 Web 应用，可以将 ASCII 图形转为 Excalidraw 风格的图片，并提供下载。”</p>
+</blockquote>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021428.webp"></p>
+<p>模型就开始思考，将这个任务分解为四步。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021409.webp"></p>
+<h2 id="五、生成结果"><a href="#五、生成结果" class="headerlink" title="五、生成结果"></a>五、生成结果</h2><p>等到 Seed 2.0 代码生成完毕，TRAE 就会起一个本地服务 localhost:8080，同时打开了预览窗口。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021410.webp"></p>
+<p>生成的结果还挺有意思，上部的 ASCII 输入框提供了四个示例：Box、Tree、Flowchart、Smiley。下面是 Tree 的样子。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021411.webp"></p>
+<p>然后是 Excalidraw 参数的控制面板：线宽、粗糙度、弯曲度、字体大小。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021412.webp"></p>
+<p>点击 Convert（转换）按钮，马上得到手绘风格的线条图。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021413.webp"></p>
+<p>整个页面就是下面的样子。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021414.webp"></p>
+<h2 id="六、Skill-简介"><a href="#六、Skill-简介" class="headerlink" title="六、Skill 简介"></a>六、Skill 简介</h2><p>这个页面的设计，感觉不是很美观，还可以改进。我打算为 Seed 2.0 加入专门的前端设计技能，使其能够做出更美观的页面。</p>
+<p><strong>所谓 Skill（技能），就是一段专门用途的提示词，用来注入上下文。</strong></p>
+<p>有时候，提示词很长，每次都输入，就很麻烦。我们可以把反复用到的部分提取出来，保存在一个文件里面，方便重复使用。这种提取出来的提示词，往往是关于如何完成一种任务的详细描述，所以就称为 “技能文件”。</p>
+<p>格式上，它就是一个 Markdown 文本文件，有一个 YAML 头，包含 name 字段和 description 字段。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021417.webp"></p>
+<p>name 字段是 Skill 的名称，可以通过这个名称调用该技能；description 字段则是技能的简要描述，模型通过这段描述判断何时自动调用该技能。</p>
+<p>有些技能比较复杂，除了描述文件以外，还有专门的脚本文件、资源文件、模板文件等等，相当于一个代码库。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021418.webp"></p>
+<p>这些文件里面，SKILL.md 是入口文件，模型根据它的描述，了解何时何处调用其他各个文件。</p>
+<p>这个库发到网上，就可以与其他人共享。如果你觉得 AI 模型处理任务时，需要用到某种技能，就可以寻找别人已经写好的 Skill 加载到模型。</p>
+<h2 id="七、前端设计技能"><a href="#七、前端设计技能" class="headerlink" title="七、前端设计技能"></a>七、前端设计技能</h2><p>下面，我使用 Anthropic 公司共享出来的<a target="_blank" rel="noopener" href="https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md">前端设计技能</a>，重构一下前面的页面。它只有单独一个 Markdown 文件，可以下载下来。</p>
+<p>打开 TRAE 的 “设置 &#x2F; 规则和技能” 页面。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021419.webp"></p>
+<p>点击技能部分的 “+ 创建” 按钮，打开创建技能的窗口。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021420.webp"></p>
+<p>你可以在这个窗口填写 SKill 内容，也可以上传现成的 Skill 文件。我选择上传，完成后，就可以看到列表里已经有 frontend-design 技能了。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021421.webp"></p>
+<p>然后，我就用下面的提示词，唤起这个技能来重构页面。</p>
+<blockquote>
+<p>“使用 frontend-design 技能，重构这个页面，让其变得更美观易用，更有专业感。”</p>
+</blockquote>
+<p>下面就是模型给出的文字描述和重构结果。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021422.webp"></p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021423.webp"></p>
+<p>页面确实感觉变得高大上了！</p>
+<h2 id="八、Vercel-deploy-技能"><a href="#八、Vercel-deploy-技能" class="headerlink" title="八、Vercel deploy 技能"></a>八、Vercel deploy 技能</h2><p>最后，再看一个技能的例子。</p>
+<p>代码生成以后，都是在本地机器上运行，能不能发布到网上，分享给更多的人呢？</p>
+<p>回答是只要使用 Vercel 公司的 deploy 技能，就能一个命令将生成结果发布到 Vercel 的机器上。</p>
+<p>在 Vercel 官方技能的 <a target="_blank" rel="noopener" href="https://github.com/vercel-labs/agent-skills/tree/main/skills/claude.ai">GitHub 仓库</a>里，下载 Vercel-deploy 技能的 zip 文件。</p>
+<p>然后，把这个 zip 文件拖到 TRAE 的技能窗口里面，就会自动加载了。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021424.webp"></p>
+<p>输入提示词：”将生成的网站发布到 Vercel”。</p>
+<p>模型就会执行 vercel-deploy 技能，将网站发布到 Vercel，最后给出两个链接，一个是预览链接，另一个是发布到你个人账户的链接。</p>
+<p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021427.webp"></p>
+<p>大家现在可以访问<a target="_blank" rel="noopener" href="https://skill-deploy-wscj2pnyc7-agent-skill-vercel.vercel.app/">这个链接</a>，看看网站的实际效果了。</p>
+<h2 id="九、总结"><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h2><p>如果你读到这里，应该会同意我的观点，Seed 2.0 的编程能力相当不错，跟自家的编程工具 TRAE 搭配起来，好用又免费。</p>
+<p>Skill 则是强大的能力扩展机制，让模型变得无所不能，一定要学会使用。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>李不群
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://l1st1t3m.github.io/post/8284ee2f.html" title="【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill">https://l1st1t3m.github.io/post/8284ee2f.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://x.com/II_F_s0cIeTy_ll">
+            <span class="icon">
+              <i class="fab fa-x-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/l1st1t3m">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag"># 转载</a>
+              <a href="/tags/%E9%98%AE%E4%B8%80%E5%B3%B0/" rel="tag"># 阮一峰</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/746d9347.html" rel="prev" title="动漫作品设定图集">
+                  <i class="fa fa-angle-left"></i> 动漫作品设定图集
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/f64927f0.html" rel="next" title="OpenClaw 爆火：现象级流量，还是生产力革命？">
+                  OpenClaw 爆火：现象级流量，还是生产力革命？ <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-solid fa-user-secret"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">李不群</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/l1st1t3m" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"l1st1t3m/comment4myblog","issue_term":"pathname","theme":"preferred-color-scheme"}</script>
+<script src="/js/third-party/comments/utterances.js" defer></script>
+<!-- YouTube 视频全局智能分流拦截器 -->
+<script data-pjax>
+document.addEventListener("click", function(event) {
+  const facade = event.target.closest('.yt-facade');
+  if (!facade) return;
+
+  const vid = facade.getAttribute('data-vid');
+  if (!vid) return;
+
+  const ua = navigator.userAgent.toLowerCase();
+  const isIOS = /iphone|ipad|ipod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isChrome = /chrome|chromium|crios/i.test(ua);
+  const isEdge = /edg/i.test(ua);
+  const isSafari = /safari/i.test(ua) && !isChrome && !isEdge;
+
+  if (isIOS || isSafari) {
+    // 🍎 Safari / iOS 专属放行：顺应超链接，直接新标签页打开
+    return; 
+  } else {
+    // 🌐 Edge / Chrome 绝对拦截：阻止跳转，原地变成视频！
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation(); 
+
+    facade.removeAttribute('href');
+    facade.removeAttribute('target');
+    
+    // 👇 核心修改：换回 youtube.com，允许读取你的登录状态，解除机器人验证！
+    facade.innerHTML = '<iframe src="https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>';
+    facade.style.cursor = 'default';
+    facade.classList.remove('yt-facade');
+  }
+}, true);
+</script>
+</body>
+</html>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218225305538.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218225109650.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218225216750.png">
+  <link rel="mask-icon" href="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218225334858.svg" color="#222">
+  <meta name="google-site-verification" content="CY2Nx7RmOneQXp5ubpaAyFRFL3q8ZD9sM6ANmWvgNzw">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"l1st1t3m.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github-dark"},"prism":{"light":"coy","dark":"tomorrow"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":3,"unescape":true,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="最近一段时间，OpenClaw 几乎刷屏。 公众号全是它，技术群全是它，朋友圈也在转它。 还有人为了OpenClaw 超越 Linux 登顶 GitHub Star 第一而兴奋。 我对这件事的看法其实很简单，现象级流量短期体现的，并不等同于技术革命。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenClaw 爆火：现象级流量，还是生产力革命？">
+<meta property="og:url" content="https://l1st1t3m.github.io/post/f64927f0.html">
+<meta property="og:site_name" content="不群小筑">
+<meta property="og:description" content="最近一段时间，OpenClaw 几乎刷屏。 公众号全是它，技术群全是它，朋友圈也在转它。 还有人为了OpenClaw 超越 Linux 登顶 GitHub Star 第一而兴奋。 我对这件事的看法其实很简单，现象级流量短期体现的，并不等同于技术革命。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTG50ZKPiNv3K8r0RF7nyNQWYxXHMndOF6rA&s">
+<meta property="og:image" content="https://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20180328/b3514e5b13354766ab7db26ab9a2d68c.jpeg">
+<meta property="og:image" content="https://video.qiluyidian.net/17421957041922804_web.jpeg">
+<meta property="og:image" content="https://n.sinaimg.cn/spider20250916/25/w1080h1345/20250916/a157-a4caea65911858c7c4010b14d9755d5f.jpg">
+<meta property="og:image" content="https://n.sinaimg.cn/spider20250916/732/w1078h1254/20250916/79ba-95b2d0a5383d8316876e143dbd8ccafd.jpg">
+<meta property="article:published_time" content="2026-07-04T09:05:09.873Z">
+<meta property="article:modified_time" content="2026-03-06T13:54:44.000Z">
+<meta property="article:author" content="李不群">
+<meta property="article:tag" content="AI应用">
+<meta property="article:tag" content="GitHub项目">
+<meta property="article:tag" content="热点评价">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTG50ZKPiNv3K8r0RF7nyNQWYxXHMndOF6rA&s">
+
+
+<link rel="canonical" href="https://l1st1t3m.github.io/post/f64927f0.html">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://l1st1t3m.github.io/post/f64927f0.html","path":"post/f64927f0.html","title":"OpenClaw 爆火：现象级流量，还是生产力革命？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>OpenClaw 爆火：现象级流量，还是生产力革命？ | 不群小筑</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="不群小筑" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">不群小筑</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay young, Stay simple.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页-|-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页 | home</a></li><li class="menu-item menu-item-关于-|-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于 | about</a></li><li class="menu-item menu-item-分类-|-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 | categories</a></li><li class="menu-item menu-item-标签-|-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 | tags</a></li><li class="menu-item menu-item-游戏-|-games"><a href="/games/" rel="section"><i class="fa-brands fa-playstation fa-fw"></i>游戏 | games</a></li><li class="menu-item menu-item-音乐-|-music"><a href="https://l1st1t3m.github.io/CD-Wall-l1st1t3m/" rel="section"><i class="fa fa-music fa-fw"></i>音乐 | music</a></li><li class="menu-item menu-item-影剧-|-media"><a href="/movie/" rel="section"><i class="fa fa-film fa-fw"></i>影剧 | media</a></li><li class="menu-item menu-item-生活-|-diary"><a href="/categories/10-%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" rel="section"><i class="fa fa-book fa-fw"></i>生活 | diary</a></li><li class="menu-item menu-item-归档-|-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档 | archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%83%BD%E6%98%AF%E8%B0%81%E5%9C%A8%E7%94%A8%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">一、都是谁在用？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%AB%98%E7%BA%A7-%E2%89%A0-%E6%B5%81%E8%A1%8C"><span class="nav-number">2.</span> <span class="nav-text">二、高级 ≠ 流行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%88%B0%E5%BA%95%E5%BC%BA%E4%B8%8D%E5%BC%BA%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">三、到底强不强？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%98%AF%E4%B8%8D%E6%98%AF%E7%8E%A9%E5%85%B7%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">四、是不是玩具？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E8%A2%AB%E5%BF%BD%E7%95%A5%E7%9A%84%E4%BB%A3%E4%BB%B7"><span class="nav-number">5.</span> <span class="nav-text">五、被忽略的代价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%85%B3%E4%BA%8EStar-%E7%99%BB%E9%A1%B6%E8%83%BD%E8%AF%B4%E6%98%8E%E4%BB%80%E4%B9%88"><span class="nav-number">6.</span> <span class="nav-text">六、关于Star 登顶能说明什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E6%88%91%E7%9A%84%E7%BB%93%E8%AE%BA"><span class="nav-number">7.</span> <span class="nav-text">七、我的结论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90"><span class="nav-number">8.</span> <span class="nav-text">八、教程推荐</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="李不群"
+      src="https://avatars.githubusercontent.com/u/58502299">
+  <p class="site-author-name" itemprop="name">李不群</p>
+  <div class="site-description" itemprop="description">Sometimes Naive.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/l1st1t3m" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;l1st1t3m" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lokilicho@gmail.com" title="Email → mailto:lokilicho@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://x.com/II_F_s0cIeTy_ll" title="Twitter → https:&#x2F;&#x2F;x.com&#x2F;II_F_s0cIeTy_ll" rel="noopener me" target="_blank"><i class="fab fa-x-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/l1st1t3m/" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;l1st1t3m&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCv1Vlxe9qQJhTPc54mTh9wg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCv1Vlxe9qQJhTPc54mTh9wg" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/l1st1t3m" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;l1st1t3m" rel="noopener me" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+<div id="custom-weather-card" style="display: none;">
+  <div id="weather-info">
+    <div id="custom-clock-header" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 12px; gap: 3px;">
+      
+      <div id="clock-date" style="font-size: 11px; opacity: 0.65; letter-spacing: 1px;">获取日期中...</div>
+      
+      <div id="clock-time" style="font-size: 28px; font-weight: 300; letter-spacing: 2px; line-height: 1; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">--:--:--</div>
+      
+      <div id="weather-city" style="font-size: 12.5px; font-weight: 600; letter-spacing: 2px;">获取位置中...</div>
+      
+    </div>
+    
+    <div style="display: flex; align-items: center; justify-content: center; gap: 5px; margin-bottom: 15px;">
+      <i id="weather-icon" class="fa-solid fa-cloud" aria-hidden="true" style="display: none;"></i>
+      <div>
+        <div id="weather-temp" style="font-size: 28px; font-weight: 300; line-height: 1;">--°C</div>
+        <div id="weather-desc" style="font-size: 12px; opacity: 0.8; margin-top: 5px;">--</div>
+      </div>
+    </div>
+
+    <div class="weather-grid">
+      <div class="weather-detail-item"><span class="w-label">体感</span><span id="w-feels" class="w-val">--°</span></div>
+      <div class="weather-detail-item"><span class="w-label">空气</span><span id="w-aqi" class="w-val">--</span></div>
+      <div class="weather-detail-item"><span class="w-label">降水</span><span id="w-rain" class="w-val">--mm</span></div>
+      
+      <div class="weather-detail-item"><span class="w-label">风速</span><span id="w-wind" class="w-val">--m/s</span></div>
+      <div class="weather-detail-item"><span class="w-label">风向</span><span id="w-winddir" class="w-val">--</span></div>
+      <div class="weather-detail-item"><span class="w-label">湿度</span><span id="w-humidity" class="w-val">--%</span></div>
+      
+      <div class="weather-detail-item"><span class="w-label">云量</span><span id="w-clouds" class="w-val">--%</span></div>
+      <div class="weather-detail-item"><span class="w-label">紫外</span><span id="w-uv" class="w-val">--</span></div>
+      <div class="weather-detail-item"><span class="w-label">能见</span><span id="w-vis" class="w-val">--km</span></div>
+      
+      <div class="weather-detail-item"><span class="w-label">气压</span><span id="w-press" class="w-val">--hPa</span></div>
+      <div class="weather-detail-item"><span class="w-label">日出</span><span id="w-sunrise" class="w-val">--:--</span></div>
+      <div class="weather-detail-item"><span class="w-label">日落</span><span id="w-sunset" class="w-val">--:--</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const API_KEY = '8c6b74f5ed7f60c14f17f9eb06739a54';
+    const WAQI_TOKEN = '3a248985bbaea3cd420b2ab3800dbe622f098248';
+    const cityMap = { 'Haidian': '北京市海淀区', 'Beijing': '北京市', 'Shanghai': '上海市', 'Chaoyang': '北京市朝阳区' };
+    
+    // ======= 时钟逻辑补丁 =======
+    const updateClock = () => {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      
+      const year = now.getFullYear();
+      const month = now.getMonth() + 1;
+      const date = now.getDate();
+      const days = ['日', '一', '二', '三', '四', '五', '六'];
+      const day = days[now.getDay()];
+      
+      const timeEl = document.getElementById('clock-time');
+      const dateEl = document.getElementById('clock-date');
+      if(timeEl) timeEl.innerText = `${h}:${m}:${s}`;
+      if(dateEl) dateEl.innerText = `${year}年${month}月${date}日 周${day}`;
+    };
+    setInterval(updateClock, 1000);
+    updateClock();
+    // ==========================
+
+    // 风向转换函数
+    const getWindDir = (deg) => {
+      if(deg === undefined) return '--';
+      const dirs = ['北', '东北', '东', '东南', '南', '西南', '西', '西北'];
+      return dirs[Math.round(deg / 45) % 8] + '风';
+    };
+
+    // 时间转换函数
+    const formatTime = (unixTs) => {
+      if(!unixTs) return '--:--';
+      const d = new Date(unixTs * 1000);
+      return d.getHours().toString().padStart(2, '0') + ':' + d.getMinutes().toString().padStart(2, '0');
+    };
+
+    const fetchWeather = async (lat, lon) => {
+      try {
+        // 并行请求：天气基础数据、WAQI空气质量、紫外线
+        const [weatherRes, aqiRes, uvRes] = await Promise.allSettled([
+          fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=zh_cn`),
+          fetch(`https://api.waqi.info/feed/geo:${lat};${lon}/?token=${WAQI_TOKEN}`),
+          fetch(`https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${API_KEY}`) // 遗留免费紫外线接口
+        ]);
+
+        if (weatherRes.status !== 'fulfilled') throw new Error('Weather fetch failed');
+        const data = await weatherRes.value.json();
+        
+        const weatherCard = document.getElementById('custom-weather-card');
+        weatherCard.onclick = () => window.open(`https://www.windy.com/?${lat},${lon},10`, '_blank');
+
+        // 基础与头部信息
+        document.getElementById('weather-city').innerText = cityMap[data.name] || data.name;
+        document.getElementById('weather-temp').innerText = Math.round(data.main.temp) + '°C';
+        document.getElementById('weather-desc').innerText = data.weather[0].description;
+        
+        // 12宫格数据填充
+        document.getElementById('w-feels').innerText = Math.round(data.main.feels_like) + '°';
+        document.getElementById('w-wind').innerText = Math.round(data.wind.speed) + 'm/s';
+        document.getElementById('w-winddir').innerText = getWindDir(data.wind.deg);
+        document.getElementById('w-humidity').innerText = data.main.humidity + '%';
+        document.getElementById('w-clouds').innerText = data.clouds.all + '%';
+        document.getElementById('w-vis').innerText = (data.visibility / 1000).toFixed(1) + 'km';
+        document.getElementById('w-press').innerText = data.main.pressure;
+        document.getElementById('w-sunrise').innerText = formatTime(data.sys.sunrise);
+        document.getElementById('w-sunset').innerText = formatTime(data.sys.sunset);
+
+        // 降水计算 (优先雨，其次雪，都没有则为 0)
+        let precip = 0;
+        if (data.rain && data.rain['1h']) precip = data.rain['1h'];
+        else if (data.snow && data.snow['1h']) precip = data.snow['1h'];
+        document.getElementById('w-rain').innerText = precip > 0 ? precip.toFixed(1) + 'mm' : '0mm';
+
+        // ==========================================
+        // 空气质量 (AQI) 处理 - WAQI 接口
+        // ==========================================
+        if (aqiRes.status === 'fulfilled' && aqiRes.value.ok) {
+          const aqiJson = await aqiRes.value.json();
+          if (aqiJson.status === 'ok') {
+            const aqiVal = aqiJson.data.aqi;
+            let aqiLabel = '--';
+            let aqiColor = 'inherit';
+
+            // 根据 WAQI 标准设置等级和颜色
+            if (aqiVal <= 50) { aqiLabel = '优'; aqiColor = '#a3d765'; }
+            else if (aqiVal <= 100) { aqiLabel = '良'; aqiColor = '#f0cc35'; }
+            else if (aqiVal <= 150) { aqiLabel = '轻度'; aqiColor = '#f09c35'; }
+            else if (aqiVal <= 200) { aqiLabel = '中度'; aqiColor = '#e04f4f'; }
+            else if (aqiVal <= 300) { aqiLabel = '重度'; aqiColor = '#9c4fe0'; }
+            else { aqiLabel = '严重'; aqiColor = '#7e0023'; } // 300以上严重污染
+
+            const aqiSpan = document.getElementById('w-aqi');
+            aqiSpan.innerText = `${aqiVal} ${aqiLabel}`; // 修改为数值+文字
+            aqiSpan.style.color = aqiColor;
+          }
+        }
+
+        // 紫外线处理
+        if (uvRes.status === 'fulfilled' && uvRes.value.ok) {
+          const uvData = await uvRes.value.json();
+          document.getElementById('w-uv').innerText = Math.round(uvData.value) || '0';
+        }
+
+        // 使用站点已加载的 Font Awesome，避免依赖不稳定的外部天气图标地址
+        const iconMap = {
+          '01d': ['fa-sun', 'weather-icon-sun'],
+          '01n': ['fa-moon', 'weather-icon-night'],
+          '02d': ['fa-cloud-sun', 'weather-icon-cloud'],
+          '02n': ['fa-cloud-moon', 'weather-icon-night'],
+          '03d': ['fa-cloud', 'weather-icon-cloud'],
+          '03n': ['fa-cloud', 'weather-icon-cloud'],
+          '04d': ['fa-cloud', 'weather-icon-overcast'],
+          '04n': ['fa-cloud', 'weather-icon-overcast'],
+          '09d': ['fa-cloud-showers-heavy', 'weather-icon-rain'],
+          '09n': ['fa-cloud-showers-heavy', 'weather-icon-rain'],
+          '10d': ['fa-cloud-rain', 'weather-icon-rain'],
+          '10n': ['fa-cloud-rain', 'weather-icon-rain'],
+          '11d': ['fa-cloud-bolt', 'weather-icon-storm'],
+          '11n': ['fa-cloud-bolt', 'weather-icon-storm'],
+          '13d': ['fa-snowflake', 'weather-icon-snow'],
+          '13n': ['fa-snowflake', 'weather-icon-snow'],
+          '50d': ['fa-smog', 'weather-icon-mist'],
+          '50n': ['fa-smog', 'weather-icon-mist']
+        };
+        const [iconClass, toneClass] = iconMap[data.weather[0].icon] || ['fa-cloud', 'weather-icon-cloud'];
+        const iconEl = document.getElementById('weather-icon');
+        iconEl.className = `fa-solid ${iconClass} ${toneClass}`;
+        iconEl.title = data.weather[0].description;
+        iconEl.style.display = 'flex';
+
+      } catch (err) { console.error('Weather error:', err); }
+    };
+
+    const initWidgets = function() {
+      // ======= 1. 增强版：自动清理分类数字前缀 =======
+      const cleanNow = () => {
+        // 涵盖：列表链接、大标题、文章内元数据、面包屑等
+        const selectors = '.category-list-link, .collection-header, span[itemprop="name"], .post-category a, .breadcrumb';
+        document.querySelectorAll(selectors).forEach(el => {
+          const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+          let node;
+          while (node = walk.nextNode()) {
+            // 正则说明：匹配开头数字 + 可选空格 + 横杠 + 可选空格
+            const cleaned = node.nodeValue.replace(/^\d+\s*-\s*/, '');
+            if (node.nodeValue !== cleaned) {
+              node.nodeValue = cleaned;
+            }
+          }
+        });
+      };
+
+      // 立即执行一次
+      cleanNow();
+      
+      // 针对异步加载（如Pjax）增加一个延时执行，确保内容已填充
+      setTimeout(cleanNow, 100);
+      setTimeout(cleanNow, 500); 
+
+      // 使用 MutationObserver 监听动态变化（最保险的方法）
+      if (!window.catObserver) {
+        window.catObserver = new MutationObserver(cleanNow);
+        window.catObserver.observe(document.body, { childList: true, subtree: true });
+      }
+      // ==========================================
+
+      const weatherCard = document.getElementById('custom-weather-card');
+      const sidebar = document.querySelector('.sidebar-inner');
+      if (weatherCard && sidebar) {
+        if (!sidebar.querySelector('#custom-weather-card')) sidebar.appendChild(weatherCard);
+        weatherCard.style.display = 'block';
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (pos) => fetchWeather(pos.coords.latitude, pos.coords.longitude), 
+            () => fetchWeather(39.9, 116.4)
+          );
+        } else { fetchWeather(39.9, 116.4); }
+      }
+    };
+    initWidgets();
+    document.addEventListener('pjax:success', initWidgets);
+  })();
+</script>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://l1st1t3m.github.io/post/f64927f0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/58502299">
+      <meta itemprop="name" content="李不群">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不群小筑">
+      <meta itemprop="description" content="Sometimes Naive.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="OpenClaw 爆火：现象级流量，还是生产力革命？ | 不群小筑">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          OpenClaw 爆火：现象级流量，还是生产力革命？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-07-04 17:05:09" itemprop="dateCreated datePublished" datetime="2026-07-04T17:05:09+08:00">2026-07-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-03-06 21:54:44" itemprop="dateModified" datetime="2026-03-06T21:54:44+08:00">2026-03-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/11-%E4%B8%8D%E7%BE%A4%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">11-不群随笔</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><div style="text-align: center;">
+<strong>
+最近一段时间，OpenClaw 几乎刷屏。
+公众号全是它，技术群全是它，朋友圈也在转它。
+还有人为了OpenClaw 超越 Linux 登顶 GitHub Star 第一而兴奋。
+我对这件事的看法其实很简单，现象级流量短期体现的，并不等同于技术革命。
+</strong>
+</div>
+<span id="more"></span>
+
+<hr>
+<h2 id="一、都是谁在用？"><a href="#一、都是谁在用？" class="headerlink" title="一、都是谁在用？"></a>一、都是谁在用？</h2><p>这里有一个公开的实例统计页面，同时能展示用户的地区来源与安全等级：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://openclaw.allegro.earth/">https://openclaw.allegro.earth/</a></p>
+</blockquote>
+<p>从前一百条样本抽样来看，使用者以中文环境为主，且安全问题严重，这一点并不意外。</p>
+<p>首先国内大部分非计算机行业工作者对 AI 认知存在明显偏差：<br>以我个人来说，2022 年 12 月，我就开始使用 GPT-3.5。<br>但很多国内用户真正接触生成式 AI，可能是 2024 年。<br>普通大众真正大规模接触 AI，是 2025 年春节 DeepSeek 爆火之后。</p>
+<p>这是一波典型的信息差红利。<br>就像当年本地部署 DeepSeek 刚出来时一样，</p>
+<p><strong>利好的往往是卖课的、卖服务的、卖 token 的。</strong></p>
+<p>OpenClaw 也是一样。</p>
+<hr>
+<h2 id="二、高级-≠-流行"><a href="#二、高级-≠-流行" class="headerlink" title="二、高级 ≠ 流行"></a><strong>二、高级 ≠ 流行</strong></h2><p>有人拿它和 Linux 在Github的收藏数量比,这个类比本身就不成立。</p>
+<p>Linux 是地基，是操作系统内核，是几十年沉淀的基础设施。<br>OpenClaw 是什么？它本质是一个高集成度的 AI Agent 框架。</p>
+<p><strong>高级、强大 ≠ 流行。</strong></p>
+<p>流行更多是传播结构决定的。</p>
+<p>Star 数量高，说明关注度高，不等于架构先进。<br>当一个项目爆火时，很多人会先手点个 star，然后收藏吃灰，表示自己关注了。<br>这并不等价于技术质量。</p>
+<p><strong>当年 <a target="_blank" rel="noopener" href="https://996.icu/#/zh_CN">996.ICU</a> 的 Star 也很夸张，但那是社会情绪的表达，不是技术能力的体现。</strong></p>
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTG50ZKPiNv3K8r0RF7nyNQWYxXHMndOF6rA&s"></p>
+<hr>
+<h2 id="三、到底强不强？"><a href="#三、到底强不强？" class="headerlink" title="三、到底强不强？"></a><strong>三、到底强不强？</strong></h2><p>客观说一句：<strong>有点用，但没那么夸张。</strong></p>
+<p>我从2025年12月开始使用ClawdBot，一直到它改名OpenClaw到爆火。<br>使用下来最大的的体会就是它集成度高，主动性强，能简单跑起来，对非程序员来说门槛相对较低。</p>
+<p>但是它的缺点是更要命的。</p>
+<p>首先在Windows 支持体验一般，在项目关注点以大量非程序员群体构成的项目中，对Windows的支持应该是第一位的，否则不说它能真正能实际解决问题，就连部署都是一道难关，本来低代码的门槛又拔高起来了。</p>
+<p>其次它的token 消耗非常高，真实使用成本并不低。<strong>每次小请求都是5000-10000 token 的上下文起步，每次请求要等20多将近30秒，有时候直接触发rate limit。<strong>效率低不说，这种消耗量不是所谓“一人公司”能玩的起的。你有“一人公司”的想法，但你只有一个人，没有公司可以承担的成本，连最基础的</strong>投产比</strong>你都根本无法做预算。</p>
+<p>在其他能力方面，它和其他 agent 在能力层面并没有本质差别，我个人并没有看出它比 Claude Code 强多少。区别更多在于主动性和整合方式，而不是底层能力跃迁。</p>
+<hr>
+<h2 id="四、是不是玩具？"><a href="#四、是不是玩具？" class="headerlink" title="四、是不是玩具？"></a><strong>四、是不是玩具？</strong></h2><p>首先，openclaw 可以说是<strong>丑陋但能跑</strong>的典范。</p>
+<p>从架构复杂度来看，目前就是纯纯的玩具。<br>核心逻辑并不难，简化版手搓并不复杂，否则也不会在短时间内出现大量类似项目。</p>
+<p>不过如果乐观看待，现在是玩具，不代表以后不能成为生产力。<br>很多技术路径都是这样：先被geek们弄出来，被流量放大，被资本加速，被产品经理打磨，才真正变成基础设施。现在 OpenClaw 处于第二阶段。</p>
+<hr>
+<h2 id="五、被忽略的代价"><a href="#五、被忽略的代价" class="headerlink" title="五、被忽略的代价"></a><strong>五、被忽略的代价</strong></h2><p>很多人没有意识到一点，Agent 框架的本质是 <strong>“把更多上下文交给模型”</strong>。<br>也就是说，文件系统、本地代码、浏览记录、账号数据等等，都可能成为输入。</p>
+<p>某种意义上，它是“用隐私换便利”的极端版本。<br>还是在这个页面上看：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://openclaw.allegro.earth/">https://openclaw.allegro.earth/</a></p>
+</blockquote>
+<p>果然李彦宏说中国人喜欢用隐私换便利是没错的。</p>
+<p><img src="https://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20180328/b3514e5b13354766ab7db26ab9a2d68c.jpeg"></p>
+<p><strong>说到李彦宏，立刻想到百度，立刻想到大厂，立刻想到大厂的产品，立刻想到大厂的目标，立刻想到大厂的销售策略。</strong></p>
+<p>大厂最喜欢这种场景，OpenClaw消耗更多 token，更长上下文，更高调用频率，更稳定付费，真他妈的是一个极好的 token 消耗器。火了可太好了，但你们普通人真的用得起吗？</p>
+<hr>
+<h2 id="六、关于Star-登顶能说明什么"><a href="#六、关于Star-登顶能说明什么" class="headerlink" title="六、关于Star 登顶能说明什么"></a><strong>六、关于Star 登顶能说明什么</strong></h2><p>说明它火了。<br>不说明它先进。</p>
+<p>现在是个人，能翻墙，就能注册个GitHub账号。<strong>我虽然看不懂，不会git，但我他妈的会点赞啊。</strong><br>这就导致Star 的结构里掺杂了大量非技术人员，非程序员，跟风收藏者，因此你不能把一场传播学现象看作架构革命。<br>因此对于OpenClaw 的Star数量超越 Linux这点也就没必要谈了，问题本身就是错的。</p>
+<p>Linux 是基础设施，Agent 框架是应用层工具，维度都不同。就像问浏览器能不能超越 TCP&#x2F;IP 一样。<br>唯一利好的就是这帮靠水文章赚流量的傻逼自媒体。</p>
+<hr>
+<h2 id="七、我的结论"><a href="#七、我的结论" class="headerlink" title="七、我的结论"></a><strong>七、我的结论</strong></h2><p>以下都是个人情绪输出，仅供参考。</p>
+<p>最让我反感的是什么？<br>就是这种对某个在正确的时间出现的历史时刻的<strong>中国特色跟风造神</strong>。</p>
+<p><strong>过去你们造了又推翻，一个又一个神，为了你们的封建统治。</strong><br><strong>现在你们造了又推翻，一个又一个神，为了你们的资本收割。</strong><br><strong>韭菜还是太多了。</strong><br><strong>铁盘还是太稳了。</strong><br><strong>你们只不过是用低级的手段把缺失的认知压缩成情绪罢了。</strong></p>
+<p>很多人并没有理解agent 是什么，orchestration 在做什么，token 成本结构如何，权限风险在哪里；<br>但传播已经变成了“超越 Linux”，“颠覆操作系统”，“未来已来”，“不会用就被淘汰”<br>这不是技术讨论，是情绪营销。<br>情绪营销是不会变成所谓的什么“新质XX力”的。<br>你们是擅长叙事操控，擅长牛头不对马嘴的硬塞框架，但别他妈给自己也骗了。</p>
+<p>其次让我反感的是什么？<br>就是你们这帮傻逼自媒体的水文章无脑托举。<br>有些文章确实没水，但你把批判放在最后，和雷军把小字调成透明度20%没有区别。<br>中文社区 AI 爆火路径一直很清晰。国外小圈子先用、中文技术圈扩散、自媒体放大、课程出现、“风口已至”、普通用户恐慌入场。<br>而现在到了第三阶段。<br>为什么没像当年本地部署DeepSeek一样很快进入第四阶段？因为自媒体也他妈的来了一帮不懂一点代码和编程的，自己玩明白也有门槛。<br>让我们静待恐慌入场的到来吧。</p>
+<p>情绪抒发完了，最后说说我针对项目本身的结论吧。</p>
+<p><strong>1. OpenClaw有价值，但被严重夸大。<br>2. 集成度高，但能力无本质突破。<br>3. 流量驱动大于技术驱动。<br>4. 成本与隐私问题被低估。<br>5. 长期价值取决于产品化能力，而不是现在的 Star 数。</strong></p>
+<p>我认为：</p>
+<p><strong>需要持续关注，不要盲目入场；</strong><br><strong>不参与情绪市场，只参与技术实验。</strong><br><strong>因为你永远赚不到你认知外的钱。</strong></p>
+<p>如果它沉淀为真正稳定、低成本、可控的生产力工具，那也是我希望看到的，欢迎来打脸。<br>如果没有，那它就是一个流量符号。</p>
+<hr>
+<h2 id="八、教程推荐"><a href="#八、教程推荐" class="headerlink" title="八、教程推荐"></a><strong>八、教程推荐</strong></h2><p>对于想自己上手试下效果的，这里推荐一个文字教程和一个视频教程：<br>（我虽然不靠写文章赚钱，但也不能和水文章公众号一样输出一堆废话。）</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/xianyu110/awesome-openclaw-tutorial?tab=readme-ov-file">从零开始玩转OpenClaw：最全面的中文教程，涵盖安装、配置、实战案例和避坑指南（github版）</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=2ZZCyHzo9as">【保姆级】OpenClaw 全网最细教学：安装→Skills实战→多Agent协作，1 小时全精通！</a></p>
+</blockquote>
+<p><strong>如果你能跟着教程做下来，再继续你的 “一人公司” 的伟大构想。</strong><br><strong>要是半途而废继续不了，就别继续投入时间成本了。</strong><br><strong>除非你是会花钱让别人帮你装各种软件的人。</strong></p>
+<div class="photo-wall">
+
+<p><img src="https://video.qiluyidian.net/17421957041922804_web.jpeg"><br><img src="https://n.sinaimg.cn/spider20250916/25/w1080h1345/20250916/a157-a4caea65911858c7c4010b14d9755d5f.jpg"><br><img src="https://n.sinaimg.cn/spider20250916/732/w1078h1254/20250916/79ba-95b2d0a5383d8316876e143dbd8ccafd.jpg"></p>
+</div>
+
+<hr>
+<div style="text-align: center;">
+
+<p><strong>技术史反复证明一件事，</strong></p>
+<p><strong>真正改变世界的，从来不是第一个爆火的那个。</strong></p>
+<p><strong>而是那个活下来的。</strong></p>
+<p>历史不会重复<br>但会押韵</p>
+</div>
+
+<hr>
+<p align="right"> —— 20260304 北京 雪夜 不群随笔 </p> 
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>李不群
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://l1st1t3m.github.io/post/f64927f0.html" title="OpenClaw 爆火：现象级流量，还是生产力革命？">https://l1st1t3m.github.io/post/f64927f0.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://x.com/II_F_s0cIeTy_ll">
+            <span class="icon">
+              <i class="fab fa-x-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/l1st1t3m">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/AI%E5%BA%94%E7%94%A8/" rel="tag"># AI应用</a>
+              <a href="/tags/GitHub%E9%A1%B9%E7%9B%AE/" rel="tag"># GitHub项目</a>
+              <a href="/tags/%E7%83%AD%E7%82%B9%E8%AF%84%E4%BB%B7/" rel="tag"># 热点评价</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/8284ee2f.html" rel="prev" title="【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill">
+                  <i class="fa fa-angle-left"></i> 【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/bc5c7667.html" rel="next" title="《雪崩》">
+                  《雪崩》 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-solid fa-user-secret"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">李不群</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/l1st1t3m" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"l1st1t3m/comment4myblog","issue_term":"pathname","theme":"preferred-color-scheme"}</script>
+<script src="/js/third-party/comments/utterances.js" defer></script>
+<!-- YouTube 视频全局智能分流拦截器 -->
+<script data-pjax>
+document.addEventListener("click", function(event) {
+  const facade = event.target.closest('.yt-facade');
+  if (!facade) return;
+
+  const vid = facade.getAttribute('data-vid');
+  if (!vid) return;
+
+  const ua = navigator.userAgent.toLowerCase();
+  const isIOS = /iphone|ipad|ipod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isChrome = /chrome|chromium|crios/i.test(ua);
+  const isEdge = /edg/i.test(ua);
+  const isSafari = /safari/i.test(ua) && !isChrome && !isEdge;
+
+  if (isIOS || isSafari) {
+    // 🍎 Safari / iOS 专属放行：顺应超链接，直接新标签页打开
+    return; 
+  } else {
+    // 🌐 Edge / Chrome 绝对拦截：阻止跳转，原地变成视频！
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation(); 
+
+    facade.removeAttribute('href');
+    facade.removeAttribute('target');
+    
+    // 👇 核心修改：换回 youtube.com，允许读取你的登录状态，解除机器人验证！
+    facade.innerHTML = '<iframe src="https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>';
+    facade.style.cursor = 'default';
+    facade.classList.remove('yt-facade');
+  }
+}, true);
+</script>
+</body>
+</html>
