@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #38f2ff;
+    background: #e2d640;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4094,7 +4094,7 @@ a.btn:hover {
   background: rgba(255,255,255,0.95) !important;
   color: #000 !important;
   transform: translateY(-1px);
-  box-shadow: 0 0 10px rgba(255,255,255,0.6);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 /* 点击黑边修复 */
 .post-button .btn:focus,
@@ -4115,6 +4115,7 @@ a.btn:active {
   a.btn:hover {
     background: rgba(255,255,255,0.15) !important;
     color: #fff !important;
+    box-shadow: 0 0 10px rgba(255,255,255,0.6);
   }
 }
 /* 只美化相关文章链接本体 */
