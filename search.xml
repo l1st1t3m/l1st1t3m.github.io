@@ -4,228 +4,25 @@
   
     
     <entry>
-      <title>Homebrew常用命令</title>
-      <link href="/post/d71c9458.html"/>
-      <url>/post/d71c9458.html</url>
+      <title>北京植物的花期</title>
+      <link href="/post/2a1528de.html"/>
+      <url>/post/2a1528de.html</url>
       
-        <content type="html"><![CDATA[<div style="text-align: center;"><strong>macOS上的Homebrew安装及更新软件等常用命令</strong></div><span id="more"></span><h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a><strong>项目介绍</strong></h2><p>Homebrew 的设计宗旨可以用一句话概括：用一行命令完成软件安装与管理，让 macOS 彻底告别手动装软件的时代。</p><p>它是一款 macOS &#x2F; Linux 平台下的包管理工具，类似 Linux 的 apt &#x2F; yum，专门解决软件安装、依赖管理与版本控制问题。 </p><p>Homebrew 主要功能包括：<br>通过一条命令安装软件，无需手动下载或拖拽安装。<br>自动处理依赖关系，避免版本冲突与缺失依赖问题。<br>支持软件的安装、卸载、更新、查询等完整生命周期管理。<br>支持命令行工具与 GUI 应用（通过 Cask）。<br>支持服务管理（如 nginx、redis 等后台服务）。<br>支持扩展仓库（Tap），获取官方之外的软件资源。<br>支持预编译二进制（Bottle），提升安装速度。</p><p>Homebrew 的核心组成包括：</p><ul><li>brew：核心命令行工具</li><li>Formula：软件安装脚本（配方）</li><li>Bottle：预编译二进制包</li><li>Cask：GUI 应用管理</li><li>Tap：扩展仓库机制</li></ul><p>👉 本质上：<br>Homebrew &#x3D; 软件包管理 + 依赖管理 + 自动化环境搭建工具</p><hr><h2 id="安装、更新、卸载"><a href="#安装、更新、卸载" class="headerlink" title="安装、更新、卸载"></a><strong>安装、更新、卸载</strong></h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a><strong>安装</strong></h3><p>打开终端（Terminal），粘贴以下命令安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span><br></pre></td></tr></table></figure><h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a><strong>更新</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure><h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a><strong>卸载</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)&quot;</span><br></pre></td></tr></table></figure><hr><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a><strong>常用命令</strong></h2><h3 id="1-安装软件包"><a href="#1-安装软件包" class="headerlink" title="1.安装软件包"></a>1.安装软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><blockquote><p>例如，安装wget：<br>brew install wget</p></blockquote><h3 id="2-卸载软件包"><a href="#2-卸载软件包" class="headerlink" title="2.卸载软件包"></a>2.卸载软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew uninstall &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><h3 id="3-更新软件"><a href="#3-更新软件" class="headerlink" title="3.更新软件"></a>3.更新软件</h3><p>更新Homebrew本身</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure><p>更新所有已安装的软件包</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade</span><br></pre></td></tr></table></figure><p>更新指定的软件包</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><h3 id="4-查看已安装的软件包"><a href="#4-查看已安装的软件包" class="headerlink" title="4.查看已安装的软件包"></a>4.查看已安装的软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list</span><br></pre></td></tr></table></figure><h3 id="5-搜索软件包"><a href="#5-搜索软件包" class="headerlink" title="5.搜索软件包"></a>5.搜索软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew search &lt;关键词&gt;</span><br></pre></td></tr></table></figure><h3 id="6-查看软件包信息"><a href="#6-查看软件包信息" class="headerlink" title="6.查看软件包信息"></a>6.查看软件包信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew info &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><h3 id="7-清理不再需要的文件"><a href="#7-清理不再需要的文件" class="headerlink" title="7.清理不再需要的文件"></a>7.清理不再需要的文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cleanup</span><br></pre></td></tr></table></figure><blockquote><p>会自动删除无用文件，释放空间</p></blockquote><h3 id="8-显示-Homebrew-的系统诊断信息"><a href="#8-显示-Homebrew-的系统诊断信息" class="headerlink" title="8.显示 Homebrew 的系统诊断信息"></a>8.显示 Homebrew 的系统诊断信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew doctor</span><br></pre></td></tr></table></figure><h3 id="9-列出过时的软件包"><a href="#9-列出过时的软件包" class="headerlink" title="9.列出过时的软件包"></a>9.列出过时的软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew outdated</span><br></pre></td></tr></table></figure><h3 id="10-导出和导入已安装的软件包列表"><a href="#10-导出和导入已安装的软件包列表" class="headerlink" title="10.导出和导入已安装的软件包列表"></a>10.导出和导入已安装的软件包列表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list --formula &gt; Brewfile</span><br></pre></td></tr></table></figure><blockquote><p>导出已安装的软件包列表</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install $(cat Brewfile)</span><br></pre></td></tr></table></figure><blockquote><p>使用Brewfile安装已导出的软件包：</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<div style="text-align: center;"><strong>北京城市园林植物的花期参考</strong></div><span id="more"></span><div style="text-align: center;"><h1 id="节气对应花期"><a href="#节气对应花期" class="headerlink" title="节气对应花期"></a>节气对应花期</h1></div><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260221184045423.jpg"></p><div style="text-align: center;"><h1 id="月份对应花期"><a href="#月份对应花期" class="headerlink" title="月份对应花期"></a>月份对应花期</h1></div><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260222143739873.jpg"></p>]]></content>
       
       
       <categories>
           
-          <category> 02-工具文档 </category>
+          <category> 06-博物笔记 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> macOS </tag>
+            <tag> 园林植物 </tag>
             
-            <tag> 实用软件 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>AWS系列02：AWS轻量服务器推荐</title>
-      <link href="/post/72a57ff0.html"/>
-      <url>/post/72a57ff0.html</url>
-      
-        <content type="html"><![CDATA[<div style="text-align: center;"><strong>通过亚马逊AWS的Lightsail服务搭建轻量服务器</strong></div><span id="more"></span><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162318055.png"></p><div style="text-align: center;"><p><strong><a href="https://lightsail.aws.amazon.com/">Lightsail</a></strong></p></div><h2 id="Lightsail服务界面与实例选择"><a href="#Lightsail服务界面与实例选择" class="headerlink" title="Lightsail服务界面与实例选择"></a>Lightsail服务界面与实例选择</h2><ul><li>登录AWS后，通过左上角的Services—All services—L检索到Lightsail服务，也可直接在左上角搜索栏输入Lightsail进行检索，找到后点击进入服务。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260228172043572.png"></p><ul><li>Lightsail服务界面</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162726700.png"></p><ul><li><p>更改实例位置，发现可用的区域如下，此处可通过测速网站来检测AWS服务器连接到各地机房的速度，选择延迟最小的，可选择亚太地区的机房，因为地理位置较近，速度会快一些。（本教程使用伦敦服务器）</p></li><li><p>测速网站CloudPing：<a href="https://www.cloudping.info/">https://www.cloudping.info/</a></p></li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162803673.png"></p><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162820846.png"></p><ul><li>选择平台：Linux&#x2F;Unix；操作系统：Debian10.8</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162844180.png"></p><ul><li><p>脚本默认为空，密钥也用默认就可以，不要开启快照，存储快照是额外收费的。选择实例计划个人选择第一个就够了。（新用户前三个月免费，如果想要无限白嫖可以三个月到了就重复<a href="/post/3624cd26">VPS系列01：AWS账号的注册流程</a>的操作换个账户，只要折腾得起）实例名字随便起，辨识用。</p></li><li><p>设置完成点击创建实例。</p></li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162951894.png"></p><ul><li>等上数十秒服务器开机，我们就有了一台自己的轻量云服务器。（若未显示开机可以刷新几次）</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301163020766.png"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 03-操作系统 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 云服务 </tag>
-            
-            <tag> AWS </tag>
-            
-            <tag> 亚马逊 </tag>
-            
-            <tag> 信用卡 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>AWS系列01：AWS账号的注册流程</title>
-      <link href="/post/3624cd26.html"/>
-      <url>/post/3624cd26.html</url>
-      
-        <content type="html"><![CDATA[<div style="text-align: center;"><strong>本文详细介绍如何创建 Amazon Web Services (AWS) 账户创建指南，从注册流程、绑定信用卡验证，到启用双重验证（MFA）和 IAM 安全配置的全流程操作方法，适合首次使用 AWS 云服务的个人用户。</strong></div><span id="more"></span><h1 id="创建亚马逊AWS账号、绑定信用卡、账号安全设置"><a href="#创建亚马逊AWS账号、绑定信用卡、账号安全设置" class="headerlink" title="创建亚马逊AWS账号、绑定信用卡、账号安全设置"></a><strong>创建亚马逊AWS账号、绑定信用卡、账号安全设置</strong></h1><p><strong>需求：VISA或双币信用卡</strong> 💳 <strong>，境内外均可。</strong> </p><p><strong>中国境内银行的外币信用卡大多数会与国内信用卡捆绑注册，可以通过申请后再与开户行申请注销国内信用卡，只保留外币信用卡。（免年费的银行首选）</strong></p><h2 id="创建亚马逊账户"><a href="#创建亚马逊账户" class="headerlink" title="创建亚马逊账户"></a>创建亚马逊账户</h2><p>亚马逊AWS官方网站：<a href="https://aws.amazon.com/cn/">AWS</a></p><ul><li>进入亚马逊AWS官方网站，选择右上角创建AWS账户，如下填写注册邮件地址、密码、账户名，然后点击继续。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220337047.png"><br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220404794.png"></p><ul><li><p>按以下标注信息填写，最好与申请信用卡时的申请信息一致，以便后期审核通过，然后点击继续。</p></li><li><p>注：全名与地址需英文填写，在线翻译即可。<a href="https://fanyi.youdao.com/">在线翻译_有道</a></p></li></ul><p>例:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">宝山区示范新村37号403室</span><br><span class="line">(Room 403, No. 37, SiFang Residential Quarter, BaoShan District )</span><br><span class="line">河南省南阳市中州路42号</span><br><span class="line">(Zhongzhou Road, Nanyang City Henan Prov. China 473004)</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220445006.png"></p><h2 id="绑定信用卡"><a href="#绑定信用卡" class="headerlink" title="绑定信用卡"></a>绑定信用卡</h2><ul><li>AWS验证信用卡，填写信用卡相关信息，通过后会从所绑定的外币信用卡中扣除1$来验证卡的可用性，稍后会<br>退还，验证成功后才可继续。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220520495.png"></p><ul><li>验证手机号，使用信用卡预留手机号即可。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220550286.png"></p><ul><li>验证时常在30min-24h内不等，此期间可关注注册邮箱内亚马逊官方发来的邮件，直到可正常登录官网。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220625231.png"></p><h2 id="账号基础配置"><a href="#账号基础配置" class="headerlink" title="账号基础配置"></a>账号基础配置</h2><ul><li>创建完毕AWS账户后，请进入亚马逊AWS的IAM服务界面。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220646633.png"></p><ul><li><p>首先开启MFA双重验证，增强登陆的安全性；</p></li><li><p>其次如果开启了IAM，请<strong>停用</strong>或<strong>删除</strong>IAM帐户的访问密钥，除非您能搞清楚权限赋予，确保账号安全。</p></li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220748177.png"></p><p>这样就完成了亚马逊AWS账号的注册。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 03-操作系统 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 云服务 </tag>
-            
-            <tag> AWS </tag>
-            
-            <tag> 亚马逊 </tag>
-            
-            <tag> 信用卡 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>AWS系列03：AWS轻量服务器推荐</title>
-      <link href="/post/731082ed.html"/>
-      <url>/post/731082ed.html</url>
-      
-        <content type="html"><![CDATA[<div style="text-align: center;"><strong>通过亚马逊AWS的Lightsail服务搭建轻量服务器</strong></div><span id="more"></span>]]></content>
-      
-      
-      <categories>
-          
-          <category> 03-操作系统 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 云服务 </tag>
-            
-            <tag> AWS </tag>
-            
-            <tag> 亚马逊 </tag>
-            
-            <tag> 信用卡 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>🐹Mole——开源的 macOS 清理与优化工具</title>
-      <link href="/post/67f7f01.html"/>
-      <url>/post/67f7f01.html</url>
-      
-        <content type="html"><![CDATA[<div style="text-align: center;"><strong>一款面向 macOS 的开源命令行系统维护工具，采用 MIT 许可证。它旨在将系统清理、卸载应用、磁盘分析、系统优化等功能整合到一个轻量的命令行程序中。<br>是 CleanMyMac、AppCleaner、DaisyDisk 等工具的免费替代方案之一。</strong></div><span id="more"></span><p><img src="https://camo.githubusercontent.com/affd58a8a489cf6dc66f808e6ae3fd2224064887762f038aa053d3b5d1cba028/68747470733a2f2f63646e2e747739332e66756e2f696d672f6d6f6c652e6a706567"></p><div style="text-align: center;"><p><strong><a href="https://github.com/tw93/Mole">Mole</a>由开发者<a href="https://github.com/tw93">tw93</a>维护</strong></p></div><h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a><strong>项目介绍</strong></h2><p>Mole 的设计宗旨可以用一句话概括：<strong>像鼹鼠一样深入挖掘系统垃圾与冗余内容</strong>。<br>它主要功能包括：<br>全面清理系统与用户空间的缓存、临时文件、浏览器残留等垃圾数据，有时能释放数十 GB 存储空间。<br>智能卸载应用程序及其相关残留文件（缓存、配置、日志、启动项等）。<br>磁盘使用分析，展示大文件&#x2F;大目录占用情况。<br>系统优化功能，例如刷新缓存、重建服务、清理交换空间等。<br>实时状态监控，在终端展示 CPU、内存、磁盘、网络、电池等信息。<br>提供交互式菜单，可通过键盘导航执行各项任务。<br>Mole 不依赖后台服务或 GUI，因此对终端习惯者特别友好，同时由于其免费开源的特性，也受到开发者社区欢迎。</p><hr><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a><strong>安装过程</strong></h2><p>Mole 支持两种主流安装方式：使用安装脚本或通过 Homebrew 安装。</p><h3 id="方式一：安装脚本"><a href="#方式一：安装脚本" class="headerlink" title="方式一：安装脚本"></a><strong>方式一：安装脚本</strong></h3><p>打开终端（Terminal），粘贴以下命令安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Optional args: -s latest for main branch code, -s 1.17.0 for specific version</span><br><span class="line">curl -fsSL https://raw.githubusercontent.com/tw93/mole/main/install.sh | bash</span><br></pre></td></tr></table></figure><p>这个脚本会自动检测你的系统架构并下载最新版本的 Mole。</p><h3 id="方式二：通过-Homebrew"><a href="#方式二：通过-Homebrew" class="headerlink" title="方式二：通过 Homebrew"></a><strong>方式二：通过 Homebrew</strong></h3><p>如果你已经安装了 Homebrew，可以这样安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mole</span><br></pre></td></tr></table></figure><p>这会从 tw93 的 Homebrew tap 仓库安装 Mole，并支持随 Homebrew 更新。</p><hr><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a><strong>使用方法</strong></h2><p>安装完成后，你可以在终端运行 mo 命令并结合不同子命令执行操作。以下是常用命令示例：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">mo                           # 交互式菜单</span><br><span class="line">mo clean                     # 深度清理</span><br><span class="line">mo uninstall                 # 卸载应用及残留</span><br><span class="line">mo optimize                  # 刷新缓存和服务</span><br><span class="line">mo analyze                   # 可视化磁盘浏览器</span><br><span class="line">mo status                    # 实时系统健康监控面板</span><br><span class="line">mo purge                     # 清理项目构建产物</span><br><span class="line">mo installer                 # 查找并删除安装器文件</span><br><span class="line"></span><br><span class="line">mo touchid                   # 配置 Touch ID 用于 sudo</span><br><span class="line">mo completion                # 设置 shell 自动补全</span><br><span class="line">mo update                    # 更新 Mole</span><br><span class="line">mo remove                    # 从系统移除 Mole</span><br><span class="line">mo --help                    # 显示帮助信息</span><br><span class="line">mo --version                 # 显示已安装版本</span><br><span class="line"></span><br><span class="line">mo clean --dry-run           # 预览清理计划</span><br><span class="line">mo clean --whitelist         # 管理受保护缓存</span><br><span class="line">mo clean --dry-run --debug   # 带风险级别和文件信息的详细预览</span><br><span class="line"></span><br><span class="line">mo optimize --dry-run        # 预览优化操作</span><br><span class="line">mo optimize --debug          # 运行时输出详细操作日志</span><br><span class="line">mo optimize --whitelist      # 管理受保护的优化规则</span><br><span class="line">mo purge --paths             # 配置项目扫描目录</span><br><span class="line">mo analyze /Volumes          # 仅分析外部磁盘</span><br></pre></td></tr></table></figure><hr><h2 id="核心常用功能"><a href="#核心常用功能" class="headerlink" title="核心常用功能"></a><strong>核心常用功能</strong></h2><h3 id="1-深度清理"><a href="#1-深度清理" class="headerlink" title="1. 深度清理"></a>1. 深度清理</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mole clean</span><br></pre></td></tr></table></figure><h3 id="2-智能卸载"><a href="#2-智能卸载" class="headerlink" title="2. 智能卸载"></a>2. 智能卸载</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mole uninstall</span><br></pre></td></tr></table></figure><h3 id="3-磁盘分析"><a href="#3-磁盘分析" class="headerlink" title="3. 磁盘分析"></a>3. 磁盘分析</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mole analyze</span><br></pre></td></tr></table></figure><h3 id="4-系统优化"><a href="#4-系统优化" class="headerlink" title="4. 系统优化"></a>4. 系统优化</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mole optimize</span><br></pre></td></tr></table></figure><h3 id="5-系统状态"><a href="#5-系统状态" class="headerlink" title="5. 系统状态"></a>5. 系统状态</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mole status</span><br></pre></td></tr></table></figure><hr><h2 id="提示与建议"><a href="#提示与建议" class="headerlink" title="提示与建议"></a><strong>提示与建议</strong></h2><p><strong>终端兼容性：</strong></p><blockquote><p>某些终端（例如 iTerm2）存在已知兼容性问题，可能会影响显示或交互体验。建议使用以下终端获得更稳定的体验：<br>Alacritty、kitty、WezTerm、Ghostty 或 Warp。</p></blockquote><p><strong>安全性说明：</strong></p><blockquote><p>Mole 在设计时包含多层安全保护机制，但删除操作一旦执行 <strong>不可恢复</strong>。执行清理前建议先使用预览模式查看将要删除的内容：<br><code>mo clean --dry-run</code></p></blockquote><p><strong>谨慎操作：</strong></p><blockquote><p>在确认清理内容无误前，不要直接运行删除命令；尤其在涉及系统缓存、项目目录或配置文件时要更加注意。</p></blockquote><p><strong>调试模式：</strong></p><blockquote><p>使用 –debug 参数可以输出详细的操作日志，有助于理解具体执行步骤或排查问题，例如：<br><code>mo clean --debug</code><br>如果同时加上 <code>--dry-run</code> 参数，还可以获得包含风险等级和文件详情的全面预览。</p></blockquote><p><strong>操作日志：</strong></p><blockquote><p>Mole 会将所有文件操作记录到如下日志文件：<br><code>~/.config/mole/operations.log</code><br>如果不希望记录操作日志，可以通过设置环境变量禁用：<br><code>export MO_NO_OPLOG=1</code></p></blockquote><p><strong>界面导航：</strong></p><blockquote><p>在 Mole 的交互式菜单中，支持方向键进行选择，同时也支持 Vim 风格按键（h&#x2F;j&#x2F;k&#x2F;l）进行快速导航。</p></blockquote><p><strong>状态界面快捷键：</strong></p><blockquote><p>在 mo status 实时状态界面中：<br>按 k 可以切换某些模块的显示状态并保存偏好设置；<br>按 q 可以退出状态界面。</p></blockquote><p><strong>常用配置命令：</strong></p><blockquote><p>触控 ID 授权 sudo（减少频繁输入密码）：<br>mo touchid<br>为当前 shell 设置命令补全（Tab 自动补全 mo 子命令）：<br>mo completion</p></blockquote><p><strong>管理受保护路径白名单（不被 Mole 清理）：</strong></p><blockquote><p>mo clean –whitelist</p></blockquote><p><strong>开发者工具清理行为：</strong></p><blockquote><p>在执行 mo clean 并进入 “Developer tools” 清理项时，Mole 会自动识别并清理未使用的 iOS 模拟器卷（Simulator Volumes）以及 Cryptex 相关条目。那些标记为正在使用（IN_USE）的项目会被安全跳过，以避免误删。</p></blockquote><hr><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><p><strong>Mole 是一款开源、功能全面、命令行驱动的 macOS 系统维护工具，集深度清理、应用卸载、磁盘分析、系统优化等功能于一体，适合习惯终端操作并希望免费替代部分付费系统维护工具的用户使用。是用了CleanMyMac多年后的小白可选择的晋级工具之一。</strong></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 02-工具文档 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> macOS </tag>
-            
-            <tag> 实用软件 </tag>
-            
-            <tag> Github项目 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>本地推送到Github</title>
-      <link href="/post/5b3a926a.html"/>
-      <url>/post/5b3a926a.html</url>
-      
-        <content type="html"><![CDATA[<div style="text-align: center;"><strong>本文为从本地修改后推送更新到GitHub容器的主要相关指令</strong></div><span id="more"></span><p><strong>1. 查看改动</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure><p>显示为：<br><code>modified:   xxx.md</code><br><code>modified:   config.yml</code><br>等。</p><hr><p><strong>2. 添加修改到暂存区</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure><hr><p><strong>3. 提交修改</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;这里写本次修改说明&quot;</span><br></pre></td></tr></table></figure><hr><p><strong>4. 确认远程仓库</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure><p>确定：<br><code>originhttps://github.com/XXXXXX/XXXXXX.git (fetch)</code><br><code>originhttps://github.com/XXXXXX/XXXXXX.git (push)</code></p><hr><p><strong>5. 改成 SSH 地址</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin git@github.com:l1st1t3m/XXXXXX.git</span><br></pre></td></tr></table></figure><hr><p><strong>6. 再检查一次（非常重要）</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure><p>看看是不是：<br><code>origin  git@github.com:XXXXXX/XXXXXX.git (fetch)</code><br><code>origin  git@github.com:XXXXXX/XXXXXX.git (push)</code></p><hr><p><strong>7. 推送到 GitHub</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 03-操作系统 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> GitHub 项目 </tag>
-            
-            <tag> 小技巧 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Windows11延长更新时间100年</title>
-      <link href="/post/4b5b9a4f.html"/>
-      <url>/post/4b5b9a4f.html</url>
-      
-        <content type="html"><![CDATA[<div style="text-align: center;"><strong>让硬件生命周期内的Windows 11系统永久停止更新</strong></div><span id="more"></span><div style="text-align: center;"><p>受够了<strong>Windows 11</strong>的更新吗？<br>受够了<strong>关键时刻卡在更新环节</strong>浪费时间吗？<br>受够了<strong>只能设定寥寥几日的延长更新</strong>提醒吗？<br>请看此篇教程吧！破除微软限制，让<strong>Windows 11</strong>的更新<strong>延长100年！</strong></p></div><ol><li>首先，Win+R输入<code>regedit</code>进入注册表<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218112220849.png"></li><li>然后找到路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</code>，并在右侧点击右键，新建DWORD(32位)值<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218112910257.png"></li><li>新建的文件命名为<code>FlightSettingsMaxPauseDays</code>，双击打开，进行如下设置：<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218113302319.png"><blockquote><p>修改选择<strong>十进制</strong>，数值为<strong>36500</strong>（延后的周期）</p></blockquote></li><li>最后，打开<strong>设置</strong>，选择<strong>Windows更新</strong>，点击<strong>暂停更新</strong>选项（注意会卡一下，因为修改了设置选项增加了上千条）。然后你会发现最高可选项高达<strong>5213周</strong>，约为<strong>100年</strong>。<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218113831893.png"></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 03-操作系统 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 小技巧 </tag>
-            
-            <tag> Windows </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>提取网站标签栏图标的方法</title>
-      <link href="/post/ba01d453.html"/>
-      <url>/post/ba01d453.html</url>
-      
-        <content type="html"><![CDATA[<div style="text-align: center;"><strong>浏览器访问网站，标签栏小图标获取方法。</strong></div><span id="more"></span><p><strong>有时候我们想提取一个网站标签栏上的那个小图标<br>（到底什么时候需要我也不知道，反正这是第一篇博客文章测试用的。）</strong></p><p>  对于部署的传统服务器有一个简单的方法，直接访问静态资源。  </p><p>  在网址后端加：  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/favicon.ico</span><br></pre></td></tr></table></figure><p>eg:<br>  <a href="https://www.baidu.com/favicon.ico">https://www.baidu.com/favicon.ico</a><br>  <img src="https://www.baidu.com/favicon.ico"><br>就可以了。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 04-网络知识 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 小技巧 </tag>
-            
-            <tag> 前端开发 </tag>
+            <tag> 知识科普 </tag>
             
         </tags>
       
@@ -255,33 +52,6 @@
             <tag> AI应用 </tag>
             
             <tag> Workflow </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>北京植物的花期</title>
-      <link href="/post/2a1528de.html"/>
-      <url>/post/2a1528de.html</url>
-      
-        <content type="html"><![CDATA[<div style="text-align: center;"><strong>北京城市园林植物的花期参考</strong></div><span id="more"></span><div style="text-align: center;"><h1 id="节气对应花期"><a href="#节气对应花期" class="headerlink" title="节气对应花期"></a>节气对应花期</h1></div><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260221184045423.jpg"></p><div style="text-align: center;"><h1 id="月份对应花期"><a href="#月份对应花期" class="headerlink" title="月份对应花期"></a>月份对应花期</h1></div><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260222143739873.jpg"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 06-博物笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 园林植物 </tag>
-            
-            <tag> 知识科普 </tag>
             
         </tags>
       
@@ -371,25 +141,228 @@
     
     
     <entry>
-      <title>【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill</title>
-      <link href="/post/8284ee2f.html"/>
-      <url>/post/8284ee2f.html</url>
+      <title>🐹Mole——开源的 macOS 清理与优化工具</title>
+      <link href="/post/67f7f01.html"/>
+      <url>/post/67f7f01.html</url>
       
-        <content type="html"><![CDATA[<p style="text-align:center;"><strong>转载：字节全家桶 Seed 2.0 + TRAE 玩转 Skill</br>原文作者：阮一峰</br>原文链接：<a href="http://www.ruanyifeng.com/blog/2026/02/seed-2.0.html" target="_blank"></br>字节全家桶 Seed 2.0 + TRAE 玩转 Skill</a></strong></p><span id="more"></span><blockquote><p>本文由 <a href="http://ksria.com/simpread/">简悦 SimpRead</a> 转码， 原文地址 <a href="http://www.ruanyifeng.com/blog/2026/02/seed-2.0.html">www.ruanyifeng.com</a></p></blockquote><h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>国产大模型之中，字节是一个异类。</p><p>不像其他大模型轰轰烈烈、争夺眼球，它更低调，不引人注目。</p><p>但是，它做的事情反倒最多，大模型、Agent、开发工具、云服务都有独立品牌，遍地开花，一个都不缺，都在高速推进。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021401.webp"></p><p>Seed 是字节的大模型团队，底下有好几条产品线，最近热得发烫的视频模型 Seedance 2.0 就是他们的产品。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021402.webp"></p><p>今天，我就用字节的全家桶 —- 刚刚发布的 Seed 2.0 模型和开发工具 TRAE —- 写一篇 Skill 教程。</p><p>大家会看到，<strong>它们组合起来既强大，又简单好用，（个人用户）还免费</strong>。这也是我想写的原因，让大家知道有这个方案。</p><p>只要十分钟，读完这篇教程，你还会明白 Skill 是什么，怎么用，以及为什么一定要用它。</p><h2 id="二、Seed-2-0-简介"><a href="#二、Seed-2-0-简介" class="headerlink" title="二、Seed 2.0 简介"></a>二、Seed 2.0 简介</h2><p>先介绍 Seed 2.0，它是 <strong>Seed 家族的基座模型</strong>。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021416.webp"></p><p>所谓 “基座模型”（foundation model），就是一种通用大模型，<strong>可用来构建其他各种下游模型</strong>。最大的两个特征有两个：一个是规模大，另一个是泛化能力强，这样才方便构建别的模型。</p><p>大家熟知的豆包，就是基于 Seed 模型，它也被称为 “豆包大模型”。这次 Seed 2.0 包含 Pro、Lite、Mini 三款通用模型，以及专为开发者定制的 Seed 2.0 Code 模型。</p><p>由于各种用途都必须支持，<strong>Seed 2.0 的通用性特别突出</strong>，比以前版本都要强。</p><blockquote><p>1、支持多模态，各种类型的数据都能处理：文字、图表、视觉空间、运动、视频等等。</p><p>2、具备各种 Agent 能力，方便跟企业工具对接：搜索、函数调用、工具调用、多轮指令、上下文管理等。</p><p>3、有推理和代码能力。</p></blockquote><p>正因为最后一点，所以我们可以拿它来编程，尤其是生成前端代码。跟字节发布的 AI 编程工具 <a href="https://www.trae.cn/">TRAE</a> 配合使用，效果很好，特别方便全栈开发，个人用户还免费。</p><h2 id="三、TRAE-的准备工作"><a href="#三、TRAE-的准备工作" class="headerlink" title="三、TRAE 的准备工作"></a>三、TRAE 的准备工作</h2><p><a href="https://www.trae.cn/ide/download">下载安装</a> TRAE 以后，它有两种模式，左上角可以切换：IDE 模型和 SOLO 模型。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021404.webp"></p><p>选择 IDE 就可以了，SOLO 是 AI 任务的编排器，除非多个任务一起跑，否则用不到。</p><p>然后，按下快捷键 Ctrl + U（或者 Command + U），唤出对话框，用来跟 AI 对话。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021429.webp"></p><p>我们要构建 Web 应用，左上角就选 @Builder 开发模式。右下角的模型就选 Seed-2.0-Code。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021426.webp"></p><p>可以看到，TRAE 自带的国产开源编程模型很全，都是免费使用。</p><p>准备工作这样就差不多了。</p><h2 id="四、编程测试"><a href="#四、编程测试" class="headerlink" title="四、编程测试"></a>四、编程测试</h2><p>我选了一个有点难度的任务，让 Seed 2.0 生成。</p><p>ASCII 图形是使用字符画出来的图形，比如下图。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021407.webp"></p><p>我打算生成一个 Web 应用，用户在网页上输入 ASCII 图形，自动转成 Excalidraw 风格的手绘图形。</p><p>提示词如下：</p><blockquote><p>“生成一个 Web 应用，可以将 ASCII 图形转为 Excalidraw 风格的图片，并提供下载。”</p></blockquote><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021428.webp"></p><p>模型就开始思考，将这个任务分解为四步。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021409.webp"></p><h2 id="五、生成结果"><a href="#五、生成结果" class="headerlink" title="五、生成结果"></a>五、生成结果</h2><p>等到 Seed 2.0 代码生成完毕，TRAE 就会起一个本地服务 localhost:8080，同时打开了预览窗口。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021410.webp"></p><p>生成的结果还挺有意思，上部的 ASCII 输入框提供了四个示例：Box、Tree、Flowchart、Smiley。下面是 Tree 的样子。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021411.webp"></p><p>然后是 Excalidraw 参数的控制面板：线宽、粗糙度、弯曲度、字体大小。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021412.webp"></p><p>点击 Convert（转换）按钮，马上得到手绘风格的线条图。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021413.webp"></p><p>整个页面就是下面的样子。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021414.webp"></p><h2 id="六、Skill-简介"><a href="#六、Skill-简介" class="headerlink" title="六、Skill 简介"></a>六、Skill 简介</h2><p>这个页面的设计，感觉不是很美观，还可以改进。我打算为 Seed 2.0 加入专门的前端设计技能，使其能够做出更美观的页面。</p><p><strong>所谓 Skill（技能），就是一段专门用途的提示词，用来注入上下文。</strong></p><p>有时候，提示词很长，每次都输入，就很麻烦。我们可以把反复用到的部分提取出来，保存在一个文件里面，方便重复使用。这种提取出来的提示词，往往是关于如何完成一种任务的详细描述，所以就称为 “技能文件”。</p><p>格式上，它就是一个 Markdown 文本文件，有一个 YAML 头，包含 name 字段和 description 字段。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021417.webp"></p><p>name 字段是 Skill 的名称，可以通过这个名称调用该技能；description 字段则是技能的简要描述，模型通过这段描述判断何时自动调用该技能。</p><p>有些技能比较复杂，除了描述文件以外，还有专门的脚本文件、资源文件、模板文件等等，相当于一个代码库。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021418.webp"></p><p>这些文件里面，SKILL.md 是入口文件，模型根据它的描述，了解何时何处调用其他各个文件。</p><p>这个库发到网上，就可以与其他人共享。如果你觉得 AI 模型处理任务时，需要用到某种技能，就可以寻找别人已经写好的 Skill 加载到模型。</p><h2 id="七、前端设计技能"><a href="#七、前端设计技能" class="headerlink" title="七、前端设计技能"></a>七、前端设计技能</h2><p>下面，我使用 Anthropic 公司共享出来的<a href="https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md">前端设计技能</a>，重构一下前面的页面。它只有单独一个 Markdown 文件，可以下载下来。</p><p>打开 TRAE 的 “设置 &#x2F; 规则和技能” 页面。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021419.webp"></p><p>点击技能部分的 “+ 创建” 按钮，打开创建技能的窗口。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021420.webp"></p><p>你可以在这个窗口填写 SKill 内容，也可以上传现成的 Skill 文件。我选择上传，完成后，就可以看到列表里已经有 frontend-design 技能了。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021421.webp"></p><p>然后，我就用下面的提示词，唤起这个技能来重构页面。</p><blockquote><p>“使用 frontend-design 技能，重构这个页面，让其变得更美观易用，更有专业感。”</p></blockquote><p>下面就是模型给出的文字描述和重构结果。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021422.webp"></p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021423.webp"></p><p>页面确实感觉变得高大上了！</p><h2 id="八、Vercel-deploy-技能"><a href="#八、Vercel-deploy-技能" class="headerlink" title="八、Vercel deploy 技能"></a>八、Vercel deploy 技能</h2><p>最后，再看一个技能的例子。</p><p>代码生成以后，都是在本地机器上运行，能不能发布到网上，分享给更多的人呢？</p><p>回答是只要使用 Vercel 公司的 deploy 技能，就能一个命令将生成结果发布到 Vercel 的机器上。</p><p>在 Vercel 官方技能的 <a href="https://github.com/vercel-labs/agent-skills/tree/main/skills/claude.ai">GitHub 仓库</a>里，下载 Vercel-deploy 技能的 zip 文件。</p><p>然后，把这个 zip 文件拖到 TRAE 的技能窗口里面，就会自动加载了。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021424.webp"></p><p>输入提示词：”将生成的网站发布到 Vercel”。</p><p>模型就会执行 vercel-deploy 技能，将网站发布到 Vercel，最后给出两个链接，一个是预览链接，另一个是发布到你个人账户的链接。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021427.webp"></p><p>大家现在可以访问<a href="https://skill-deploy-wscj2pnyc7-agent-skill-vercel.vercel.app/">这个链接</a>，看看网站的实际效果了。</p><h2 id="九、总结"><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h2><p>如果你读到这里，应该会同意我的观点，Seed 2.0 的编程能力相当不错，跟自家的编程工具 TRAE 搭配起来，好用又免费。</p><p>Skill 则是强大的能力扩展机制，让模型变得无所不能，一定要学会使用。</p>]]></content>
+        <content type="html"><![CDATA[<div style="text-align: center;"><strong>一款面向 macOS 的开源命令行系统维护工具，采用 MIT 许可证。它旨在将系统清理、卸载应用、磁盘分析、系统优化等功能整合到一个轻量的命令行程序中。<br>是 CleanMyMac、AppCleaner、DaisyDisk 等工具的免费替代方案之一。</strong></div><span id="more"></span><p><img src="https://camo.githubusercontent.com/affd58a8a489cf6dc66f808e6ae3fd2224064887762f038aa053d3b5d1cba028/68747470733a2f2f63646e2e747739332e66756e2f696d672f6d6f6c652e6a706567"></p><div style="text-align: center;"><p><strong><a href="https://github.com/tw93/Mole">Mole</a>由开发者<a href="https://github.com/tw93">tw93</a>维护</strong></p></div><h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a><strong>项目介绍</strong></h2><p>Mole 的设计宗旨可以用一句话概括：<strong>像鼹鼠一样深入挖掘系统垃圾与冗余内容</strong>。<br>它主要功能包括：<br>全面清理系统与用户空间的缓存、临时文件、浏览器残留等垃圾数据，有时能释放数十 GB 存储空间。<br>智能卸载应用程序及其相关残留文件（缓存、配置、日志、启动项等）。<br>磁盘使用分析，展示大文件&#x2F;大目录占用情况。<br>系统优化功能，例如刷新缓存、重建服务、清理交换空间等。<br>实时状态监控，在终端展示 CPU、内存、磁盘、网络、电池等信息。<br>提供交互式菜单，可通过键盘导航执行各项任务。<br>Mole 不依赖后台服务或 GUI，因此对终端习惯者特别友好，同时由于其免费开源的特性，也受到开发者社区欢迎。</p><hr><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a><strong>安装过程</strong></h2><p>Mole 支持两种主流安装方式：使用安装脚本或通过 Homebrew 安装。</p><h3 id="方式一：安装脚本"><a href="#方式一：安装脚本" class="headerlink" title="方式一：安装脚本"></a><strong>方式一：安装脚本</strong></h3><p>打开终端（Terminal），粘贴以下命令安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Optional args: -s latest for main branch code, -s 1.17.0 for specific version</span><br><span class="line">curl -fsSL https://raw.githubusercontent.com/tw93/mole/main/install.sh | bash</span><br></pre></td></tr></table></figure><p>这个脚本会自动检测你的系统架构并下载最新版本的 Mole。</p><h3 id="方式二：通过-Homebrew"><a href="#方式二：通过-Homebrew" class="headerlink" title="方式二：通过 Homebrew"></a><strong>方式二：通过 Homebrew</strong></h3><p>如果你已经安装了 Homebrew，可以这样安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mole</span><br></pre></td></tr></table></figure><p>这会从 tw93 的 Homebrew tap 仓库安装 Mole，并支持随 Homebrew 更新。</p><hr><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a><strong>使用方法</strong></h2><p>安装完成后，你可以在终端运行 mo 命令并结合不同子命令执行操作。以下是常用命令示例：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">mo                           # 交互式菜单</span><br><span class="line">mo clean                     # 深度清理</span><br><span class="line">mo uninstall                 # 卸载应用及残留</span><br><span class="line">mo optimize                  # 刷新缓存和服务</span><br><span class="line">mo analyze                   # 可视化磁盘浏览器</span><br><span class="line">mo status                    # 实时系统健康监控面板</span><br><span class="line">mo purge                     # 清理项目构建产物</span><br><span class="line">mo installer                 # 查找并删除安装器文件</span><br><span class="line"></span><br><span class="line">mo touchid                   # 配置 Touch ID 用于 sudo</span><br><span class="line">mo completion                # 设置 shell 自动补全</span><br><span class="line">mo update                    # 更新 Mole</span><br><span class="line">mo remove                    # 从系统移除 Mole</span><br><span class="line">mo --help                    # 显示帮助信息</span><br><span class="line">mo --version                 # 显示已安装版本</span><br><span class="line"></span><br><span class="line">mo clean --dry-run           # 预览清理计划</span><br><span class="line">mo clean --whitelist         # 管理受保护缓存</span><br><span class="line">mo clean --dry-run --debug   # 带风险级别和文件信息的详细预览</span><br><span class="line"></span><br><span class="line">mo optimize --dry-run        # 预览优化操作</span><br><span class="line">mo optimize --debug          # 运行时输出详细操作日志</span><br><span class="line">mo optimize --whitelist      # 管理受保护的优化规则</span><br><span class="line">mo purge --paths             # 配置项目扫描目录</span><br><span class="line">mo analyze /Volumes          # 仅分析外部磁盘</span><br></pre></td></tr></table></figure><hr><h2 id="核心常用功能"><a href="#核心常用功能" class="headerlink" title="核心常用功能"></a><strong>核心常用功能</strong></h2><h3 id="1-深度清理"><a href="#1-深度清理" class="headerlink" title="1. 深度清理"></a>1. 深度清理</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mole clean</span><br></pre></td></tr></table></figure><h3 id="2-智能卸载"><a href="#2-智能卸载" class="headerlink" title="2. 智能卸载"></a>2. 智能卸载</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mole uninstall</span><br></pre></td></tr></table></figure><h3 id="3-磁盘分析"><a href="#3-磁盘分析" class="headerlink" title="3. 磁盘分析"></a>3. 磁盘分析</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mole analyze</span><br></pre></td></tr></table></figure><h3 id="4-系统优化"><a href="#4-系统优化" class="headerlink" title="4. 系统优化"></a>4. 系统优化</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mole optimize</span><br></pre></td></tr></table></figure><h3 id="5-系统状态"><a href="#5-系统状态" class="headerlink" title="5. 系统状态"></a>5. 系统状态</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mole status</span><br></pre></td></tr></table></figure><hr><h2 id="提示与建议"><a href="#提示与建议" class="headerlink" title="提示与建议"></a><strong>提示与建议</strong></h2><p><strong>终端兼容性：</strong></p><blockquote><p>某些终端（例如 iTerm2）存在已知兼容性问题，可能会影响显示或交互体验。建议使用以下终端获得更稳定的体验：<br>Alacritty、kitty、WezTerm、Ghostty 或 Warp。</p></blockquote><p><strong>安全性说明：</strong></p><blockquote><p>Mole 在设计时包含多层安全保护机制，但删除操作一旦执行 <strong>不可恢复</strong>。执行清理前建议先使用预览模式查看将要删除的内容：<br><code>mo clean --dry-run</code></p></blockquote><p><strong>谨慎操作：</strong></p><blockquote><p>在确认清理内容无误前，不要直接运行删除命令；尤其在涉及系统缓存、项目目录或配置文件时要更加注意。</p></blockquote><p><strong>调试模式：</strong></p><blockquote><p>使用 –debug 参数可以输出详细的操作日志，有助于理解具体执行步骤或排查问题，例如：<br><code>mo clean --debug</code><br>如果同时加上 <code>--dry-run</code> 参数，还可以获得包含风险等级和文件详情的全面预览。</p></blockquote><p><strong>操作日志：</strong></p><blockquote><p>Mole 会将所有文件操作记录到如下日志文件：<br><code>~/.config/mole/operations.log</code><br>如果不希望记录操作日志，可以通过设置环境变量禁用：<br><code>export MO_NO_OPLOG=1</code></p></blockquote><p><strong>界面导航：</strong></p><blockquote><p>在 Mole 的交互式菜单中，支持方向键进行选择，同时也支持 Vim 风格按键（h&#x2F;j&#x2F;k&#x2F;l）进行快速导航。</p></blockquote><p><strong>状态界面快捷键：</strong></p><blockquote><p>在 mo status 实时状态界面中：<br>按 k 可以切换某些模块的显示状态并保存偏好设置；<br>按 q 可以退出状态界面。</p></blockquote><p><strong>常用配置命令：</strong></p><blockquote><p>触控 ID 授权 sudo（减少频繁输入密码）：<br>mo touchid<br>为当前 shell 设置命令补全（Tab 自动补全 mo 子命令）：<br>mo completion</p></blockquote><p><strong>管理受保护路径白名单（不被 Mole 清理）：</strong></p><blockquote><p>mo clean –whitelist</p></blockquote><p><strong>开发者工具清理行为：</strong></p><blockquote><p>在执行 mo clean 并进入 “Developer tools” 清理项时，Mole 会自动识别并清理未使用的 iOS 模拟器卷（Simulator Volumes）以及 Cryptex 相关条目。那些标记为正在使用（IN_USE）的项目会被安全跳过，以避免误删。</p></blockquote><hr><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><p><strong>Mole 是一款开源、功能全面、命令行驱动的 macOS 系统维护工具，集深度清理、应用卸载、磁盘分析、系统优化等功能于一体，适合习惯终端操作并希望免费替代部分付费系统维护工具的用户使用。是用了CleanMyMac多年后的小白可选择的晋级工具之一。</strong></p>]]></content>
       
       
       <categories>
           
-          <category> 12-转载 </category>
+          <category> 02-工具文档 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 转载 </tag>
+            <tag> Github项目 </tag>
             
-            <tag> 阮一峰 </tag>
+            <tag> macOS </tag>
+            
+            <tag> 实用软件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Homebrew常用命令</title>
+      <link href="/post/d71c9458.html"/>
+      <url>/post/d71c9458.html</url>
+      
+        <content type="html"><![CDATA[<div style="text-align: center;"><strong>macOS上的Homebrew安装及更新软件等常用命令</strong></div><span id="more"></span><h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a><strong>项目介绍</strong></h2><p>Homebrew 的设计宗旨可以用一句话概括：用一行命令完成软件安装与管理，让 macOS 彻底告别手动装软件的时代。</p><p>它是一款 macOS &#x2F; Linux 平台下的包管理工具，类似 Linux 的 apt &#x2F; yum，专门解决软件安装、依赖管理与版本控制问题。 </p><p>Homebrew 主要功能包括：<br>通过一条命令安装软件，无需手动下载或拖拽安装。<br>自动处理依赖关系，避免版本冲突与缺失依赖问题。<br>支持软件的安装、卸载、更新、查询等完整生命周期管理。<br>支持命令行工具与 GUI 应用（通过 Cask）。<br>支持服务管理（如 nginx、redis 等后台服务）。<br>支持扩展仓库（Tap），获取官方之外的软件资源。<br>支持预编译二进制（Bottle），提升安装速度。</p><p>Homebrew 的核心组成包括：</p><ul><li>brew：核心命令行工具</li><li>Formula：软件安装脚本（配方）</li><li>Bottle：预编译二进制包</li><li>Cask：GUI 应用管理</li><li>Tap：扩展仓库机制</li></ul><p>👉 本质上：<br>Homebrew &#x3D; 软件包管理 + 依赖管理 + 自动化环境搭建工具</p><hr><h2 id="安装、更新、卸载"><a href="#安装、更新、卸载" class="headerlink" title="安装、更新、卸载"></a><strong>安装、更新、卸载</strong></h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a><strong>安装</strong></h3><p>打开终端（Terminal），粘贴以下命令安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span><br></pre></td></tr></table></figure><h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a><strong>更新</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure><h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a><strong>卸载</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)&quot;</span><br></pre></td></tr></table></figure><hr><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a><strong>常用命令</strong></h2><h3 id="1-安装软件包"><a href="#1-安装软件包" class="headerlink" title="1.安装软件包"></a>1.安装软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><blockquote><p>例如，安装wget：<br>brew install wget</p></blockquote><h3 id="2-卸载软件包"><a href="#2-卸载软件包" class="headerlink" title="2.卸载软件包"></a>2.卸载软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew uninstall &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><h3 id="3-更新软件"><a href="#3-更新软件" class="headerlink" title="3.更新软件"></a>3.更新软件</h3><p>更新Homebrew本身</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure><p>更新所有已安装的软件包</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade</span><br></pre></td></tr></table></figure><p>更新指定的软件包</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><h3 id="4-查看已安装的软件包"><a href="#4-查看已安装的软件包" class="headerlink" title="4.查看已安装的软件包"></a>4.查看已安装的软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list</span><br></pre></td></tr></table></figure><h3 id="5-搜索软件包"><a href="#5-搜索软件包" class="headerlink" title="5.搜索软件包"></a>5.搜索软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew search &lt;关键词&gt;</span><br></pre></td></tr></table></figure><h3 id="6-查看软件包信息"><a href="#6-查看软件包信息" class="headerlink" title="6.查看软件包信息"></a>6.查看软件包信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew info &lt;软件包名&gt;</span><br></pre></td></tr></table></figure><h3 id="7-清理不再需要的文件"><a href="#7-清理不再需要的文件" class="headerlink" title="7.清理不再需要的文件"></a>7.清理不再需要的文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cleanup</span><br></pre></td></tr></table></figure><blockquote><p>会自动删除无用文件，释放空间</p></blockquote><h3 id="8-显示-Homebrew-的系统诊断信息"><a href="#8-显示-Homebrew-的系统诊断信息" class="headerlink" title="8.显示 Homebrew 的系统诊断信息"></a>8.显示 Homebrew 的系统诊断信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew doctor</span><br></pre></td></tr></table></figure><h3 id="9-列出过时的软件包"><a href="#9-列出过时的软件包" class="headerlink" title="9.列出过时的软件包"></a>9.列出过时的软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew outdated</span><br></pre></td></tr></table></figure><h3 id="10-导出和导入已安装的软件包列表"><a href="#10-导出和导入已安装的软件包列表" class="headerlink" title="10.导出和导入已安装的软件包列表"></a>10.导出和导入已安装的软件包列表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list --formula &gt; Brewfile</span><br></pre></td></tr></table></figure><blockquote><p>导出已安装的软件包列表</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install $(cat Brewfile)</span><br></pre></td></tr></table></figure><blockquote><p>使用Brewfile安装已导出的软件包：</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 02-工具文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> macOS </tag>
+            
+            <tag> 实用软件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>AWS系列01：AWS账号的注册流程</title>
+      <link href="/post/3624cd26.html"/>
+      <url>/post/3624cd26.html</url>
+      
+        <content type="html"><![CDATA[<div style="text-align: center;"><strong>本文详细介绍如何创建 Amazon Web Services (AWS) 账户创建指南，从注册流程、绑定信用卡验证，到启用双重验证（MFA）和 IAM 安全配置的全流程操作方法，适合首次使用 AWS 云服务的个人用户。</strong></div><span id="more"></span><h1 id="创建亚马逊AWS账号、绑定信用卡、账号安全设置"><a href="#创建亚马逊AWS账号、绑定信用卡、账号安全设置" class="headerlink" title="创建亚马逊AWS账号、绑定信用卡、账号安全设置"></a><strong>创建亚马逊AWS账号、绑定信用卡、账号安全设置</strong></h1><p><strong>需求：VISA或双币信用卡</strong> 💳 <strong>，境内外均可。</strong> </p><p><strong>中国境内银行的外币信用卡大多数会与国内信用卡捆绑注册，可以通过申请后再与开户行申请注销国内信用卡，只保留外币信用卡。（免年费的银行首选）</strong></p><h2 id="创建亚马逊账户"><a href="#创建亚马逊账户" class="headerlink" title="创建亚马逊账户"></a>创建亚马逊账户</h2><p>亚马逊AWS官方网站：<a href="https://aws.amazon.com/cn/">AWS</a></p><ul><li>进入亚马逊AWS官方网站，选择右上角创建AWS账户，如下填写注册邮件地址、密码、账户名，然后点击继续。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220337047.png"><br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220404794.png"></p><ul><li><p>按以下标注信息填写，最好与申请信用卡时的申请信息一致，以便后期审核通过，然后点击继续。</p></li><li><p>注：全名与地址需英文填写，在线翻译即可。<a href="https://fanyi.youdao.com/">在线翻译_有道</a></p></li></ul><p>例:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">宝山区示范新村37号403室</span><br><span class="line">(Room 403, No. 37, SiFang Residential Quarter, BaoShan District )</span><br><span class="line">河南省南阳市中州路42号</span><br><span class="line">(Zhongzhou Road, Nanyang City Henan Prov. China 473004)</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220445006.png"></p><h2 id="绑定信用卡"><a href="#绑定信用卡" class="headerlink" title="绑定信用卡"></a>绑定信用卡</h2><ul><li>AWS验证信用卡，填写信用卡相关信息，通过后会从所绑定的外币信用卡中扣除1$来验证卡的可用性，稍后会<br>退还，验证成功后才可继续。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220520495.png"></p><ul><li>验证手机号，使用信用卡预留手机号即可。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220550286.png"></p><ul><li>验证时常在30min-24h内不等，此期间可关注注册邮箱内亚马逊官方发来的邮件，直到可正常登录官网。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220625231.png"></p><h2 id="账号基础配置"><a href="#账号基础配置" class="headerlink" title="账号基础配置"></a>账号基础配置</h2><ul><li>创建完毕AWS账户后，请进入亚马逊AWS的IAM服务界面。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220646633.png"></p><ul><li><p>首先开启MFA双重验证，增强登陆的安全性；</p></li><li><p>其次如果开启了IAM，请<strong>停用</strong>或<strong>删除</strong>IAM帐户的访问密钥，除非您能搞清楚权限赋予，确保账号安全。</p></li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218220748177.png"></p><p>这样就完成了亚马逊AWS账号的注册。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 03-操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 云服务 </tag>
+            
+            <tag> AWS </tag>
+            
+            <tag> 亚马逊 </tag>
+            
+            <tag> 信用卡 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>AWS系列02：AWS轻量服务器推荐</title>
+      <link href="/post/72a57ff0.html"/>
+      <url>/post/72a57ff0.html</url>
+      
+        <content type="html"><![CDATA[<div style="text-align: center;"><strong>通过亚马逊AWS的Lightsail服务搭建轻量服务器</strong></div><span id="more"></span><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162318055.png"></p><div style="text-align: center;"><p><strong><a href="https://lightsail.aws.amazon.com/">Lightsail</a></strong></p></div><h2 id="Lightsail服务界面与实例选择"><a href="#Lightsail服务界面与实例选择" class="headerlink" title="Lightsail服务界面与实例选择"></a>Lightsail服务界面与实例选择</h2><ul><li>登录AWS后，通过左上角的Services—All services—L检索到Lightsail服务，也可直接在左上角搜索栏输入Lightsail进行检索，找到后点击进入服务。</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260228172043572.png"></p><ul><li>Lightsail服务界面</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162726700.png"></p><ul><li><p>更改实例位置，发现可用的区域如下，此处可通过测速网站来检测AWS服务器连接到各地机房的速度，选择延迟最小的，可选择亚太地区的机房，因为地理位置较近，速度会快一些。（本教程使用伦敦服务器）</p></li><li><p>测速网站CloudPing：<a href="https://www.cloudping.info/">https://www.cloudping.info/</a></p></li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162803673.png"></p><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162820846.png"></p><ul><li>选择平台：Linux&#x2F;Unix；操作系统：Debian10.8</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162844180.png"></p><ul><li><p>脚本默认为空，密钥也用默认就可以，不要开启快照，存储快照是额外收费的。选择实例计划个人选择第一个就够了。（新用户前三个月免费，如果想要无限白嫖可以三个月到了就重复<a href="/post/3624cd26">VPS系列01：AWS账号的注册流程</a>的操作换个账户，只要折腾得起）实例名字随便起，辨识用。</p></li><li><p>设置完成点击创建实例。</p></li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301162951894.png"></p><ul><li>等上数十秒服务器开机，我们就有了一台自己的轻量云服务器。（若未显示开机可以刷新几次）</li></ul><p><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260301163020766.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 03-操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 云服务 </tag>
+            
+            <tag> AWS </tag>
+            
+            <tag> 亚马逊 </tag>
+            
+            <tag> 信用卡 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows11延长更新时间100年</title>
+      <link href="/post/4b5b9a4f.html"/>
+      <url>/post/4b5b9a4f.html</url>
+      
+        <content type="html"><![CDATA[<div style="text-align: center;"><strong>让硬件生命周期内的Windows 11系统永久停止更新</strong></div><span id="more"></span><div style="text-align: center;"><p>受够了<strong>Windows 11</strong>的更新吗？<br>受够了<strong>关键时刻卡在更新环节</strong>浪费时间吗？<br>受够了<strong>只能设定寥寥几日的延长更新</strong>提醒吗？<br>请看此篇教程吧！破除微软限制，让<strong>Windows 11</strong>的更新<strong>延长100年！</strong></p></div><ol><li>首先，Win+R输入<code>regedit</code>进入注册表<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218112220849.png"></li><li>然后找到路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</code>，并在右侧点击右键，新建DWORD(32位)值<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218112910257.png"></li><li>新建的文件命名为<code>FlightSettingsMaxPauseDays</code>，双击打开，进行如下设置：<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218113302319.png"><blockquote><p>修改选择<strong>十进制</strong>，数值为<strong>36500</strong>（延后的周期）</p></blockquote></li><li>最后，打开<strong>设置</strong>，选择<strong>Windows更新</strong>，点击<strong>暂停更新</strong>选项（注意会卡一下，因为修改了设置选项增加了上千条）。然后你会发现最高可选项高达<strong>5213周</strong>，约为<strong>100年</strong>。<br><img src="https://raw.githubusercontent.com/l1st1t3m/Picture-bed/img/img/20260218113831893.png"></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 03-操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+            <tag> 小技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>本地推送到Github</title>
+      <link href="/post/5b3a926a.html"/>
+      <url>/post/5b3a926a.html</url>
+      
+        <content type="html"><![CDATA[<div style="text-align: center;"><strong>本文为从本地修改后推送更新到GitHub容器的主要相关指令</strong></div><span id="more"></span><p><strong>1. 查看改动</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure><p>显示为：<br><code>modified:   xxx.md</code><br><code>modified:   config.yml</code><br>等。</p><hr><p><strong>2. 添加修改到暂存区</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure><hr><p><strong>3. 提交修改</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;这里写本次修改说明&quot;</span><br></pre></td></tr></table></figure><hr><p><strong>4. 确认远程仓库</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure><p>确定：<br><code>originhttps://github.com/XXXXXX/XXXXXX.git (fetch)</code><br><code>originhttps://github.com/XXXXXX/XXXXXX.git (push)</code></p><hr><p><strong>5. 改成 SSH 地址</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin git@github.com:l1st1t3m/XXXXXX.git</span><br></pre></td></tr></table></figure><hr><p><strong>6. 再检查一次（非常重要）</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure><p>看看是不是：<br><code>origin  git@github.com:XXXXXX/XXXXXX.git (fetch)</code><br><code>origin  git@github.com:XXXXXX/XXXXXX.git (push)</code></p><hr><p><strong>7. 推送到 GitHub</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 03-操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小技巧 </tag>
+            
+            <tag> GitHub 项目 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>提取网站标签栏图标的方法</title>
+      <link href="/post/ba01d453.html"/>
+      <url>/post/ba01d453.html</url>
+      
+        <content type="html"><![CDATA[<div style="text-align: center;"><strong>浏览器访问网站，标签栏小图标获取方法。</strong></div><span id="more"></span><p><strong>有时候我们想提取一个网站标签栏上的那个小图标<br>（到底什么时候需要我也不知道，反正这是第一篇博客文章测试用的。）</strong></p><p>  对于部署的传统服务器有一个简单的方法，直接访问静态资源。  </p><p>  在网址后端加：  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/favicon.ico</span><br></pre></td></tr></table></figure><p>eg:<br>  <a href="https://www.baidu.com/favicon.ico">https://www.baidu.com/favicon.ico</a><br>  <img src="https://www.baidu.com/favicon.ico"><br>就可以了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 04-网络知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小技巧 </tag>
+            
+            <tag> 前端开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>AWS系列03：AWS轻量服务器推荐</title>
+      <link href="/post/731082ed.html"/>
+      <url>/post/731082ed.html</url>
+      
+        <content type="html"><![CDATA[<div style="text-align: center;"><strong>通过亚马逊AWS的Lightsail服务搭建轻量服务器</strong></div><span id="more"></span>]]></content>
+      
+      
+      <categories>
+          
+          <category> 03-操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 云服务 </tag>
+            
+            <tag> AWS </tag>
+            
+            <tag> 亚马逊 </tag>
+            
+            <tag> 信用卡 </tag>
             
         </tags>
       
@@ -417,6 +390,33 @@
             <tag> 二次元 </tag>
             
             <tag> 电子艺术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【转载】字节全家桶 Seed 2.0 + TRAE 玩转 Skill</title>
+      <link href="/post/8284ee2f.html"/>
+      <url>/post/8284ee2f.html</url>
+      
+        <content type="html"><![CDATA[<p style="text-align:center;"><strong>转载：字节全家桶 Seed 2.0 + TRAE 玩转 Skill</br>原文作者：阮一峰</br>原文链接：<a href="http://www.ruanyifeng.com/blog/2026/02/seed-2.0.html" target="_blank"></br>字节全家桶 Seed 2.0 + TRAE 玩转 Skill</a></strong></p><span id="more"></span><blockquote><p>本文由 <a href="http://ksria.com/simpread/">简悦 SimpRead</a> 转码， 原文地址 <a href="http://www.ruanyifeng.com/blog/2026/02/seed-2.0.html">www.ruanyifeng.com</a></p></blockquote><h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>国产大模型之中，字节是一个异类。</p><p>不像其他大模型轰轰烈烈、争夺眼球，它更低调，不引人注目。</p><p>但是，它做的事情反倒最多，大模型、Agent、开发工具、云服务都有独立品牌，遍地开花，一个都不缺，都在高速推进。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021401.webp"></p><p>Seed 是字节的大模型团队，底下有好几条产品线，最近热得发烫的视频模型 Seedance 2.0 就是他们的产品。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021402.webp"></p><p>今天，我就用字节的全家桶 —- 刚刚发布的 Seed 2.0 模型和开发工具 TRAE —- 写一篇 Skill 教程。</p><p>大家会看到，<strong>它们组合起来既强大，又简单好用，（个人用户）还免费</strong>。这也是我想写的原因，让大家知道有这个方案。</p><p>只要十分钟，读完这篇教程，你还会明白 Skill 是什么，怎么用，以及为什么一定要用它。</p><h2 id="二、Seed-2-0-简介"><a href="#二、Seed-2-0-简介" class="headerlink" title="二、Seed 2.0 简介"></a>二、Seed 2.0 简介</h2><p>先介绍 Seed 2.0，它是 <strong>Seed 家族的基座模型</strong>。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021416.webp"></p><p>所谓 “基座模型”（foundation model），就是一种通用大模型，<strong>可用来构建其他各种下游模型</strong>。最大的两个特征有两个：一个是规模大，另一个是泛化能力强，这样才方便构建别的模型。</p><p>大家熟知的豆包，就是基于 Seed 模型，它也被称为 “豆包大模型”。这次 Seed 2.0 包含 Pro、Lite、Mini 三款通用模型，以及专为开发者定制的 Seed 2.0 Code 模型。</p><p>由于各种用途都必须支持，<strong>Seed 2.0 的通用性特别突出</strong>，比以前版本都要强。</p><blockquote><p>1、支持多模态，各种类型的数据都能处理：文字、图表、视觉空间、运动、视频等等。</p><p>2、具备各种 Agent 能力，方便跟企业工具对接：搜索、函数调用、工具调用、多轮指令、上下文管理等。</p><p>3、有推理和代码能力。</p></blockquote><p>正因为最后一点，所以我们可以拿它来编程，尤其是生成前端代码。跟字节发布的 AI 编程工具 <a href="https://www.trae.cn/">TRAE</a> 配合使用，效果很好，特别方便全栈开发，个人用户还免费。</p><h2 id="三、TRAE-的准备工作"><a href="#三、TRAE-的准备工作" class="headerlink" title="三、TRAE 的准备工作"></a>三、TRAE 的准备工作</h2><p><a href="https://www.trae.cn/ide/download">下载安装</a> TRAE 以后，它有两种模式，左上角可以切换：IDE 模型和 SOLO 模型。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021404.webp"></p><p>选择 IDE 就可以了，SOLO 是 AI 任务的编排器，除非多个任务一起跑，否则用不到。</p><p>然后，按下快捷键 Ctrl + U（或者 Command + U），唤出对话框，用来跟 AI 对话。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021429.webp"></p><p>我们要构建 Web 应用，左上角就选 @Builder 开发模式。右下角的模型就选 Seed-2.0-Code。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021426.webp"></p><p>可以看到，TRAE 自带的国产开源编程模型很全，都是免费使用。</p><p>准备工作这样就差不多了。</p><h2 id="四、编程测试"><a href="#四、编程测试" class="headerlink" title="四、编程测试"></a>四、编程测试</h2><p>我选了一个有点难度的任务，让 Seed 2.0 生成。</p><p>ASCII 图形是使用字符画出来的图形，比如下图。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021407.webp"></p><p>我打算生成一个 Web 应用，用户在网页上输入 ASCII 图形，自动转成 Excalidraw 风格的手绘图形。</p><p>提示词如下：</p><blockquote><p>“生成一个 Web 应用，可以将 ASCII 图形转为 Excalidraw 风格的图片，并提供下载。”</p></blockquote><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021428.webp"></p><p>模型就开始思考，将这个任务分解为四步。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021409.webp"></p><h2 id="五、生成结果"><a href="#五、生成结果" class="headerlink" title="五、生成结果"></a>五、生成结果</h2><p>等到 Seed 2.0 代码生成完毕，TRAE 就会起一个本地服务 localhost:8080，同时打开了预览窗口。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021410.webp"></p><p>生成的结果还挺有意思，上部的 ASCII 输入框提供了四个示例：Box、Tree、Flowchart、Smiley。下面是 Tree 的样子。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021411.webp"></p><p>然后是 Excalidraw 参数的控制面板：线宽、粗糙度、弯曲度、字体大小。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021412.webp"></p><p>点击 Convert（转换）按钮，马上得到手绘风格的线条图。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021413.webp"></p><p>整个页面就是下面的样子。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021414.webp"></p><h2 id="六、Skill-简介"><a href="#六、Skill-简介" class="headerlink" title="六、Skill 简介"></a>六、Skill 简介</h2><p>这个页面的设计，感觉不是很美观，还可以改进。我打算为 Seed 2.0 加入专门的前端设计技能，使其能够做出更美观的页面。</p><p><strong>所谓 Skill（技能），就是一段专门用途的提示词，用来注入上下文。</strong></p><p>有时候，提示词很长，每次都输入，就很麻烦。我们可以把反复用到的部分提取出来，保存在一个文件里面，方便重复使用。这种提取出来的提示词，往往是关于如何完成一种任务的详细描述，所以就称为 “技能文件”。</p><p>格式上，它就是一个 Markdown 文本文件，有一个 YAML 头，包含 name 字段和 description 字段。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021417.webp"></p><p>name 字段是 Skill 的名称，可以通过这个名称调用该技能；description 字段则是技能的简要描述，模型通过这段描述判断何时自动调用该技能。</p><p>有些技能比较复杂，除了描述文件以外，还有专门的脚本文件、资源文件、模板文件等等，相当于一个代码库。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021418.webp"></p><p>这些文件里面，SKILL.md 是入口文件，模型根据它的描述，了解何时何处调用其他各个文件。</p><p>这个库发到网上，就可以与其他人共享。如果你觉得 AI 模型处理任务时，需要用到某种技能，就可以寻找别人已经写好的 Skill 加载到模型。</p><h2 id="七、前端设计技能"><a href="#七、前端设计技能" class="headerlink" title="七、前端设计技能"></a>七、前端设计技能</h2><p>下面，我使用 Anthropic 公司共享出来的<a href="https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md">前端设计技能</a>，重构一下前面的页面。它只有单独一个 Markdown 文件，可以下载下来。</p><p>打开 TRAE 的 “设置 &#x2F; 规则和技能” 页面。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021419.webp"></p><p>点击技能部分的 “+ 创建” 按钮，打开创建技能的窗口。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021420.webp"></p><p>你可以在这个窗口填写 SKill 内容，也可以上传现成的 Skill 文件。我选择上传，完成后，就可以看到列表里已经有 frontend-design 技能了。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021421.webp"></p><p>然后，我就用下面的提示词，唤起这个技能来重构页面。</p><blockquote><p>“使用 frontend-design 技能，重构这个页面，让其变得更美观易用，更有专业感。”</p></blockquote><p>下面就是模型给出的文字描述和重构结果。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021422.webp"></p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021423.webp"></p><p>页面确实感觉变得高大上了！</p><h2 id="八、Vercel-deploy-技能"><a href="#八、Vercel-deploy-技能" class="headerlink" title="八、Vercel deploy 技能"></a>八、Vercel deploy 技能</h2><p>最后，再看一个技能的例子。</p><p>代码生成以后，都是在本地机器上运行，能不能发布到网上，分享给更多的人呢？</p><p>回答是只要使用 Vercel 公司的 deploy 技能，就能一个命令将生成结果发布到 Vercel 的机器上。</p><p>在 Vercel 官方技能的 <a href="https://github.com/vercel-labs/agent-skills/tree/main/skills/claude.ai">GitHub 仓库</a>里，下载 Vercel-deploy 技能的 zip 文件。</p><p>然后，把这个 zip 文件拖到 TRAE 的技能窗口里面，就会自动加载了。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021424.webp"></p><p>输入提示词：”将生成的网站发布到 Vercel”。</p><p>模型就会执行 vercel-deploy 技能，将网站发布到 Vercel，最后给出两个链接，一个是预览链接，另一个是发布到你个人账户的链接。</p><p><img src="https://cdn.beekka.com/blogimg/asset/202602/bg2026021427.webp"></p><p>大家现在可以访问<a href="https://skill-deploy-wscj2pnyc7-agent-skill-vercel.vercel.app/">这个链接</a>，看看网站的实际效果了。</p><h2 id="九、总结"><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h2><p>如果你读到这里，应该会同意我的观点，Seed 2.0 的编程能力相当不错，跟自家的编程工具 TRAE 搭配起来，好用又免费。</p><p>Skill 则是强大的能力扩展机制，让模型变得无所不能，一定要学会使用。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 12-转载 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 转载 </tag>
+            
+            <tag> 阮一峰 </tag>
             
         </tags>
       
