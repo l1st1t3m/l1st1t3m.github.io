@@ -1499,7 +1499,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ff9022;
+    background: #38f2ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3245,9 +3245,12 @@ header.header {
    基础环境
    ===================================== */
 body {
-  background-color: #0f1115;
-  background: url("https://bing.img.run/uhd.php") no-repeat center fixed;
-  background-size: cover;
+  background: #f7f7f7;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #080808;
+  }
 }
 .header,
 .header-inner,
